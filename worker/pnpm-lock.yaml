@@ -1,0 +1,30 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      render2:
+        specifier: ^1.5.0
+        version: 1.5.0
+
+packages:
+
+  range-parser@1.2.1:
+    resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
+    engines: {node: '>= 0.6'}
+
+  render2@1.5.0:
+    resolution: {integrity: sha512-q60V+O193o4bevaWgMHoN9II5BsH4purEemu+NJnx0bBZ3x4Hxfkq9t0puOKemRnOhYhwc39HPVLaKgmAehFBQ==}
+
+snapshots:
+
+  range-parser@1.2.1: {}
+
+  render2@1.5.0:
+    dependencies:
+      range-parser: 1.2.1
