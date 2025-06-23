@@ -47,6 +47,11 @@ params:
   navbar:
     displayTitle: true
     displayLogo: true
+    logo:
+      path: logo.png
+      link: /
+      width: 32
+      height: 32
 
   page:
     # full (100%), wide (90rem), normal (1280px)
