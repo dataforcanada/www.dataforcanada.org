@@ -44,11 +44,12 @@ menu:
         icon: github
 
 params:
+  externalLinkDectoration: true
   navbar:
     displayTitle: true
     displayLogo: true
     logo:
-      path: logo.png
+      path: logo.svg
       link: /
       width: 32
       height: 32
