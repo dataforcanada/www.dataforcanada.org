@@ -13,4 +13,4 @@ Canada creates incredible amounts of open data, from foundational road networks 
 We act as the transformation layer. We aggregate datasets with permissive licenses and process them into "digestible" standards optimized for modern downstream applications.
 
 * **For Researchers:** Skip the cleaning phase. Access normalized, documented data ready for analysis.
-* **For Systems:** Integration-ready datasets that feed directly into pipelines, databases, and geospatial engines.
+* **For Systems:** Standardized data structures designed to feed directly into pipelines, data warehouses, and downstream services.
