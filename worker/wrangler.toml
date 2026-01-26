@@ -3,7 +3,7 @@ main = "src/index.js"
 compatibility_date = "2022-05-15"
 # Set this to false if you don't want to use the default *.workers.dev route.
 # Note that *.workers.dev routes don't support native worker-level caching: https://developers.cloudflare.com/workers/runtime-apis/cache/
-workers_dev = true
+workers_dev = false
 routes = [
   { pattern = "www.dataforcanada.org", custom_domain = true }
 ]
@@ -16,7 +16,7 @@ ALLOWED_ORIGINS = "https://www.dataforcanada.org"
 # The `cache-control` header: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control.
 # Optional, the `cache-control` header is omitted if unset, which would NOT disable caching: https://developers.cloudflare.com/workers/runtime-apis/cache/#headers
 # For example, you can disable all cache by setting this to `no-store`.
-CACHE_CONTROL = "max-age=86400, public"
+CACHE_CONTROL = "max-age=3600, public"
 
 # The string to prepend to each file path. Optional, nothing is prepended to the path if unset.
 PATH_PREFIX = ""
@@ -45,7 +45,7 @@ ITEMS_PER_PAGE = 1000
 HIDE_HIDDEN_FILES = false
 
 # Set a cache header here, e.g. "max-age=86400", if you want to cache directory listings.
-DIRECTORY_CACHE_CONTROL = "max-age=86400, public"
+DIRECTORY_CACHE_CONTROL = "max-age=3600, public"
 
 # Set debugging log enabled.
 LOGGING = false
