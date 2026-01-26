@@ -56,6 +56,8 @@ menu:
         icon: github
 
 params:
+  displayUpdatedDate: true
+
   externalLinkDectoration: true
   navbar:
     displayTitle: true
@@ -68,7 +70,7 @@ params:
 
   page:
     # full (100%), wide (90rem), normal (1280px)
-    width: wide
+    width: full
 
   footer:
     displayCopyright: True
