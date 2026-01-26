@@ -50,6 +50,7 @@ flowchart TD
         ObjectStorage[Object Storage]:::storage
         DecentralizedDistribution[Decentralized Distribution]:::storage
         Serverless[API & Static Files]:::storage
+        Metadata[Metadata]:::storage
     end
 
     subgraph "Experimental Infrastructure"
@@ -77,8 +78,15 @@ flowchart TD
     FlatGeoBuf --> ObjectStorage
     PMTiles --> ObjectStorage
     COG --> ObjectStorage
-    ObjectStorage --> DecentralizedDistribution
-    ObjectStorage --> Serverless
+    ObjectStorage --> Metadata
+    Metadata --> DecentralizedDistribution
+    Metadata --> Serverless
+    Metadata --> GeoServer
+    Metadata --> QGISServer
+    Metadata --> Martin
+    Metadata --> DataSci
+    Metadata --> WebApps
+    Metadata --> Systems
     DecentralizedDistribution --> Systems
     Serverless --> WebApps
     Serverless --> DataSci
@@ -98,6 +106,7 @@ flowchart TD
     click StatProducts "https://www.dataforcanada.org/docs/processes/statistical_products/" _blank
     click Orthoimagery "https://www.dataforcanada.org/docs/processes/orthoimagery/" _blank
     click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
+    click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click Martin "https://martin.maplibre.org/" _blank
     click GeoServer "https://geoserver.org/" _blank
     click COG "https://cogeo.org/" _blank
