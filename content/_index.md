@@ -41,14 +41,21 @@ flowchart TD
 
     subgraph "Dissemination Formats"
         Parquet[("Parquet")]:::storage
-        PMTiles[("PMTile")]:::storage
         FlatGeoBuf[("FlatGeoBuf")]:::storage
+        PMTiles[("PMTile")]:::storage
+        COG[("COG")]:::storage
     end
 
     subgraph "Distribution Infrastructure"
         ObjectStorage[Object Storage]:::storage
         DecentralizedDistribution[Decentralized Distribution]:::storage
         Serverless[API & Static Files]:::storage
+    end
+
+    subgraph "Experimental Infrastructure"
+        GeoServer
+        QGISServer[("QGIS Server")]
+        Martin
     end
 
     subgraph "Consumption / End Users"
@@ -63,16 +70,27 @@ flowchart TD
     Raw --> Transform
     Transform --> Opt
     Opt --> Parquet
-    Opt --> PMTiles
     Opt --> FlatGeoBuf
+    Opt --> PMTiles
+    Opt --> COG
     Parquet --> ObjectStorage
-    PMTiles --> ObjectStorage
     FlatGeoBuf --> ObjectStorage
+    PMTiles --> ObjectStorage
+    COG --> ObjectStorage
     ObjectStorage --> DecentralizedDistribution
     ObjectStorage --> Serverless
     DecentralizedDistribution --> Systems
     Serverless --> WebApps
     Serverless --> DataSci
+    ObjectStorage --> GeoServer
+    ObjectStorage --> QGISServer
+    ObjectStorage --> Martin
+    GeoServer --> WebApps
+    QGISServer --> WebApps
+    Martin --> WebApps
+    GeoServer --> DataSci
+    QGISServer --> DataSci
+    Martin --> DataSci
 
     click Parquet "https://github.com/apache/parquet-format" _blank
     click FlatGeoBuf "https://flatgeobuf.org" _blank
@@ -80,4 +98,7 @@ flowchart TD
     click StatProducts "https://www.dataforcanada.org/docs/processes/statistical_products/" _blank
     click Orthoimagery "https://www.dataforcanada.org/docs/processes/orthoimagery/" _blank
     click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
+    click Martin "https://martin.maplibre.org/" _blank
+    click GeoServer "https://geoserver.org/" _blank
+    click COG "https://cogeo.org/" _blank
 ```
