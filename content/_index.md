@@ -60,9 +60,8 @@ flowchart TD
     end
 
     subgraph "Consumption / End Users"
-        DataSci[DuckDB, Python, QGIS, Jupyter]:::consumer
+        DataSci[Researchers & Developers]:::consumer
         WebApps[Web Applications]:::consumer
-        DataSci[Python, R, Julia]:::consumer
         Systems[Systems]:::consumer
     end
 
