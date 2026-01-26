@@ -24,6 +24,6 @@ hugo server --logLevel debug --disableFastRender -p 1313
 
 ## License
 
-My website and code are distributed under an MIT license.
+The website and code are distributed under an MIT license.
 
 [Back to top](#top)
