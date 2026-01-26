@@ -25,6 +25,11 @@ enableGitInfo: true
 enableInlineShortcodes: true
 enableEmoji: true
 
+outputs:
+  home: [html, rss, llms]
+  page: [html, rss, llms]
+  section: [html, rss, llms]
+
 menu:
   main:
     - identifier: datasets
