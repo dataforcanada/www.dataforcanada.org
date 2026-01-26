@@ -60,7 +60,7 @@ flowchart TD
     end
 
     subgraph "Consumption / End Users"
-        DataSci[Researchers & Developers]:::consumer
+        DataSci[Researchers]:::consumer
         WebApps[Web Applications]:::consumer
         Systems[Systems]:::consumer
     end
