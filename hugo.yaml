@@ -27,18 +27,30 @@ enableEmoji: true
 
 menu:
   main:
-    - name: Blog
-      url: /blog/
+    - identifier: datasets
+      name: Datasets
       weight: 1
-    - name: Contact
-      url: /contact/
+    - identifier: Production
+      name: Production
+      url: https://data-01.dataforcanada.org/processed/
+      parent: datasets
+    - identifier: Development
+      name: Development
+      url: https://data-01.dev.dataforcanada.org/processed/
+      parent: datasets
+    - name: Docs
+      url: /docs/
       weight: 2
-    - name: Search
-      weight: 3
-      params:
-        type: search
+    #  weight: 1
+    #- name: Contact
+    #  url: /contact/
+    #  weight: 2
+    #- name: Search
+    #  weight: 2
+    #  params:
+    #    type: search
     - name: GitHub
-      weight: 4
+      weight: 3
       url: "https://github.com/dataforcanada"
       params:
         icon: github

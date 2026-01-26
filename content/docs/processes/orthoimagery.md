@@ -1,0 +1,21 @@
+---
+title: Orthoimagery
+weight: 3
+---
+
+I briefly worked on collecting orthoimagery a couple of years ago. It started from [this](https://github.com/diegoripley/canada-orthoimagery). Current data processing pipeline is being defined, but you can preview some of the datasets from the process.
+
+Here is a table of some of the resulting datasets.
+
+| Place      | ISO | Province | Year | Provider   | Dataset ID / Preview                                                | PMTiles                                                                                                            | TileJSON                                                                                                         |
+|------------|-----|----------|------|------------|------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| Canada     | CA  |          | 2020 | NRCan      | [ca_nrcan_land_cover_2020_30m](https://data-01.dev.dataforcanada.org/processed/ca_nrcan_land_cover_2020_30m.html)                               | https://data-01.dev.dataforcanada.org/processed/ca_nrcan_land_cover_2020_30m.pmtiles                               | https://tiles-01.dev.dataforcanada.org/processed/ca_nrcan_land_cover_2020_30m.json                               |
+| Edmonton   | CA  | AB       | 2023 | Edmonton   | [ca-ab_edmonton-2023A00054811061_orthoimagery_2023_075mm](https://data-01.dev.dataforcanada.org/processed/ca-ab_edmonton-2023A00054811061_orthoimagery_2023_075mm.html)    | https://data-01.dev.dataforcanada.org/processed/ca-ab_edmonton-2023A00054811061_orthoimagery_2023_075mm.pmtiles    | https://tiles-01.dev.dataforcanada.org/processed/ca-ab_edmonton-2023A00054811061_orthoimagery_2023_075mm.json    |
+| Red Deer   | CA  | AB       | 2024 | Red Deer   | [ca-ab_red_deer-2024A00054808011_orthoimagery_2024_075mm](https://data-01.dev.dataforcanada.org/processed/ca-ab_red_deer-2024A00054808011_orthoimagery_2024_075mm.html)    | https://data-01.dev.dataforcanada.org/processed/ca-ab_red_deer-2024A00054808011_orthoimagery_2024_075mm.pmtiles    | https://tiles-01.dev.dataforcanada.org/processed/ca-ab_red_deer-2024A00054808011_orthoimagery_2024_075mm.json    |
+| Vancouver  | CA  | BC       | 2022 | Vancouver  | [ca-bc_vancouver-2022A00055915022_orthoimagery_2022_075mm](https://data-01.dev.dataforcanada.org/processed/ca-ab_red_deer-2025A00054808011_orthoimagery_2025_075mm.html)   | https://data-01.dev.dataforcanada.org/processed/ca-bc_vancouver-2022A00055915022_orthoimagery_2022_075mm.pmtiles   | https://tiles-01.dev.dataforcanada.org/processed/ca-bc_vancouver-2022A00055915022_orthoimagery_2022_075mm.json   |
+| Whitehorse | CA  | YK       | 2019 | Whitehorse | [ca-yt_whitehorse-2019A000556001009_orthoimagery_2019_200mm](https://data-01.dev.dataforcanada.org/processed/ca-bc_vancouver-2022A00055915022_orthoimagery_2022_075mm.html) | https://data-01.dev.dataforcanada.org/processed/ca-yt_whitehorse-2019A000556001009_orthoimagery_2019_200mm.pmtiles | https://tiles-01.dev.dataforcanada.org/processed/ca-yt_whitehorse-2019A000556001009_orthoimagery_2019_200mm.json |
+| Winnipeg   | CA  | MB       | 2024 | Winnipeg   | [ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm](https://data-01.dev.dataforcanada.org/processed/ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm.html)    | https://data-01.dev.dataforcanada.org/processed/ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm.pmtiles    | https://tiles-01.dev.dataforcanada.org/processed/ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm.json    |
+
+
+# The Plan
+The plan is to include the original dataset, for example, the orthoimagery files from [Vancouver](https://opendata.vancouver.ca/explore/dataset/orthophoto-imagery-2022/information/) are provided in MrSID and ECW file formats, which are proprietary and require special drivers being used. I am looking into using formats such as [Cloud Optimized GeoTIFFs](https://cogeo.org/), but I have to make sure that there is no degradation of visual quality in the process. I hope to experiment with multispectral data in the future.
