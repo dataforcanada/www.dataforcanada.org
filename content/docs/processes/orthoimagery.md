@@ -7,7 +7,7 @@ I briefly worked on collecting orthoimagery a couple of years ago. It started fr
 
 ## Development Environment
 
-While a key goal is to utilize open source as much as possible, We utilize the proprietary software [MapTiler Engine Pro](https://www.maptiler.com/engine/pricing) as it is superior to current open source solutions. A limitation is that we are limited to 8 CPU cores for rendering of the map tiles.
+While a key goal is to utilize open source as much as possible, we utilize the proprietary software [MapTiler Engine Pro](https://www.maptiler.com/engine/pricing) as it is superior to current open source solutions.
 
 ## Specifications of Tile Packages
 
