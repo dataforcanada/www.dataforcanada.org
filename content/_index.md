@@ -81,6 +81,6 @@ flowchart TD
     FlatGeoBuf -.->|"Stream"|WebApps
 
     click StatProducts "https://www.dataforcanada.org/docs/processes/statistical_products/" _blank
-    click Orthoimagery "https://www.dataforcanada.org/docs/processes/statistical_products/" _blank
+    click Orthoimagery "https://www.dataforcanada.org/docs/processes/orthoimagery/" _blank
     click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
 ```
