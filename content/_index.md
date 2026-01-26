@@ -57,6 +57,8 @@ flowchart TD
         GeoServer
         QGISServer[("QGIS Server")]
         Martin
+        ZOOProject[("ZOO Project")]
+        BBOXServer[("BBOX Server")]
     end
 
     subgraph "Consumption / End Users"
@@ -82,7 +84,9 @@ flowchart TD
     Metadata --> Serverless
     Metadata --> GeoServer
     Metadata --> QGISServer
+    Metadata --> BBOXServer
     Metadata --> Martin
+    Metadata --> ZOOProject
     Metadata --> DataSci
     Metadata --> WebApps
     Metadata --> Systems
@@ -91,13 +95,21 @@ flowchart TD
     Serverless --> DataSci
     ObjectStorage --> GeoServer
     ObjectStorage --> QGISServer
+    ObjectStorage --> BBOXServer
     ObjectStorage --> Martin
+    ObjectStorage --> ZOOProject
+
     GeoServer --> WebApps
     QGISServer --> WebApps
+    BBOXServer --> WebApps
     Martin --> WebApps
+    ZOOProject --> WebApps
+
     GeoServer --> DataSci
     QGISServer --> DataSci
+    BBOXServer --> DataSci
     Martin --> DataSci
+    ZOOProject --> DataSci
 
     click Parquet "https://github.com/apache/parquet-format" _blank
     click FlatGeoBuf "https://flatgeobuf.org" _blank
@@ -109,4 +121,6 @@ flowchart TD
     click Martin "https://martin.maplibre.org/" _blank
     click GeoServer "https://geoserver.org/" _blank
     click COG "https://cogeo.org/" _blank
+    click ZOOProject "https://zoo-project.org/" _blank
+    click BBOXServer "https://www.bbox.earth/" _blank
 ```
