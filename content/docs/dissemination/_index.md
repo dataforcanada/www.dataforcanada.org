@@ -19,35 +19,29 @@ Once data products reach a production-ready state, the workflow is as follows:
 ```mermaid
 
 flowchart TD
-    Sources[Open Data Sources<br/>Statistics Canada and Others]
+    Sources[Open Data Sources]
 
     Notebook[Jupyter Notebooks]
-    DuckDB[DuckDB]
-    QGIS[QGIS]
 
-    Artifacts[Analysis-Ready Data<br/>Parquet and GeoParquet]
-
-    Distribution[Decentralized Distribution]
+    Artifacts[Analysis-Ready Data]
 
     Portal[Static Data Portal]
+    Distribution[Decentralized Distribution]
+
     Zenodo[Long-Term Archive]
     Torrent[Peer Distribution]
 
-    Users[Researchers and Developers]
+    Users[Researchers, Developers, Systems]
 
     Sources --> Notebook
-    Notebook --> DuckDB
-    DuckDB --> QGIS
-    QGIS --> Artifacts
+    Notebook --> Artifacts
+    Artifacts --> Portal
+    Portal --> Distribution
 
-    Artifacts --> Distribution
-
-    Distribution --> Portal
     Distribution --> Zenodo
     Distribution --> Torrent
 
     Portal --> Users
     Zenodo --> Users
     Torrent --> Users
-
 ```

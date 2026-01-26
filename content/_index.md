@@ -74,9 +74,6 @@ flowchart TD
     Serverless --> WebApps
     Serverless --> DataSci
 
-    %% Concept Annotations
-    Transform -.->|"Join Spatial & Tabular"| Parquet
-
     click Parquet "https://github.com/apache/parquet-format" _blank
     click FlatGeoBuf "https://flatgeobuf.org" _blank
     click PMTiles "https://github.com/protomaps/PMTiles/blob/main/spec/v3/spec.md" _blank
