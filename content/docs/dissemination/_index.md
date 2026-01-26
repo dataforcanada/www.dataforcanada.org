@@ -13,3 +13,41 @@ Once data products reach a production-ready state, the workflow is as follows:
   * The endpoint `https://data-01.dataforcanada.org/processed/` will strictly serve the **latest** version of a dataset.
   * Global metadata will be aggregated into a single, queryable [STAC GeoParquet](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/) file. This catalog will track all versions and DOIs, providing direct download links to [Zenodo](https://zenodo.org) which serves as the long-term data repository.
 * **Decentralized Distribution:** We will pilot BitTorrent to maximize infrastructure resilience. By leveraging HTTP Web Seeding (BEP 19), torrents will be seeded simultaneously by Zenodo, the Data for Canada infrastructure, and community peers, ensuring high availability without a single point of failure.
+
+## High-Level Overview
+
+```mermaid
+
+flowchart TD
+    Sources[Open Data Sources<br/>Statistics Canada and Others]
+
+    Notebook[Jupyter Notebooks]
+    DuckDB[DuckDB]
+    QGIS[QGIS]
+
+    Artifacts[Analysis-Ready Data<br/>Parquet and GeoParquet]
+
+    Distribution[Decentralized Distribution]
+
+    Portal[Static Data Portal]
+    Zenodo[Long-Term Archive]
+    Torrent[Peer Distribution]
+
+    Users[Researchers and Developers]
+
+    Sources --> Notebook
+    Notebook --> DuckDB
+    DuckDB --> QGIS
+    QGIS --> Artifacts
+
+    Artifacts --> Distribution
+
+    Distribution --> Portal
+    Distribution --> Zenodo
+    Distribution --> Torrent
+
+    Portal --> Users
+    Zenodo --> Users
+    Torrent --> Users
+
+```
