@@ -57,6 +57,8 @@ menu:
 
 params:
   displayUpdatedDate: true
+  theme:
+    default: light
 
   externalLinkDectoration: true
   navbar:
