@@ -1,9 +1,11 @@
 ## Table of Contents
+
 - [About](#about)
 - [How to Run Locally](#how-to-run-locally)
 - [License](#license)
 
 ## About
+
 [![Deploy Hugo site to R2](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_website.yaml/badge.svg)](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_website.yaml)
 [![Deploy Worker](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_worker.yaml/badge.svg)](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_worker.yaml)
 
@@ -19,7 +21,7 @@ git clone git@github.com:dataforcanada/www.dataforcanada.org.git
 cd www.dataforcanada.org
 
 # In Dev Container
-hugo server --logLevel debug --disableFastRender -p 1313
+hugo server --bind 0.0.0.0 --bind 0.0.0.0 --disableFastRender --noHTTPCache -p 1313
 ```
 
 ## License
