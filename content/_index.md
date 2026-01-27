@@ -36,7 +36,7 @@ flowchart TD
 
     subgraph "Processing Pipeline"
         Raw[Raw Data Ingestion]:::process
-        Transform[Transformation Engine]:::process
+        Transform[Transformation Processes]:::process
         Opt[Optimization]:::process
     end
 
