@@ -9,13 +9,13 @@ Data for Canada exists to bridge the gap between open data availability and data
 
 ## The Problem
 
-Canada creates incredible amounts of open data, from foundational road networks to federal census statistics. However, these datasets are often locked in legacy formats, fragmented portals, or structures that require significant engineering effort to normalize before they can be used. For a researcher or a system developer, the "time-to-insight" is often bottlenecked by data preparation.
+Canada creates incredible amounts of open data, from foundational road networks, federal census statistics, orthoimagery, and other. However, these datasets are often locked in legacy formats, fragmented portals, or structures that require significant engineering effort to normalize before they can be used. For a researcher or a system developer, the "time-to-insight" is often bottlenecked by data preparation.
 
 ## The Solution
 
 We act as the transformation layer. We aggregate datasets with permissive licenses and process them into "digestible" standards optimized for modern downstream applications.
 
-* **For Researchers:** Skip the cleaning phase. Access normalized, documented data ready for analysis.
+* **For Researchers and Developers:** Skip the cleaning phase. Access normalized, documented data ready for analysis.
 * **For Systems:** Standardized data structures designed to feed directly into pipelines, data warehouses, and downstream services.
 
 ## High-Level Overview
@@ -31,10 +31,11 @@ flowchart TD
     subgraph "Data Sources"
         StatProducts[("Statistical Products")]:::source
         Orthoimagery[("Orthoimagery")]:::source
+        Elevation[("Elevation")]:::source
     end
 
     subgraph "Processing Pipeline"
-        Raw[Raw Data Ingestion<br/>CSVs, Shapefiles, ECW]:::process
+        Raw[Raw Data Ingestion]:::process
         Transform[Transformation Engine]:::process
         Opt[Optimization]:::process
     end
@@ -55,15 +56,13 @@ flowchart TD
 
     subgraph "Experimental Infrastructure"
         GeoServer
-        QGISServer[("QGIS Server")]
         Martin
         ZOOProject[("ZOO Project")]
         BBOXServer[("BBOX Server")]
     end
 
     subgraph "Consumption / End Users"
-        DataSci[Researchers]:::consumer
-        WebApps[Web Applications]:::consumer
+        DataSci["Researchers & Developers"]:::consumer
         Systems[Systems]:::consumer
     end
 
@@ -83,30 +82,20 @@ flowchart TD
     Metadata --> DecentralizedDistribution
     Metadata --> Serverless
     Metadata --> GeoServer
-    Metadata --> QGISServer
     Metadata --> BBOXServer
     Metadata --> Martin
     Metadata --> ZOOProject
     Metadata --> DataSci
-    Metadata --> WebApps
     Metadata --> Systems
     DecentralizedDistribution --> Systems
-    Serverless --> WebApps
+    DecentralizedDistribution --> DataSci
     Serverless --> DataSci
     ObjectStorage --> GeoServer
-    ObjectStorage --> QGISServer
     ObjectStorage --> BBOXServer
     ObjectStorage --> Martin
     ObjectStorage --> ZOOProject
 
-    GeoServer --> WebApps
-    QGISServer --> WebApps
-    BBOXServer --> WebApps
-    Martin --> WebApps
-    ZOOProject --> WebApps
-
     GeoServer --> DataSci
-    QGISServer --> DataSci
     BBOXServer --> DataSci
     Martin --> DataSci
     ZOOProject --> DataSci
