@@ -51,7 +51,7 @@ flowchart TD
     subgraph "Experimental Infrastructure"
         Martin@{ shape: rect}
         GeoServer@{ shape: rect}
-        ZOOProject@{ shape: rect, label: "ZOO Project"}
+        ZOOProject@{ shape: rect, label: "ZOO-Project"}
         BBOXServer@{ shape: rect, label: "BBOX Server"}
     end
 
