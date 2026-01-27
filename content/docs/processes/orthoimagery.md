@@ -3,12 +3,11 @@ title: Orthoimagery
 weight: 3
 ---
 
-I briefly worked on collecting orthoimagery a couple of years ago. It started from [this](https://github.com/diegoripley/canada-orthoimagery). Current data processing pipeline is being defined, but you can preview some of the datasets from the process.
+This project builds upon [previous work collecting Canadian orthoimagery](https://github.com/diegoripley/canada-orthoimagery). While the data processing workflow is still under development, you can [preview sample datasets](#download-and-preview) below.
 
 ## Development Environment
 
-While a key goal is to utilize open source as much as possible, We utilize the proprietary software [MapTiler Engine Pro](https://www.maptiler.com/engine/pricing) as it is superior to current open source solutions.
-While a key goal is to utilize open source as much as possible, we utilize the proprietary software [MapTiler Engine Pro](https://www.maptiler.com/engine/pricing) as it is superior to current open source solutions.
+Although we prioritize open-source tools, we currently use [MapTiler Engine Pro](https://www.maptiler.com/engine/pricing) because it outperforms available open-source alternatives for this specific workflow.
 
 ## Specifications of Tile Packages
 
@@ -16,7 +15,7 @@ The specifications for the tile packages are defined in this code.
 
 ```bash
 #!/bin/bash
-PROJECT_DIR="~/Documents/Personal/Projects/dataforcanada-orthoimagery"
+PROJECT_DIR="~/Documents/Personal/Projects/dataforcanada/process-orthoimagery"
 DATASET_ID="ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm"
 DATA_DIR="${PROJECT_DIR}/data"
 DATA_INPUT_DIR="${DATA_DIR}/input/${DATASET_ID}"
@@ -69,5 +68,4 @@ Here is a table of some of the datasets created from the current process.
 | Winnipeg   | CA  | MB       | 2024 | Winnipeg   | [ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm](https://data-01.dev.dataforcanada.org/processed/ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm.html)     | [Download](https://data-01.dev.dataforcanada.org/processed/ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm.pmtiles)    | [TileJSON](https://tiles-01.dev.dataforcanada.org/processed/ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm.json)    | [Download](https://data-01.dev.dataforcanada.org/processed/ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm.pmtiles.torrent)   |
 
 ## The Plan
-
-The plan is to include the original dataset, for example, the orthoimagery files from [Vancouver](https://opendata.vancouver.ca/explore/dataset/orthophoto-imagery-2022/information/) are provided in MrSID and ECW file formats, which are proprietary and require special drivers being used. I am looking into using formats such as [Cloud Optimized GeoTIFFs](https://cogeo.org/), but I have to make sure that there is no degradation of visual quality in the process. I hope to experiment with multispectral data in the future.
+The objective is to standardize the source datasets used by Data for Canada processes. For instance, Vancouver’s orthoimagery is currently distributed in proprietary formats (MrSID and ECW) that require specialized drivers. I am currently evaluating open alternatives, such as [Cloud Optimized GeoTIFFs](https://cogeo.org/), while ensuring that the conversion process preserves full visual fidelity. Future iterations will also explore the integration of multispectral data.
