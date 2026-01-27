@@ -9,7 +9,7 @@
 [![Deploy Hugo site to R2](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_website.yaml/badge.svg)](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_website.yaml)
 [![Deploy Worker](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_worker.yaml/badge.svg)](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_worker.yaml)
 
-This repo has the code for my personal website, [www.dataforcanada.org](https://www.dataforcanada.org). The website is generated as a static website with Hugo and is served via a Cloudflare worker that reads a Cloudflare R2 bucket.
+This repo has the code for the Data for Canada project website, [www.dataforcanada.org](https://www.dataforcanada.org). The website is generated as a static website with Hugo and is served via a Cloudflare worker that reads a Cloudflare R2 bucket.
 
 ## How to Run Locally
 
@@ -21,7 +21,7 @@ git clone git@github.com:dataforcanada/www.dataforcanada.org.git
 cd www.dataforcanada.org
 
 # In Dev Container
-hugo server --bind 0.0.0.0 --bind 0.0.0.0 --disableFastRender --noHTTPCache -p 1313
+hugo server --disableFastRender --noHTTPCache -p 1313
 ```
 
 ## License
