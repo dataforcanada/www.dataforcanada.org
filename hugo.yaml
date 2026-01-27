@@ -46,19 +46,14 @@ menu:
     - name: Docs
       url: /docs/
       weight: 2
-    #  weight: 1
-    #- name: Contact
-    #  url: /contact/
-    #  weight: 2
-    #- name: Search
-    #  weight: 2
-    #  params:
-    #    type: search
     - name: GitHub
       weight: 3
       url: "https://github.com/dataforcanada"
       params:
         icon: github
+    - name: Contact
+      url: /contact/
+      weight: 4
 
 params:
   displayUpdatedDate: true
