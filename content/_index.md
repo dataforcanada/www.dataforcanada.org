@@ -73,9 +73,9 @@ flowchart TD
     a5@{animate: true, animation: slow}
     Opt a6@--> Parquet
     a6@{animate: true, animation: slow}
-    Opt a7@--> FlatGeoBuf
+    Parquet a7@--> FlatGeoBuf
     a7@{animate: true, animation: slow}
-    Opt a8@--> PMTiles
+    Parquet a8@--> PMTiles
     a8@{animate: true, animation: slow}
     Opt a9@--> COG
     a9@{animate: true, animation: slow}
@@ -87,6 +87,8 @@ flowchart TD
     a12@{animate: true, animation: slow}
     COG a13@--> ObjectStorage
     a13@{animate: true, animation: slow}
+    COG a28@--> PMTiles
+    a28@{animate: true, animation: slow}
     ObjectStorage a14@--> Metadata
     a14@{animate: true, animation: slow}
     Metadata a15@--> HTTP
