@@ -54,6 +54,8 @@ flowchart TD
     a11@{animate: true, animation: fast}
     Zenodo a12@--> Systems
     a12@{animate: true, animation: slow}
+    Zenodo a13@--> Torrent
+    a13@{animate: true, animation: slow}
 
     click Portal "https://data-01.dataforcanada.org/processed/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
