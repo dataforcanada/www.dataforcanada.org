@@ -25,6 +25,7 @@ flowchart TD
     subgraph "Data Sources"
         StatProducts@{ shape: lean-l, label: "Statistical Products"}
         Orthoimagery@{ shape: lean-l}
+        FieldImagery@{ shape: lean-l, label: "Field Imagery"}
         Elevation@{ shape: lean-l}
         EnvironmentClimate@{ shape: lean-l, label: "Environmental & Climate"}
     end
@@ -41,6 +42,8 @@ flowchart TD
         PMTiles@{ shape: lean-l}
         COG@{ shape: lean-l}
         Zarr@{ shape: lean-l}
+        JPEGXL@{ shape: lean-l, label: "JPEG XL"}
+        AV1@{ shape: lean-l, label: "AV1"}
     end
 
     subgraph "Distribution Infrastructure"
@@ -51,6 +54,7 @@ flowchart TD
     end
 
     subgraph ei [Experimental Infrastructure]
+        Panoramax@{ shape: rect}
         Martin@{ shape: rect}
         GeoServer@{ shape: rect}
         ZOOProject@{ shape: rect, label: "ZOO-Project"}
@@ -67,6 +71,8 @@ flowchart TD
     a3@{animate: true, animation: slow}
     EnvironmentClimate a31@--> Raw
     a31@{animate: true, animation: slow}
+    FieldImagery a32@--> Raw
+    a32@{animate:true, animation: fast}
     Orthoimagery a2@--> Raw
     a2@{animate: true, animation: slow}
     StatProducts a1@--> Raw
@@ -85,6 +91,14 @@ flowchart TD
     a9@{animate: true, animation: slow}
     Opt a29@--> Zarr
     a29@{animate: true, animation: slow}
+    Opt a33@--> JPEGXL
+    a33@{animate: true, animation: slow}
+    JPEGXL a34@ --> ObjectStorage
+    a34@{animate: true, animation: fast}
+    Opt a35@--> AV1
+    a35@{animate: true, animation: slow}
+    AV1 a36@ --> ObjectStorage
+    a36@{animate: true, animation: fast}
     Zarr a30@--> ObjectStorage
     a30@{animate: true, animation: slow}
     Parquet a10@--> ObjectStorage
@@ -120,17 +134,25 @@ flowchart TD
     a26@{animate: true, animation: slow}
     BBOXServer a27@--> DataSci
     a27@{animate: true, animation: slow}
+    Panoramax a37@--> DataSci
+    a37@{animate: true, animation: slow}
 
     click Parquet "https://github.com/apache/parquet-format/" _blank
     click FlatGeoBuf "https://flatgeobuf.org/" _blank
     click PMTiles "https://github.com/protomaps/PMTiles/blob/main/spec/v3/spec.md" _blank
     click Zarr "https://github.com/zarr-developers/geozarr-spec/" _blank
-    click StatProducts "https://www.dataforcanada.org/docs/processes/statistical_products/" _blank
-    click Orthoimagery "https://www.dataforcanada.org/docs/processes/orthoimagery/" _blank
-    click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
+    click StatProducts "/docs/processes/statistical_products/" _blank
+    click Orthoimagery "/docs/processes/orthoimagery/" _blank
+    %%click FieldImagery "/docs/processes/field_imagery/" _blank
+    %%click EnvironmentClimate "/docs/processes/environmental_climate/" _blank
+    %%click Elevation "/docs/processes/elevation/" _blank
+    click JPEGXL "https://jpeg.org/jpegxl/" _blank
+    click AV1 "https://aomedia.org/specifications/av1/" _blank
+    click DecentralizedDistribution "/docs/dissemination/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click Martin "https://martin.maplibre.org/" _blank
     click GeoServer "https://geoserver.org/" _blank
+    click Panoramax "https://gitlab.com/panoramax" _blank
     click COG "https://cogeo.org/" _blank
     click ZOOProject "https://zoo-project.org/" _blank
     click BBOXServer "https://www.bbox.earth/" _blank
