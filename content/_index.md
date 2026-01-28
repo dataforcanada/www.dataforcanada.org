@@ -105,7 +105,6 @@ flowchart TD
     a16@{animate: true, animation: slow}
     HTTP a17@--> DecentralizedDistribution
     a17@{animate: true, animation: slow}
-    a21@{animate: true, animation: slow}
     DecentralizedDistribution a22@--> Systems
     a22@{animate: true, animation: fast}
     DecentralizedDistribution a23@--> DataSci
