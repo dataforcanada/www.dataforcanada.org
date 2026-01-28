@@ -22,7 +22,7 @@ We act as the transformation layer. We aggregate datasets with permissive licens
 
 ```mermaid
 flowchart TD
-    subgraph "Data Sources"
+    subgraph ds [Data Sources]
         StatProducts@{ shape: lean-l, label: "Statistical Products"}
         Orthoimagery@{ shape: lean-l}
         FieldImagery@{ shape: lean-l, label: "Field Imagery"}
@@ -30,13 +30,12 @@ flowchart TD
         EnvironmentClimate@{ shape: lean-l, label: "Environmental & Climate"}
     end
 
-    subgraph "Processing Pipeline"
+    subgraph pp [Processing Pipeline]
         Raw@{ shape: rect, label: "Raw Data Ingestion"}
-        Transform@{ shape: rect, label: "Transform"}
-        Opt@{ shape: rect, label: "Optimization"}
+        Transform@{ shape: rect, label: "Transform and Optimize"}
     end
 
-    subgraph "Dissemination Formats"
+    subgraph df [Dissemination Formats]
         Parquet@{ shape: lean-l}
         FlatGeoBuf@{ shape: lean-l}
         PMTiles@{ shape: lean-l}
@@ -46,7 +45,7 @@ flowchart TD
         AV1@{ shape: lean-l, label: "AV1"}
     end
 
-    subgraph "Distribution Infrastructure"
+    subgraph di [Distribution Infrastructure]
         ObjectStorage@{ shape: bow-rect, label: "Object Storage"}
         Metadata@{ shape: rect}
         HTTP@{ shape: rect, label: "Static Files & API"}
@@ -67,48 +66,28 @@ flowchart TD
     end
 
     %% Relationships
-    Elevation a3@--> Raw
-    a3@{animate: true, animation: slow}
-    EnvironmentClimate a31@--> Raw
-    a31@{animate: true, animation: slow}
-    FieldImagery a32@--> Raw
-    a32@{animate:true, animation: fast}
-    Orthoimagery a2@--> Raw
-    a2@{animate: true, animation: slow}
     StatProducts a1@--> Raw
     a1@{animate: true, animation: slow}
+    Orthoimagery a2@--> Raw
+    a2@{animate: true, animation: slow}
+    FieldImagery a32@--> Raw
+    a32@{animate:true, animation: fast}
+    EnvironmentClimate a31@--> Raw
+    a31@{animate: true, animation: fast}
+    Elevation a3@--> Raw
+    a3@{animate: true, animation: slow}
     Raw a4@--> Transform
     a4@{animate: true, animation: slow}
-    Transform a5@--> Opt
+    Transform a5@--> df
     a5@{animate: true, animation: slow}
-    Opt a6@--> Parquet
-    a6@{animate: true, animation: slow}
     Parquet a7@--> FlatGeoBuf
     a7@{animate: true, animation: slow}
     Parquet a8@--> PMTiles
     a8@{animate: true, animation: slow}
-    Opt a9@--> COG
-    a9@{animate: true, animation: slow}
-    Opt a29@--> Zarr
-    a29@{animate: true, animation: slow}
-    Opt a33@--> JPEGXL
-    a33@{animate: true, animation: slow}
-    JPEGXL a34@ --> ObjectStorage
-    a34@{animate: true, animation: fast}
-    Opt a35@--> AV1
-    a35@{animate: true, animation: slow}
-    AV1 a36@ --> ObjectStorage
+    Zarr a39@ --> PMTiles
+    a39@{animate: true, animation: slow}
+    df a36@ --> di
     a36@{animate: true, animation: slow}
-    Zarr a30@--> ObjectStorage
-    a30@{animate: true, animation: slow}
-    Parquet a10@--> ObjectStorage
-    a10@{animate: true, animation: slow}
-    FlatGeoBuf a11@--> ObjectStorage
-    a11@{animate: true, animation: slow}
-    PMTiles a12@--> ObjectStorage
-    a12@{animate: true, animation: slow}
-    COG a13@--> ObjectStorage
-    a13@{animate: true, animation: slow}
     COG a28@--> PMTiles
     a28@{animate: true, animation: slow}
     ObjectStorage a14@--> Metadata
