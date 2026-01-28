@@ -26,6 +26,7 @@ flowchart TD
         StatProducts@{ shape: lean-l, label: "Statistical Products"}
         Orthoimagery@{ shape: lean-l}
         Elevation@{ shape: lean-l}
+        EnvironmentClimate@{ shape: lean-l, label: "Environmental & Climate"}
     end
 
     subgraph "Processing Pipeline"
@@ -49,7 +50,7 @@ flowchart TD
         DecentralizedDistribution@{ shape: rect, label: "Decentralized Distribution"}
     end
 
-    subgraph "Experimental Infrastructure"
+    subgraph ei [Experimental Infrastructure]
         Martin@{ shape: rect}
         GeoServer@{ shape: rect}
         ZOOProject@{ shape: rect, label: "ZOO-Project"}
@@ -62,12 +63,14 @@ flowchart TD
     end
 
     %% Relationships
-    StatProducts a1@--> Raw
-    a1@{animate: true, animation: slow}
-    Orthoimagery a2@--> Raw
-    a2@{animate: true, animation: slow}
     Elevation a3@--> Raw
     a3@{animate: true, animation: slow}
+    EnvironmentClimate a31@--> Raw
+    a31@{animate: true, animation: slow}
+    Orthoimagery a2@--> Raw
+    a2@{animate: true, animation: slow}
+    StatProducts a1@--> Raw
+    a1@{animate: true, animation: slow}
     Raw a4@--> Transform
     a4@{animate: true, animation: slow}
     Transform a5@--> Opt
@@ -98,17 +101,10 @@ flowchart TD
     a14@{animate: true, animation: slow}
     Metadata a15@--> HTTP
     a15@{animate: true, animation: slow}
-    HTTP a16@--> DataSci
+    HTTP a16@--> ei
     a16@{animate: true, animation: slow}
     HTTP a17@--> DecentralizedDistribution
     a17@{animate: true, animation: slow}
-    HTTP a18@--> Martin
-    a18@{animate: true, animation: slow}
-    HTTP a19@--> GeoServer
-    a19@{animate: true, animation: slow}
-    HTTP a20@--> ZOOProject
-    a20@{animate: true, animation: slow}
-    HTTP a21@--> BBOXServer
     a21@{animate: true, animation: slow}
     DecentralizedDistribution a22@--> Systems
     a22@{animate: true, animation: fast}
