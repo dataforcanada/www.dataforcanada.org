@@ -44,7 +44,7 @@ flowchart TD
     end
 
     subgraph "Distribution Infrastructure"
-        ObjectStorage@{ shape: bow-rect}
+        ObjectStorage@{ shape: bow-rect, label: "Object Storage"}
         Metadata@{ shape: rect}
         HTTP@{ shape: rect, label: "Static Files & API"}
         DecentralizedDistribution@{ shape: rect, label: "Decentralized Distribution"}
