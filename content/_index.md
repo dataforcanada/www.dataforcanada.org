@@ -39,6 +39,7 @@ flowchart TD
         FlatGeoBuf@{ shape: lean-l}
         PMTiles@{ shape: lean-l}
         COG@{ shape: lean-l}
+        Zarr@{ shape: lean-l}
     end
 
     subgraph "Distribution Infrastructure"
@@ -79,6 +80,10 @@ flowchart TD
     a8@{animate: true, animation: slow}
     Opt a9@--> COG
     a9@{animate: true, animation: slow}
+    Opt a29@--> Zarr
+    a29@{animate: true, animation: slow}
+    Zarr a30@--> ObjectStorage
+    a30@{animate: true, animation: slow}
     Parquet a10@--> ObjectStorage
     a10@{animate: true, animation: slow}
     FlatGeoBuf a11@--> ObjectStorage
@@ -122,6 +127,7 @@ flowchart TD
     click Parquet "https://github.com/apache/parquet-format/" _blank
     click FlatGeoBuf "https://flatgeobuf.org/" _blank
     click PMTiles "https://github.com/protomaps/PMTiles/blob/main/spec/v3/spec.md" _blank
+    click Zarr "https://github.com/zarr-developers/geozarr-spec/" _blank
     click StatProducts "https://www.dataforcanada.org/docs/processes/statistical_products/" _blank
     click Orthoimagery "https://www.dataforcanada.org/docs/processes/orthoimagery/" _blank
     click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
