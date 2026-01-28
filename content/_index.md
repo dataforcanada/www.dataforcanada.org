@@ -98,7 +98,7 @@ flowchart TD
     Opt a35@--> AV1
     a35@{animate: true, animation: slow}
     AV1 a36@ --> ObjectStorage
-    a36@{animate: true, animation: fast}
+    a36@{animate: true, animation: slow}
     Zarr a30@--> ObjectStorage
     a30@{animate: true, animation: slow}
     Parquet a10@--> ObjectStorage
@@ -125,6 +125,8 @@ flowchart TD
     a22@{animate: true, animation: fast}
     DecentralizedDistribution a23@--> DataSci
     a23@{animate: true, animation: fast}
+    Systems a38@ --> DataSci
+    a38@{animate: true, animation: fast}
 
     Martin a24@--> DataSci
     a24@{animate: true, animation: slow}
