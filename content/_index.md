@@ -107,16 +107,8 @@ flowchart TD
     Systems a38@ --> DataSci
     a38@{animate: true, animation: fast}
 
-    Martin a24@--> DataSci
-    a24@{animate: true, animation: slow}
-    GeoServer a25@--> DataSci
-    a25@{animate: true, animation: slow}
-    ZOOProject a26@--> DataSci
-    a26@{animate: true, animation: slow}
-    BBOXServer a27@--> DataSci
-    a27@{animate: true, animation: slow}
-    Panoramax a37@--> DataSci
-    a37@{animate: true, animation: slow}
+    ei a39@ --> DataSci
+    a39@{animate: true, animation: slow}
 
     click Parquet "https://github.com/apache/parquet-format/" _blank
     click FlatGeoBuf "https://flatgeobuf.org/" _blank
