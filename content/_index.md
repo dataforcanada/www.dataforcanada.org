@@ -24,6 +24,7 @@ We act as the transformation layer. We aggregate datasets with permissive licens
 flowchart TD
     subgraph ds [Data Sources]
         StatProducts@{ shape: lean-l, label: "Statistical Products"}
+        Foundation@{ shape: lean-l, label: "Foundation"}
         Orthoimagery@{ shape: lean-l}
         FieldImagery@{ shape: lean-l, label: "Field Imagery"}
         Elevation@{ shape: lean-l}
@@ -68,6 +69,8 @@ flowchart TD
     %% Relationships
     StatProducts a1@--> Raw
     a1@{animate: true, animation: slow}
+    Foundation a41@--> Raw
+    a41@{animate: true, animation: slow}
     Orthoimagery a2@--> Raw
     a2@{animate: true, animation: slow}
     FieldImagery a32@--> Raw
