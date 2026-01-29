@@ -53,11 +53,11 @@ flowchart TD
     end
 
     subgraph ei [Experimental Infrastructure]
-        Panoramax@{ shape: rect}
         Martin@{ shape: rect}
         GeoServer@{ shape: rect}
         ZOOProject@{ shape: rect, label: "ZOO-Project"}
         BBOXServer@{ shape: rect, label: "BBOX Server"}
+        Panoramax@{ shape: rect}
     end
 
     subgraph "Consumption"
