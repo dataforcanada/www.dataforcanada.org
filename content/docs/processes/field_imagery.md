@@ -34,5 +34,5 @@ Unlike commercial platforms that only offer a "view" of the data, we provide the
 
 * **API Access**: Full programmatic access via the Panoramax REST API for querying imagery by location, date, or sequence.
 * **Bulk Datasets**: Curated dumps of street-level imagery available for computer vision training, asset management, and change detection models.
-* **STAC Integration**: Seamless integration with geospatial workflows (ex. DuckDB, QGIS, Python, R, etc.) using the STAC standard.
+* **STAC Integration**: Seamless integration with geospatial workflows (ex. DuckDB, QGIS, Python, R, Julia, etc.) using the STAC standard.
 `
