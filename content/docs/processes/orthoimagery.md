@@ -3,7 +3,7 @@ title: Orthoimagery
 weight: 3
 ---
 
-This project builds upon [previous work collecting Canadian orthoimagery](https://github.com/diegoripley/canada-orthoimagery). While the data processing workflow is still under development, you can [preview sample datasets](#download-and-preview) below.
+Look through our [process-orthoimagery-dev](https://github.com/dataforcanada/process-orthoimagery-dev) repo for the datasets processed. There is still lots of work to do to make it ready for systems. While the data processing workflow is still under development, you can [preview sample datasets](#download-and-preview) below.
 
 ## Development Environment
 
