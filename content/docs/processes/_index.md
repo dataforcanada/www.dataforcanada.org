@@ -4,4 +4,4 @@ toc: true
 weight: 1
 ---
 
-For the moment, this project is composed of two processes, both of which are still in development.
+For the moment, this project is composed of just a few processes, which are in development.
