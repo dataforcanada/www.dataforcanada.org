@@ -57,7 +57,7 @@ menu:
       name: 🚧 Development
       url: https://data-01.dev.dataforcanada.org/processed/
       parent: datasets
-    - name: ✅ Docs
+    - name: 📚 Docs
       url: /docs/
       weight: 2
     - name: 📬 Contact
