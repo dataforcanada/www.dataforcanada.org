@@ -26,27 +26,41 @@ enableInlineShortcodes: true
 enableEmoji: true
 
 outputs:
-  home: [html, rss, llms]
-  page: [html, rss, llms]
-  section: [html, rss, llms]
+  home: 
+  - html
+  - rss
+  page: 
+  - html
+  - rss
+  rss:
+  - rss
+  section: 
+  - html
+  - rss
+  taxonomy: 
+  - html
+  - rss
+  term: 
+  - html
+  - rss
 
 menu:
   main:
     - identifier: datasets
-      name: Datasets
+      name: 📁 Datasets
       weight: 1
     - identifier: Production
-      name: Production
+      name: ✅ Production
       url: https://data-01.dataforcanada.org/processed/
       parent: datasets
     - identifier: Development
-      name: Development
+      name: 🚧 Development
       url: https://data-01.dev.dataforcanada.org/processed/
       parent: datasets
-    - name: Docs
+    - name: ✅ Docs
       url: /docs/
       weight: 2
-    - name: Contact
+    - name: 📬 Contact
       url: /contact/
       weight: 3
     - name: GitHub

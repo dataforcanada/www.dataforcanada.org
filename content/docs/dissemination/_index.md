@@ -1,5 +1,5 @@
 ---
-title: "Data Dissemination Strategy"
+title: 🌐 Data Dissemination Strategy
 toc: true
 weight: 3
 ---

@@ -1,5 +1,5 @@
 ---
-title: Statistical Products
+title: 📊 Statistical
 weight: 2
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Orthoimagery
+title: 🛰️ Orthoimagery
 weight: 3
 ---
 
