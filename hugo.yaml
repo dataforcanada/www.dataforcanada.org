@@ -63,8 +63,12 @@ menu:
     - name: 📬 Contact
       url: /contact/
       weight: 3
-    - name: GitHub
+    - name: Search
       weight: 4
+      params:
+        type: search
+    - name: GitHub
+      weight: 5
       url: "https://github.com/dataforcanada"
       params:
         icon: github
