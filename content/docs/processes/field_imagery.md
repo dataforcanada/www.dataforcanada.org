@@ -1,0 +1,38 @@
+---
+title: Field Imagery
+weight: 4
+---
+
+### The Mission
+Commercial street-level imagery is often locked behind restrictive licenses, proprietary viewers, and paywalls, making it inaccessible for researchers, urban planners, and the general public. We are building a sovereign, open-source alternative for Canada.
+
+By self-hosting a **[Panoramax](https://panoramax.fr/)** instance, we provide a decentralized platform where field imagery is treated as a public utility: fully downloadable, API-accessible, and privacy-compliant.
+
+---
+
+### The Infrastructure
+Our field imagery pipeline is built on the **Panoramax** ecosystem, a federated open-source alternative to Google Street View. Instead of relying on centralized corporate servers, we operate a sovereign instance that guarantees data permanence and open access.
+
+* **Platform**: Self-hosted Panoramax instance running on our internal infrastructure.
+* **Storage**: High-performance object storage backend for hosting terabytes of 360° and flat field imagery.
+* **Federation**: Our instance connects to the global Panoramax federation, ensuring that while the data is hosted in Canada, it is discoverable worldwide through the global `panoramax.xyz` catalog.
+
+---
+
+### The Processing Pipeline
+We treat field imagery as a data engineering challenge, ensuring "time-to-insight" is minimized for downstream users.
+
+1.  **Ingestion**: Raw imagery is captured using diverse hardware (ex. 360° cameras, mobile rigs, meta glasses, etc.) and ingested by our systems. 
+2.  **Privacy & Anonymization**: Before publication, all imagery undergoes a rigorous privacy scrub. We utilize automated detection pipelines to blur faces and license plates, ensuring compliance with Canadian privacy standards while maintaining data utility.
+3.  **Standardization**: Images are processed into standardized, web-optimized tiles for the viewer and high-resolution archives for analysis.
+4.  **Metadata Extraction**: We extract and normalize/strip EXIF and GPS telemetry, indexing it into a **STAC (SpatioTemporal Asset Catalog)** compliant API.
+
+---
+
+### Data Products
+Unlike commercial platforms that only offer a "view" of the data, we provide the **data itself**.
+
+* **API Access**: Full programmatic access via the Panoramax REST API for querying imagery by location, date, or sequence.
+* **Bulk Datasets**: Curated dumps of street-level imagery available for computer vision training, asset management, and change detection models.
+* **STAC Integration**: Seamless integration with geospatial workflows (ex. DuckDB, QGIS, Python, R, etc.) using the STAC standard.
+`
