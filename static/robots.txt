@@ -28,5 +28,5 @@
 # RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
 
 User-Agent: *
-Content-Signal: ai-train=yes, search=yes, ai-input=yes
+#Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
