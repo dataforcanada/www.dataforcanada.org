@@ -53,9 +53,9 @@ menu:
       name: ✅ Production
       url: https://data-01.dataforcanada.org/processed/
       parent: datasets
-    - identifier: Development
-      name: 🚧 Development
-      url: https://data-01.dev.dataforcanada.org/processed/
+    - identifier: Labs
+      name: 🚧 Labs
+      url: https://data-01.labs.dataforcanada.org/processed/
       parent: datasets
     - name: 📚 Docs
       url: /docs/
