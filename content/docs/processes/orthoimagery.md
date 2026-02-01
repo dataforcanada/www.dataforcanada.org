@@ -3,7 +3,7 @@ title: 🛰️ Orthoimagery
 weight: 3
 ---
 
-Look through our [process-orthoimagery-dev](https://github.com/dataforcanada/process-orthoimagery-dev) repo for the datasets processed. There is still lots of work to do to make it ready for systems. While the data processing workflow is still under development, you can [preview sample datasets](#download-and-preview) below.
+Look through our [process-orthoimagery-labs](https://github.com/dataforcanada/process-orthoimagery-labs) repo for the datasets processed. There is still lots of work to do to make it ready for systems. While the data processing workflow is still under development, you can [preview sample datasets](#download-and-preview) below.
 
 ## Development Environment
 
@@ -15,7 +15,7 @@ The specifications for the tile packages are defined in this code.
 
 ```bash
 #!/bin/bash
-PROJECT_DIR="~/Documents/Personal/Projects/dataforcanada/process-orthoimagery"
+PROJECT_DIR="~/Documents/Personal/Projects/dataforcanada/process-orthoimagery-labs"
 DATASET_ID="ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm"
 DATA_DIR="${PROJECT_DIR}/data"
 DATA_INPUT_DIR="${DATA_DIR}/input/${DATASET_ID}"
