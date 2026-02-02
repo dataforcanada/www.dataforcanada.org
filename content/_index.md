@@ -27,8 +27,9 @@ flowchart TD
         Foundation@{ shape: lean-l, label: "Foundation"}
         Orthoimagery@{ shape: lean-l}
         FieldImagery@{ shape: lean-l, label: "Field Imagery"}
-        Elevation@{ shape: lean-l}
         EnvironmentClimate@{ shape: lean-l, label: "Environmental & Climate"}
+        Elevation@{ shape: lean-l}
+        WebCorpus@{ shape: lean-l, label: "Web Corpus"}
     end
 
     subgraph pp [Processing Pipeline]
@@ -80,38 +81,40 @@ flowchart TD
     a5@{animate: true, animation: fast}
     Elevation a6@--> Raw
     a6@{animate: true, animation: slow}
-    Raw a7@--> Transform
-    a7@{animate: true, animation: slow}
-    Transform a8@--> df
+    WebCorpus a7@--> Raw
+    a7@{animate: true, animation: fast}
+    Raw a8@--> Transform
     a8@{animate: true, animation: slow}
-    Parquet a9@--> FlatGeoBuf
+    Transform a9@--> df
     a9@{animate: true, animation: slow}
-    Parquet a10@--> PMTiles
+    Parquet a10@--> FlatGeoBuf
     a10@{animate: true, animation: slow}
-    Zarr a11@ --> PMTiles
+    Parquet a11@--> PMTiles
     a11@{animate: true, animation: slow}
-    df a12@ --> di
+    Zarr a12@ --> PMTiles
     a12@{animate: true, animation: slow}
-    COG a13@--> PMTiles
+    df a13@ --> di
     a13@{animate: true, animation: slow}
-    ObjectStorage a14@--> Metadata
+    COG a14@--> PMTiles
     a14@{animate: true, animation: slow}
-    Metadata a15@--> HTTP
+    ObjectStorage a15@--> Metadata
     a15@{animate: true, animation: slow}
-    HTTP a16@--> ei
+    Metadata a16@--> HTTP
     a16@{animate: true, animation: slow}
-    HTTP a17@--> DecentralizedDistribution
+    HTTP a17@--> ei
     a17@{animate: true, animation: slow}
-    HTTP a18@--> DataSci
+    HTTP a18@--> DecentralizedDistribution
     a18@{animate: true, animation: slow}
-    DecentralizedDistribution a19@--> Systems
-    a19@{animate: true, animation: fast}
-    DecentralizedDistribution a20@--> DataSci
+    HTTP a19@--> DataSci
+    a19@{animate: true, animation: slow}
+    DecentralizedDistribution a20@--> Systems
     a20@{animate: true, animation: fast}
-    Systems a21@ --> DataSci
+    DecentralizedDistribution a21@--> DataSci
     a21@{animate: true, animation: fast}
-    ei a22@ --> DataSci
-    a22@{animate: true, animation: slow}
+    Systems a22@ --> DataSci
+    a22@{animate: true, animation: fast}
+    ei a23@ --> DataSci
+    a23@{animate: true, animation: slow}
 
     %% URLs
     click Foundation "/docs/processes/foundation/" _blank
