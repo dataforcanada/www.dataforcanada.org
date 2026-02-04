@@ -55,8 +55,8 @@ WITH calculated_data AS (
         CAST((ST_Area_Spheroid(ST_FlipCoordinates(geo.geom)) / 1000000.0) AS DECIMAL(10, 4)) AS area_km2 -- Area in square kilometers
         ,geo.geom
     FROM
-        'https://data-01.dataforcanada.org/processed/ca_statcan_census_pop_dissemination_areas_tabular_2021.parquet' AS cop,
-        'https://data-01.dataforcanada.org/processed/ca_statcan_dissemination_areas_digital_2021.parquet' AS geo
+        'https://data-01.labs.dataforcanada.org/processed/ca_statcan_census_pop_dissemination_areas_tabular_2021.parquet' AS cop,
+        'https://data-01.labs.dataforcanada.org/processed/ca_statcan_dissemination_areas_digital_2021.parquet' AS geo
     WHERE 
         cop.da_dguid = geo.da_dguid
         AND geo.csd_dguid = '2021A00052466023' -- Montréal, QC
