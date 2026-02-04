@@ -61,3 +61,15 @@ flowchart TD
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click Zenodo "https://zenodo.org/communities/dataforcanada/" _blank
 ```
+
+## Work in the Lab: Smartnodes
+
+To further democratize access and ensure the persistence of Canada’s open data, we are experimenting with the features defined in previous **smartnode** work done by [Academic Torrents](https://academictorrents.com/docs/mirroring.html#smartnodes).
+
+A smartnode functions as a "set-it-and-forget-it" volunteer server, an automated library branch for our data infrastructure.
+
+* **Automated Mirroring:** Unlike a standard download, a smartnode automatically synchronizes with our central catalog. It intelligently fetches new or "at-risk" datasets to ensure they remain available even if the central portal experiences downtime.
+* **Volunteer-Powered Resilience:** This model allows partner institutions (universities, research labs) and public volunteers to donate bandwidth and storage. By running a smartnode, contributors actively protect vital Canadian datasets from being lost or gated behind paywalls.
+* **Dynamic Storage Management:** The node software monitors network health, automatically prioritizing rare data to maintain high availability across the entire Data for Canada ecosystem.
+
+We are currently adapting the `smart-node-transmission` protocols to work seamlessly with our STAC GeoParquet catalog, enabling a fully decentralized data mesh for Canadian geospatial information.
