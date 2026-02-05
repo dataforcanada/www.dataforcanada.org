@@ -68,6 +68,7 @@ flowchart TD
 
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click Zenodo "https://zenodo.org/communities/dataforcanada/" _blank
+    click SourceCoop "https://source.coop/dataforcanada/" _blank
 ```
 
 ## Dissemination Process
