@@ -194,7 +194,7 @@ Our data is optimized for:
 
 * **Core Libraries & Tools:** [GDAL/OGR](https://gdal.org/), [QGIS](https://qgis.org/), and [QField](https://qfield.org/).
 * **Analysis & Database:** [DuckDB](https://duckdb.org/), [SedonaDB](https://sedona.apache.org/sedonadb/latest/).
-* **Serving:** [GeoServer](https://geoserver.org/), [Martin](https://martin.maplibre.org/), and [ZOO-Project](https://zoo-project.github.io/).
+* **Serving:** [GeoServer](https://geoserver.org/), [Martin](https://martin.maplibre.org/), and [ZOO-Project](https://zoo-project.org/).
 * **Serverless:** [Cloudflare Workers](https://workers.cloudflare.com/), [AWS Lambda](https://aws.amazon.com/lambda/), and [Google Cloud Run functions](https://cloud.google.com/functions).
 * **Enterprise:** Esri based products ([ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview), [ArcGIS Server](https://enterprise.arcgis.com/)).
 
