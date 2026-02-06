@@ -25,7 +25,7 @@ Data for Canada takes ownership of the datasets we create, from start to finish.
 
 We prioritize our work in a utilitarian manner, aiming to provide the greatest amount of good to the greatest amount of individuals, though we remain open to making exceptions where necessary.
 
-Our approach is informed by key federal digital standards:
+Our approach is informed by the following:
 
 * [Guidance on assessing readiness to manage data according to Findable, Accessible, Interoperable, Reusable (FAIR) principles](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/guidance-assessing-readiness-manage-data-according-findable-accessible-interoperable-reusable-principles.html)
 * [GC White Paper: Data Sovereignty and Public Cloud](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty/gc-white-paper-data-sovereignty-public-cloud.html)
