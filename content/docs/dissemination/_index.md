@@ -11,15 +11,18 @@ Our dissemination strategy prioritizes interoperability, long-term preservation,
 ```mermaid
 
 flowchart TD
+    subgraph mirrors [Mirrors]
+        SourceCoop[Source Cooperative]
+        Zenodo[Zenodo]
+        InternetArchive[Internet Archive]
+    end
+
     Sources[Open Data Sources]
     Processes[Transformation Processes]
     Artifacts[Systems-Ready Data]
     Portal[Object Storage]
     Metadata[Metadata]
     Distribution[Decentralized Distribution]
-    Zenodo[Zenodo]
-    SourceCoop[Source Cooperative]
-    InternetArchive[Internet Archive]
     Torrent[BitTorrent]
     Users[Researchers & Developers]
     Systems[Systems]
@@ -35,36 +38,23 @@ flowchart TD
     Metadata a5@--> Distribution
     a5@{animate: true, animation: fast}
 
-    Distribution a14@--> SourceCoop
-    a14@{animate: true, animation: fast}
-    Distribution a15@--> InternetArchive
-    a15@{animate: true, animation: slow}
-    Distribution a6@--> Zenodo
-    a6@{animate: true, animation: slow}
     Distribution a7@--> Torrent
     a7@{animate: true, animation: slow}
+    Distribution a8@--> mirrors
+    a8@{animate: true, animation: slow}
 
-    Zenodo a9@--> Users
-    a9@{animate: true, animation: slow}
-    SourceCoop a18@--> Users
-    a18@{animate: true, animation: fast}
+    mirrors a9@--> Torrent
+    a8@{animate: true, animation: fast}
+
+    mirrors a12@ --> Users
+    a12@{animate: true, animation: slow}
+    mirrors a13@ --> Systems
+    a13@{animate: true, animation: slow}
 
     Torrent a10@--> Users
     a10@{animate: true, animation: fast}
-    InternetArchive a20@--> Users
-    a20@{animate: true, animation: slow}
     Torrent a11@--> Systems
     a11@{animate: true, animation: fast}
-    Zenodo a12@--> Systems
-    a12@{animate: true, animation: slow}
-    SourceCoop a16@--> Systems
-    a16@{animate: true, animation: fast}
-    SourceCoop a17@--> Torrent
-    a17@{animate: true, animation: fast}
-    Zenodo a13@--> Torrent
-    a13@{animate: true, animation: slow}
-    InternetArchive a19@--> Torrent
-    a19@{animate: true, animation: slow}
 
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click Zenodo "https://zenodo.org/communities/dataforcanada/" _blank
