@@ -4,4 +4,10 @@ toc: false
 comments: false
 ---
 
-If you have any questions, feel free to comment on any specific pages in this website, as all pages are tracked to GitHub discussions.
+## Get in Touch
+
+For questions regarding specific data or documentation, please **comment directly on the relevant page**. This integrates with GitHub Discussions to help us build a public knowledge base.
+
+### Mirroring Data
+
+We are currently seeking partners to mirror Data for Canada’s data within Canada. If you can assist with hosting or bandwidth, or for any other inquiries, please contact us at [hello@dataforcanada.org](mailto:hello@dataforcanada.org).
