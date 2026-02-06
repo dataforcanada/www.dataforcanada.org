@@ -64,7 +64,7 @@ flowchart TD
 ## Dissemination Process
 Once data products reach a production-ready state, the workflow is as follows:
 
-- **Cloud-Native First:** Priority is given to highly performant, system-to-system file formats (e.g., Parquet) to enable highly performant applications.
+- **Cloud-Native First:** Priority is given to performant, system-to-system file formats (e.g., Parquet) to enable highly performant applications.
 - **Persistent Identification & Cataloging:** Every dataset version will be assigned a DOI for citation and immutability.
   - The endpoint `https://data-01.dataforcanada.org/processed/` will strictly serve the **latest** version of a dataset.
   - Global metadata will be aggregated into a single, queryable [STAC GeoParquet](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/) file. This catalog will track all versions and DOIs, directing users to our multi-tier storage network:
