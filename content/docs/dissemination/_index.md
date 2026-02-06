@@ -44,7 +44,7 @@ flowchart TD
     a8@{animate: true, animation: slow}
 
     mirrors a9@--> Torrent
-    a8@{animate: true, animation: fast}
+    a9@{animate: true, animation: fast}
 
     mirrors a12@ --> Users
     a12@{animate: true, animation: slow}
