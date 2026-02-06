@@ -55,6 +55,7 @@ flowchart TD
         MVT@{ shape: lean-l}
         MLT@{ shape: lean-l}
         PMTiles@{ shape: lean-l}
+        GeoPackage@{ shape: lean-l}
         COG@{ shape: lean-l}
         Zarr@{ shape: lean-l}
         WebP@{ shape: lean-l}
@@ -111,8 +112,12 @@ flowchart TD
     a91@{animate: true, animation: slow}
     MVT a90@ --> PMTiles
     a90@{animate: true, animation: slow}
+    MVT a96@ --> GeoPackage
+    a96@{animate: true, animation: slow}
     MLT a92@ --> PMTiles
     a92@{animate: true, animation: slow}
+    MLT a95@ --> GeoPackage
+    a95@{animate: true, animation: slow}
     Zarr a12@ --> WebP
     a12@{animate: true, animation: slow}
     df a13@ --> di
@@ -121,6 +126,8 @@ flowchart TD
     a14@{animate: true, animation: slow}
     WebP a93@--> PMTiles 
     a93@{animate: true, animation: slow}
+    WebP a94@--> GeoPackage
+    a94@{animate: true, animation: slow}
     ObjectStorage a15@--> Metadata
     a15@{animate: true, animation: slow}
     Metadata a16@--> HTTP
@@ -151,6 +158,7 @@ flowchart TD
 
     click Parquet "https://github.com/apache/parquet-format/" _blank
     click FlatGeoBuf "https://flatgeobuf.org/" _blank
+    click GeoPackage "https://www.geopackage.org/" _blank
     click MVT "https://github.com/mapbox/vector-tile-spec/" _blank
     click MLT "https://github.com/maplibre/maplibre-tile-spec/" _blank
     click COG "https://cogeo.org/" _blank
