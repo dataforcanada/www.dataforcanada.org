@@ -69,8 +69,8 @@ Once data products reach a production-ready state, the workflow is as follows:
   - The endpoint `https://data-01.dataforcanada.org/processed/` will strictly serve the **latest** version of a dataset.
   - Global metadata will be aggregated into a single, queryable [STAC GeoParquet](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/) file. This catalog will track all versions and DOIs, directing users to our multi-tier storage network:
     - **[Source Cooperative](https://source.coop/dataforcanada)** serves as our **primary mirror** for all datasets, including large-scale products like orthoimagery (see [Funding and Governance](https://docs.source.coop/#funding-and-governance)).
-    - **[Zenodo](https://zenodo.org/communities/dataforcanada/)** serves as our repository for **long-term preservation** and provides a mirror for users in Europe.
-    - **[The Internet Archive](https://archive.org)** is utilized **strategically** for specific datasets to minimize load on their limited infrastructure.
+    - **[Zenodo](https://zenodo.org/communities/dataforcanada/)** serves as our repository for **long-term preservation** and provides a mirror for users in Europe (see [Funding](https://about.zenodo.org/infrastructure/)).
+    - **[The Internet Archive](https://archive.org)** is utilized **strategically** for specific datasets to minimize load on their limited infrastructure (see [Funding](https://projects.propublica.org/nonprofits/organizations/943242767)).
 - **Decentralized Distribution:** We will pilot BitTorrent to maximize infrastructure resilience. By leveraging [HTTP Web Seeding (BEP 19)](https://www.bittorrent.org/beps/bep_0019.html), torrents will be seeded simultaneously by Source Cooperative, Zenodo, the Data for Canada infrastructure, and community peers, ensuring high availability without a single point of failure. Current laboratory work is available on the [dataforcanada/decentralized-distribution-labs](https://github.com/dataforcanada/decentralized-distribution-labs) repo.
 
 
