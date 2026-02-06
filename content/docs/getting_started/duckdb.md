@@ -1,5 +1,6 @@
 ---
 title: "DuckDB"
+draft: true
 ---
 
 Here is a DuckDB example.
