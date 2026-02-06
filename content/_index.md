@@ -199,13 +199,19 @@ Our data is optimized for:
 * **Serverless:** [Cloudflare Workers](https://workers.cloudflare.com/), [AWS Lambda](https://aws.amazon.com/lambda/), and [Google Cloud Run functions](https://cloud.google.com/functions).
 * **Enterprise:** Esri based products ([ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview), [ArcGIS Server](https://enterprise.arcgis.com/)).
 
-## Get Involved: We Are Looking for Members
+## Get Involved
 
-We are actively looking for new members to help shape this project. 
+We are actively looking for new members and partners to help shape this project.
+
+### 🇨🇦 Infrastructure Support: Selective Mirroring
+
+To support data sovereignty and improve local access speeds, **we are currently seeking selective mirroring in Canada**.
+
+We are looking for academic institutions, research organizations, or ISPs interested in hosting mirrors of specific, high-value dataset subsets. If you have bandwidth and storage capacity to spare for the Canadian open data ecosystem, please reach out via the communication channels below.
+
+### Contributing & Feedback
 
 Right now, we primarily need **feedback on our datasets and the underlying processes** used to generate them. If you have thoughts on data quality, format optimization, or pipeline improvements, we want to hear from you.
-
-### How to Contribute
 
 * **Discussions:** Head over to [#dataforcanada:matrix.org](https://matrix.to/#/#dataforcanada:matrix.org) to chat, or go to the individual process GitHub repos to comment on specific issues.
 
