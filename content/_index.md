@@ -170,3 +170,16 @@ flowchart TD
     click Pelias "https://pelias.io" _blank
 ```
 
+## Get Involved: We Are Looking for Members
+
+We are actively looking for new members to help shape this project. 
+
+Right now, we primarily need **feedback on our datasets and the underlying processes** used to generate them. If you have thoughts on data quality, format optimization, or pipeline improvements, we want to hear from you.
+
+### How to Contribute
+
+* **Discussions:** Head over to [#dataforcanada:matrix.org](https://matrix.to/#/#dataforcanada:matrix.org) to chat, or go to the individual process GitHub repos to comment on specific issues.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
