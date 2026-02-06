@@ -5,11 +5,11 @@ toc: false
 
 ## Mission
 
-Data for Canada exists to bridge the gap between open data availability and data usability. We curate, clean, and re-engineer high-value Canadian datasets into high-performance, analysis-ready formats for researchers, developers, and systems.
+Data for Canada exists to bridge the gap between open data availability and data usability. We curate, clean, and re-engineer high-value Canadian datasets into high-performance, analysis-ready formats for data engineers, researchers/scientists, developers, and systems.
 
 ## The Problem
 
-Canada creates incredible amounts of open data, from foundational road networks to federal census statistics and orthoimagery. However, these datasets are often locked in legacy formats, fragmented portals, or structures that require significant engineering effort to normalize. For a researcher or system developer, the "time-to-insight" is often bottlenecked by data preparation.
+Canada creates incredible amounts of open data, from foundational road networks to federal census statistics and orthoimagery. However, these datasets are often locked in legacy formats, fragmented portals, or structures that require significant engineering effort to normalize. For our target audience, the "time-to-insight" is often bottlenecked by data preparation.
 
 ## The Solution
 
@@ -31,6 +31,8 @@ Our approach is informed by the following:
 * [GC White Paper: Data Sovereignty and Public Cloud](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty/gc-white-paper-data-sovereignty-public-cloud.html)
 
 ## High-Level Overview
+
+**Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value statistical,foundational, and orthoimagery datasets first.
 
 ```mermaid
 flowchart TD
@@ -81,7 +83,7 @@ flowchart TD
     end
 
     subgraph "Consumption"
-        DataSci@{ shape: rect, label: "Researchers & Developers"}
+        DataSci@{ shape: rect, label: "Data People & Developers"}
         Systems@{ shape: rect, label: "Systems"}
     end
 
@@ -178,6 +180,18 @@ flowchart TD
     click Pelias "https://pelias.io" _blank
 ```
 
+## Target Software Ecosystem
+
+We adopt an **open-source first** approach, while supporting proprietary solutions to the best of our ability to ensure maximum accessibility. **We target the latest versions of these software packages** (e.g., modern GDAL/OGR) to leverage the newest features and performance improvements.
+
+Our data is optimized for:
+
+* **Core Libraries & Tools:** [GDAL/OGR](https://gdal.org/), [QGIS](https://qgis.org/), and [QField](https://qfield.org/).
+* **Analysis & Database:** [DuckDB](https://duckdb.org/), [SedonaDB](https://sedona.apache.org/sedonadb/latest/).
+* **Serving:** [GeoServer](https://geoserver.org/), [Martin](https://martin.maplibre.org/), and [ZOO-Project](https://zoo-project.github.io/).
+* **Serverless:** [Cloudflare Workers](https://workers.cloudflare.com/), [AWS Lambda](https://aws.amazon.com/lambda/), and [Google Cloud Run functions](https://cloud.google.com/functions).
+* **Enterprise:** Esri based products ([ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview), [ArcGIS Server](https://enterprise.arcgis.com/)).
+
 ## Get Involved: We Are Looking for Members
 
 We are actively looking for new members to help shape this project. 
@@ -190,4 +204,4 @@ Right now, we primarily need **feedback on our datasets and the underlying proce
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://opensource.org/license/mit).
