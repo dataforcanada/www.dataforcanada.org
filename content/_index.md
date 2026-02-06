@@ -9,22 +9,34 @@ Data for Canada exists to bridge the gap between open data availability and data
 
 ## The Problem
 
-Canada creates incredible amounts of open data, from foundational road networks, federal census statistics, orthoimagery, and other. However, these datasets are often locked in legacy formats, fragmented portals, or structures that require significant engineering effort to normalize before they can be used. For a researcher or a system developer, the "time-to-insight" is often bottlenecked by data preparation.
+Canada creates incredible amounts of open data, from foundational road networks to federal census statistics and orthoimagery. However, these datasets are often locked in legacy formats, fragmented portals, or structures that require significant engineering effort to normalize. For a researcher or system developer, the "time-to-insight" is often bottlenecked by data preparation.
 
 ## The Solution
 
 We act as the transformation layer. We aggregate datasets with permissive licenses and process them into "digestible" standards optimized for modern downstream applications.
 
-* **For Researchers and Developers:** Skip the cleaning phase. Access normalized, documented data ready for analysis.
+* **For Data Engineers, Researchers/Scientists, and Developers:** Skip the cleaning phase. Access normalized, documented data ready for analysis.
 * **For Systems:** Standardized data structures designed to feed directly into pipelines, data warehouses, and downstream services.
+
+**Our Stewardship:**
+Data for Canada takes ownership of the datasets we create, from start to finish. We ensure that data structures remain consistent, allowing for reliable analysis across **time and space**.
+
+## What Guides Us
+
+We prioritize our work in a utilitarian manner, aiming to provide the greatest amount of good to the greatest amount of individuals, though we remain open to making exceptions where necessary.
+
+Our approach is informed by key federal digital standards:
+
+* [Guidance on assessing readiness to manage data according to Findable, Accessible, Interoperable, Reusable (FAIR) principles](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/guidance-assessing-readiness-manage-data-according-findable-accessible-interoperable-reusable-principles.html)
+* [GC White Paper: Data Sovereignty and Public Cloud](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty/gc-white-paper-data-sovereignty-public-cloud.html)
 
 ## High-Level Overview
 
 ```mermaid
 flowchart TD
     subgraph ds [Data Sources]
-        StatProducts@{ shape: lean-l, label: "Statistical Products"}
-        Foundation@{ shape: lean-l, label: "Foundation"}
+        Statistical@{ shape: lean-l}
+        Foundation@{ shape: lean-l}
         Orthoimagery@{ shape: lean-l}
         FieldImagery@{ shape: lean-l, label: "Field Imagery"}
         EnvironmentClimate@{ shape: lean-l, label: "Environmental & Climate"}
@@ -73,7 +85,7 @@ flowchart TD
     end
 
     %% Relationships
-    StatProducts a1@--> Raw
+    Statistical a1@--> Raw
     a1@{animate: true, animation: slow}
     Foundation a2@--> Raw
     a2@{animate: true, animation: slow}
@@ -129,12 +141,13 @@ flowchart TD
     a23@{animate: true, animation: slow}
 
     %% URLs
-    click Foundation "/docs/processes/foundation/" _blank
-    click StatProducts "/docs/processes/statistical_products/" _blank
-    click Orthoimagery "/docs/processes/orthoimagery/" _blank
-    click FieldImagery "/docs/processes/field_imagery/" _blank
-    %%click EnvironmentClimate "/docs/processes/environmental_climate/" _blank
-    %%click Elevation "/docs/processes/elevation/" _blank
+    click Foundation "https://github.com/dataforcanada/process-foundation-labs/" _blank
+    click Statistical "https://github.com/dataforcanada/process-statistical-labs/" _blank
+    click Orthoimagery "https://github.com/dataforcanada/process-orthoimagery-labs/" _blank
+    click FieldImagery "https://github.com/dataforcanada/process-field-imagery-labs/" _blank
+    click EnvironmentClimate "https://github.com/dataforcanada/process-environmental-climate-labs/" _blank
+    click Elevation "https://www.dataforcanada.org/docs/dissemination/" _blank
+    click WebCorpus "https://github.com/dataforcanada/process-web-corpus-labs/" _blank
 
     click Parquet "https://github.com/apache/parquet-format/" _blank
     click FlatGeoBuf "https://flatgeobuf.org/" _blank
@@ -142,12 +155,13 @@ flowchart TD
     click MLT "https://github.com/maplibre/maplibre-tile-spec/" _blank
     click COG "https://cogeo.org/" _blank
     click Zarr "https://github.com/zarr-developers/geozarr-spec/" _blank
-    click WebP "https://developers.google.com/speed/webp/docs/riff_container/" _blank
+    click WebP "https://developers.google.com/speed/webp/" _blank
     click PMTiles "https://github.com/protomaps/PMTiles/blob/main/spec/v3/spec.md" _blank
     click JPEGXL "https://jpeg.org/jpegxl/" _blank
     click AV1 "https://aomedia.org/specifications/av1/" _blank
-    click DecentralizedDistribution "/docs/dissemination/" _blank
+    click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
+    click GeoSpatialServices "https://github.com/dataforcanada/geo-services-labs/" _blank
     click Martin "https://martin.maplibre.org/" _blank
     click GeoServer "https://geoserver.org/" _blank
     click ZOOProject "https://zoo-project.org/" _blank
@@ -155,3 +169,4 @@ flowchart TD
     click Panoramax "https://gitlab.com/panoramax" _blank
     click Pelias "https://pelias.io" _blank
 ```
+
