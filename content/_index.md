@@ -55,7 +55,7 @@ flowchart TD
     end
 
     subgraph ei [Experimental Infrastructure]
-        GeoProcessingAPIs@{ shape: rect, label: "Geoprocessing APIs"}
+        GeoProcessingAPIs@{ shape: rect, label: "Geoprocessing Services"}
         %%Martin@{ shape: rect}
         %%GeoServer@{ shape: rect}
         %%ZOOProject@{ shape: rect, label: "ZOO-Project"}
