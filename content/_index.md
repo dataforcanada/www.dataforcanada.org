@@ -32,7 +32,7 @@ Our approach is informed by the following:
 
 ## High-Level Overview
 
-**Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value statistical,foundational, and orthoimagery datasets first.
+**Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value statistical, foundational, and orthoimagery datasets first.
 
 ```mermaid
 flowchart TD
