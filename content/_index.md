@@ -58,6 +58,7 @@ flowchart TD
         MLT@{ shape: lean-l}
         PMTiles@{ shape: lean-l}
         GeoPackage@{ shape: lean-l}
+        FileGeodatabase@{shape: lean-l, label: "File Geodatabase"}
         COG@{ shape: lean-l}
         Zarr@{ shape: lean-l}
         WebP@{ shape: lean-l}
@@ -107,13 +108,15 @@ flowchart TD
     Transform a9@--> df
     a9@{animate: true, animation: slow}
     Parquet a10@--> FlatGeoBuf
-    a10@{animate: true, animation: slow}
+    a10@{animate: true, animation: fast}
+    Parquet a100@--> FileGeodatabase
+    a100@{animate: true, animation: slow}
     FlatGeoBuf a11@--> MVT
-    a11@{animate: true, animation: slow}
+    a11@{animate: true, animation: fast}
     FlatGeoBuf a91@--> MLT
-    a91@{animate: true, animation: slow}
+    a91@{animate: true, animation: fast}
     MVT a90@ --> PMTiles
-    a90@{animate: true, animation: slow}
+    a90@{animate: true, animation: fast}
     MVT a96@ --> GeoPackage
     a96@{animate: true, animation: slow}
     MLT a92@ --> PMTiles
@@ -130,6 +133,8 @@ flowchart TD
     a93@{animate: true, animation: slow}
     WebP a94@--> GeoPackage
     a94@{animate: true, animation: slow}
+	WebP a101@--> FileGeodatabase
+    a101@{animate: true, animation: slow}
     ObjectStorage a15@--> Metadata
     a15@{animate: true, animation: slow}
     Metadata a16@--> HTTP
@@ -161,6 +166,7 @@ flowchart TD
     click Parquet "https://github.com/apache/parquet-format/" _blank
     click FlatGeoBuf "https://flatgeobuf.org/" _blank
     click GeoPackage "https://www.geopackage.org/" _blank
+    click FileGeodatabase "https://gdal.org/en/stable/drivers/vector/openfilegdb.html" _blank
     click MVT "https://github.com/mapbox/vector-tile-spec/" _blank
     click MLT "https://github.com/maplibre/maplibre-tile-spec/" _blank
     click COG "https://cogeo.org/" _blank
