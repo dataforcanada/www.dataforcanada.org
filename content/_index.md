@@ -146,7 +146,7 @@ flowchart TD
     click Orthoimagery "https://github.com/dataforcanada/process-orthoimagery-labs/" _blank
     click FieldImagery "https://github.com/dataforcanada/process-field-imagery-labs/" _blank
     click EnvironmentClimate "https://github.com/dataforcanada/process-environmental-climate-labs/" _blank
-    click Elevation "https://www.dataforcanada.org/docs/dissemination/" _blank
+    click Elevation "https://github.com/dataforcanada/process-elevation-labs/" _blank
     click WebCorpus "https://github.com/dataforcanada/process-web-corpus-labs/" _blank
 
     click Parquet "https://github.com/apache/parquet-format/" _blank
