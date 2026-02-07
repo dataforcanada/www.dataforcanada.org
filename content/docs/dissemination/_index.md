@@ -65,6 +65,7 @@ flowchart TD
 ```
 
 ## Dissemination Process
+
 Once data products reach a production-ready state, the workflow is as follows:
 
 - **Cloud-Native First:** Priority is given to performant, system-to-system file formats (e.g., Parquet) to enable highly performant applications.
@@ -76,15 +77,14 @@ Once data products reach a production-ready state, the workflow is as follows:
     - **[The Internet Archive](https://archive.org)** is utilized **strategically** for specific datasets to minimize load on their limited infrastructure (see [Funding](https://projects.propublica.org/nonprofits/organizations/943242767)).
 - **Decentralized Distribution:** We will pilot BitTorrent to maximize infrastructure resilience. By leveraging [HTTP Web Seeding (BEP 19)](https://www.bittorrent.org/beps/bep_0019.html), torrents will be seeded simultaneously by Source Cooperative, Zenodo, the Data for Canada infrastructure, and community peers, ensuring high availability without a single point of failure. Current laboratory work is available on the [dataforcanada/decentralized-distribution-labs](https://github.com/dataforcanada/decentralized-distribution-labs) repo.
 
+## Work in the Lab: Smart Nodes
 
-## Work in the Lab: Smartnodes
+To further democratize access and ensure the persistence of Canada’s open data, we are experimenting with the features defined in previous work done by [Academic Torrents](https://academictorrents.com/docs/mirroring.html#smartnodes).
 
-To further democratize access and ensure the persistence of Canada’s open data, we are experimenting with the features defined in previous **smartnode** work done by [Academic Torrents](https://academictorrents.com/docs/mirroring.html#smartnodes).
+A smart node functions as a "set-it-and-forget-it" volunteer server, an automated library branch for our data infrastructure.
 
-A smartnode functions as a "set-it-and-forget-it" volunteer server, an automated library branch for our data infrastructure.
-
-* **Automated Mirroring:** Unlike a standard download, a smartnode automatically synchronizes with our central catalog. It intelligently fetches new or "at-risk" datasets to ensure they remain available even if the central portal experiences downtime.
-* **Volunteer-Powered Resilience:** This model allows partner institutions (universities, research labs) and public volunteers to donate bandwidth and storage. By running a smartnode, contributors actively protect vital Canadian datasets from being lost or gated behind paywalls.
-* **Dynamic Storage Management:** The node software monitors network health, automatically prioritizing rare data to maintain high availability across the entire Data for Canada ecosystem.
+- **Automated Mirroring:** Unlike a standard download, a smart node automatically synchronizes with our central catalog. It intelligently fetches new or "at-risk" datasets to ensure they remain available even if the central portal experiences downtime.
+- **Volunteer-Powered Resilience:** This model allows partner institutions (universities, research labs) and public volunteers to donate bandwidth and storage. By running a smart node, contributors actively protect vital Canadian datasets from being lost or gated behind paywalls.
+- **Dynamic Storage Management:** The node software monitors network health, automatically prioritizing rare data to maintain high availability across the entire Data for Canada ecosystem.
 
 We are currently refining the concepts from  [smart-node-transmission](https://github.com/academictorrents/smartnode-transmission)  to work seamlessly with our STAC GeoParquet catalog, enabling a fully decentralized data mesh for Canadian geospatial information.
