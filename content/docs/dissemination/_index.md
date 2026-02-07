@@ -27,7 +27,7 @@ flowchart TD
     Metadata[Metadata]
     Distribution[Decentralized Distribution]
     Torrent[BitTorrent]
-    Users[Researchers & Developers]
+    Users[Data People & Developers]
     Systems[Systems]
 
     Sources a1@--> Processes
