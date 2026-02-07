@@ -5,7 +5,7 @@ prev: /docs/processes/statistical_products/statistics_canada/census_data/
 next: /docs/processes/field_imagery/
 ---
 
-Look through our [process-orthoimagery-labs](https://github.com/dataforcanada/process-orthoimagery-labs) rep for the datasets processed and datasets currently being acquired. There is still lots of work to do to make it ready for systems. While the data processing workflow is still under development, you can [preview sample datasets](#download-and-preview) below.
+Look through our [process-orthoimagery-labs](https://github.com/dataforcanada/process-orthoimagery-labs) repo for the datasets processed and datasets currently being acquired. There is still lots of work to do to make it ready for systems. While the data processing workflow is still under development, you can [preview sample datasets](#download-and-preview) below.
 
 ## Development Environment
 
