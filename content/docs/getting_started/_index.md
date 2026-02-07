@@ -10,6 +10,6 @@ Look through our [GitHub Organization](https://github.com/orgs/dataforcanada/rep
 
 {{< cards >}}
   {{< card link="https://data-01.labs.dataforcanada.org/processed/" title="Data in The Lab" icon="cloud-download" >}}
-  {{< card link="/docs/processes" title="Processes" icon="cog" >}}
-  {{< card link="/docs/dissemination" title="Data Dissemination Strategy" icon="globe" >}}
+  {{< card link="/docs/processes/" title="Processes" icon="cog" >}}
+  {{< card link="/docs/dissemination/" title="Data Dissemination Strategy" icon="globe" >}}
 {{< /cards >}}
