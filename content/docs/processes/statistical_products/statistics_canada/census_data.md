@@ -37,7 +37,10 @@ Click the **"Recalculate Classes"** button. This will refresh the map legend and
 {{< /callout >}}
 
 {{< callout type="note">}}
-**Credit:** The location search functionality in our map previews is powered by the **[PHAC Geocoder](https://geocoder.alpha.phac.gc.ca/)**.
+**Credit:**
+
+* The location search functionality in our map previews is powered by the **[PHAC Geocoder](https://geocoder.alpha.phac.gc.ca/)**.
+* The basemaps is generously served through [OpenFreeMap](https://openfreemap.org/).
 {{< /callout >}}
 
 | Place  | ISO | Date | Provider | Dataset ID & Preview                                                                                                                                                                                               | Parquet                                                                                                                                                       | PMTiles **(draft)**                                                                                                                      |
