@@ -18,7 +18,7 @@ Our field imagery pipeline is built on the **Panoramax** ecosystem, a federated 
 
 * **Platform**: Self-hosted Panoramax instance running on our internal infrastructure.
 * **Storage**: High-performance object storage backend for hosting terabytes of 360° and flat field imagery.
-* **Federation**: Our instance connects to the global Panoramax federation, ensuring that while the data is hosted in Canada, it is discoverable worldwide through the global `panoramax.xyz` catalog.
+* **Federation**: Our instance connects to the global Panoramax federation, ensuring that while the data is hosted in Canada, it is discoverable worldwide through the global panoramax catalog.
 
 ---
 
