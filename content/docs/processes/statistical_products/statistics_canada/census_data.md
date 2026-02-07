@@ -33,7 +33,7 @@ In the top-right "Search fields" box, enter the attribute key using the format `
 Click the **"Recalculate Classes"** button. This will refresh the map legend and choropleth coloring based on the currently visible extent.
 
 {{< callout type="info">}}
-**Note on Data Availability:** Dissemination blocks currently only contain these **[4 specific characteristics](https://github.com/dataforcanada/process-statcan-data-labs/issues/6)**.
+**Note on Data Availability:** Dissemination blocks currently only contain these **[3 specific characteristics](https://github.com/dataforcanada/process-statcan-data-labs/issues/6)**.
 {{< /callout >}}
 
 {{< callout type="note">}}
