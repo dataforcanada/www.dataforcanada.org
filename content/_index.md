@@ -36,6 +36,7 @@ We prioritize our work in a utilitarian manner, aiming to provide the greatest a
 Our approach is guided by the following:
 
 * [Link rot in LIS literature: a 20-year study of web citation decay, recovery and preservation challenges](https://doi.org/10.1108/AJIM-05-2025-0286)
+* [Sustainability of Digital Formats: Planning for Library of Congress Collections](https://www.loc.gov/preservation/digital/formats/index.html)
 * [Guidance on assessing readiness to manage data according to Findable, Accessible, Interoperable, Reusable (FAIR) principles](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/guidance-assessing-readiness-manage-data-according-findable-accessible-interoperable-reusable-principles.html)
 * [GC White Paper: Data Sovereignty and Public Cloud](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty/gc-white-paper-data-sovereignty-public-cloud.html)
 
@@ -73,6 +74,7 @@ flowchart TD
         WebP@{ shape: lean-l}
         JPEGXL@{ shape: lean-l, label: "JPEG XL"}
         AV1@{ shape: lean-l, label: "AV1"}
+        WARC@{ shape: lean-l}
     end
 
     subgraph di [Distribution Infrastructure]
@@ -184,6 +186,7 @@ flowchart TD
     click PMTiles "https://github.com/protomaps/PMTiles/blob/main/spec/v3/spec.md" _blank
     click JPEGXL "https://jpeg.org/jpegxl/" _blank
     click AV1 "https://aomedia.org/specifications/av1/" _blank
+    click WARC "https://github.com/iipc/warc-specifications/" _blank
     click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click GeoSpatialServices "https://github.com/dataforcanada/geo-services-labs/" _blank
