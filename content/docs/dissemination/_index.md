@@ -1,10 +1,13 @@
 ---
 title: 🌐 Data Dissemination Strategy
-toc: true
 weight: 3
+prev: /docs/processes/field_imagery/
+next: /contact/
 ---
 
-Our dissemination strategy prioritizes interoperability, long-term preservation, and decentralized resilience.
+{{< callout type="important" icon="sparkles" >}}
+We prioritize interoperability, long-term preservation, and decentralized resilience.
+{{< /callout >}}
 
 ## High-Level Overview
 
