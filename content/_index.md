@@ -21,6 +21,14 @@ We act as the transformation layer. We aggregate datasets with permissive licens
 **Our Stewardship:**
 Data for Canada takes ownership of the datasets we create, from start to finish. We ensure that data remains consistent, allowing for reliable analysis across **time and space**.
 
+## Explore Sample Datasets
+
+See our processing pipeline in action. View samples and documentation for our current priority processes:
+
+* [**Statistical Products**](https://www.dataforcanada.org/docs/processes/statistical_products/): Census data and other quantitative datasets.
+* [**Foundation**](https://www.dataforcanada.org/docs/processes/foundation/#download-and-preview/): Core geospatial layers including address point, road networks, and buildings.
+* [**Orthoimagery**](https://www.dataforcanada.org/docs/processes/orthoimagery/#download-and-preview): High-resolution orthoimagery.
+
 ## What Guides Us
 
 We prioritize our work in a utilitarian manner, aiming to provide the greatest amount of good to the greatest amount of individuals, though we remain open to making exceptions where necessary.
@@ -33,7 +41,7 @@ Our approach is guided by the following:
 
 ## High-Level Overview
 
-**Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value statistical, foundational, and orthoimagery datasets first.
+**Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value [statistical](https://www.dataforcanada.org/docs/processes/statistical_products/), [foundational](https://www.dataforcanada.org/docs/processes/foundation/#download-and-preview), and [orthoimagery](https://www.dataforcanada.org/docs/processes/orthoimagery/#download-and-preview) datasets first.
 
 ```mermaid
 flowchart TD
