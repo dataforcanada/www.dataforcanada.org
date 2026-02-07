@@ -215,7 +215,7 @@ We are actively looking for new members and partners to help shape this project.
 
 To support data sovereignty and improve local access speeds, **we are currently seeking selective mirroring in Canada**.
 
-We are looking for academic institutions, research organizations, or ISPs interested in hosting mirrors of specific, high-value dataset subsets. If you have bandwidth and storage capacity to spare for the Canadian open data ecosystem, please reach out via the communication channels below.
+We are looking for academic institutions, research organizations, or ISPs interested in hosting mirrors of specific, high-value dataset subsets. If you have bandwidth and storage capacity to spare for the Canadian open data ecosystem, please [contact us](https://www.dataforcanada.org/contact/).
 
 ### Contributing & Feedback
 
