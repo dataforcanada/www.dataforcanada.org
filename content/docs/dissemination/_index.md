@@ -13,6 +13,7 @@ We prioritize interoperability, long-term preservation, and decentralized resili
 
 ```mermaid
 flowchart TD
+    classDef linkNode stroke:#0000EE,color:#0000EE,stroke-width:2px;
     subgraph mirrors [Mirrors & Preservation]
         SourceCoop[Source Cooperative]
         Zenodo[Zenodo]
@@ -77,9 +78,13 @@ flowchart TD
     a11@{animate: true, animation: fast}
 
     %% Click Actions
+    click Artifacts "/docs/processes/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click Zenodo "https://zenodo.org/communities/dataforcanada/" _blank
     click SourceCoop "https://source.coop/dataforcanada/" _blank
+
+    %% APPLY STYLES TO LINKED NODES
+    class Artifacts,Metadata,Zenodo,SourceCoop linkNode
 ```
 
 ## 🏗️ Open Processing Architecture
