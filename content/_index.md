@@ -85,6 +85,8 @@ flowchart TD
         COG@{ shape: lean-l}
         Zarr@{ shape: lean-l}
         WebP@{ shape: lean-l}
+        JPG@{ shape: lean-l}
+        PNG@{ shape: lean-l}
         JPEGXL@{ shape: lean-l, label: "JPEG XL"}
         AV1@{ shape: lean-l, label: "AV1"}
         WARC@{ shape: lean-l}
@@ -157,8 +159,14 @@ flowchart TD
     a93@{animate: true, animation: slow}
     WebP a94@--> GeoPackage
     a94@{animate: true, animation: slow}
-	WebP a101@--> FileGeodatabase
+    WebP a103@--> JPG
+    103@{animate: true, animation: slow}
+    WebP a104@--> PNG
+    104@{animate: true, animation: slow}
+	JPG a101@--> FileGeodatabase
     a101@{animate: true, animation: slow}
+	PNG a102@--> FileGeodatabase
+    a102@{animate: true, animation: slow}
     ObjectStorage a15@--> Metadata
     a15@{animate: true, animation: slow}
     Metadata a16@--> HTTP
