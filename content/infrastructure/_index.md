@@ -24,7 +24,7 @@ flowchart TD
         direction TB
         NodeTO["Smart Node
 Location: Toronto, CA
-Specs: 50Gbps / 50Gbps
+Specs: 50Gbps / 50Gbps, 950GB Flash Storage
 Jurisdiction: Canada"]
         
         IA_Van["Internet Archive Mirror
@@ -56,7 +56,7 @@ Jurisdiction: USA"]
         
         Netcup["Netcup VPS
 Location: Virginia, USA
-Specs: 2.5Gbps / 2.5Gbps
+Specs: 2.5Gbps / 2.5Gbps, Flash Storage
 Protocol: HTTP & BitTorrent
 Jurisdiction: Germany"]
     end
@@ -69,7 +69,7 @@ Jurisdiction: Germany"]
         subgraph Netherlands ["🇳🇱 Netherlands"]
             NodeAMS["Smart Node
 Location: Amsterdam, NL
-Specs: 50Gbps / 50Gbps
+Specs: 50Gbps / 50Gbps, 950GB Flash Storage
 Jurisdiction: Netherlands"]
         end
         
@@ -94,4 +94,25 @@ Jurisdiction: Switzerland"]
     NodeTO -.->|HTTP Pull| Zenodo
     NodeTO -.->|HTTP Pull| IA_SF
     NodeTO -.->|HTTP or P2P| Netcup
+
 ```
+
+## Roadmap: Resilience & Transparency
+
+To support our mission of providing high-performance, analysis-ready data, we are currently developing a suite of public tools to make this distributed ecosystem more **FAIR** (Findable, Accessible, Interoperable, Reusable), **resilient**, and **transparent**.
+
+These planned features are designed to help researchers and automated systems coordinate data access across the various platforms and mirrors we utilize.
+
+### 1. Real-Time Service Status
+
+We are building a comprehensive status dashboard that monitors the availability of the diverse storage locations we rely on, from our own Smart Nodes to external providers like the Internet Archive, Source Cooperative, and Zenodo. Users will be able to verify if a specific mirror is operational before initiating workflows.
+
+### 2. Traffic & Load Optimization Statistics
+
+To foster better cooperation between our systems and downstream users, we plan to expose traffic and connectivity statistics where possible.
+
+This transparency allows automated systems to be "smart" about data retrieval. For example, a system could query these statistics to schedule bandwidth-intensive HTTP downloads during non-peak hours, or adjust behavior based on current connectivity loads during high-traffic periods of the workday. This improves performance for individual users while respecting the bandwidth constraints of the various host providers.
+
+### 3. Community Issue Reporting
+
+We are introducing a streamlined method for users to report access issues across any of the services we aggregate. By allowing the community to flag connectivity drops or data integrity issues quickly, we can identify bottlenecks or outages at specific providers and route users to alternative sources more effectively.
