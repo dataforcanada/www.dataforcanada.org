@@ -160,9 +160,9 @@ flowchart TD
     WebP a94@--> GeoPackage
     a94@{animate: true, animation: slow}
     WebP a103@--> JPG
-    103@{animate: true, animation: slow}
+    a103@{animate: true, animation: slow}
     WebP a104@--> PNG
-    104@{animate: true, animation: slow}
+    a104@{animate: true, animation: slow}
 	JPG a101@--> FileGeodatabase
     a101@{animate: true, animation: slow}
 	PNG a102@--> FileGeodatabase
