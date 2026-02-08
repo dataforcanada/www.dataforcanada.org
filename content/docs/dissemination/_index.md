@@ -12,7 +12,6 @@ We prioritize interoperability, long-term preservation, and decentralized resili
 ## High-Level Overview
 
 ```mermaid
-
 flowchart TD
     subgraph mirrors [Mirrors]
         SourceCoop[Source Cooperative]
@@ -59,23 +58,40 @@ flowchart TD
     Torrent a11@--> Systems
     a11@{animate: true, animation: fast}
 
-    click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
-    click Zenodo "https://zenodo.org/communities/dataforcanada/" _blank
-    click SourceCoop "https://source.coop/dataforcanada/" _blank
+    click Metadata "[https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/)" _blank
+    click Zenodo "[https://zenodo.org/communities/dataforcanada/](https://zenodo.org/communities/dataforcanada/)" _blank
+    click SourceCoop "[https://source.coop/dataforcanada/](https://source.coop/dataforcanada/)" _blank
+
 ```
+
+## 🏗️ Open Processing Architecture
+
+We believe that true open data requires open production. To ensure the longevity and resilience of Canada's data infrastructure, we treat our data pipelines as **open source software artifacts**. We provide the "blueprints" alongside the data, allowing any user to verify our work or rebuild the dataset from scratch on their own infrastructure.
+
+### The Blueprint Model
+
+Our processing strategy relies on three immutable components to guarantee transparency:
+
+1. **Build Manifests:** Every dataset version is accompanied by a strict manifest. This locks the exact "ingredients" used: the cryptographic hashes of the raw source files, the specific Git commit of the processing code, and the configuration parameters.
+2. **Environment Definitions:** Rather than opaque binaries, we publish the exact **Infrastructure as Code (IaC)** definitions (e.g., Dockerfiles). This allows users to inspect the system context GDAL versions, libraries, and dependencies, and build the environment themselves.
+3. **Deterministic Builds:** By combining a *Build Manifest* with our *Environment Definitions*, any user can execute a **deterministic build**. This process guarantees a bit-for-bit identical copy of the official Data for Canada artifact, ensuring that the pipeline is independent of our specific servers.
+
+**Mirrored Source Artifacts:**
+Crucially, we do not rely solely on external version control systems like GitHub, which may change or disappear. A complete snapshot of the processing code, environment definitions, and manifests is bundled with every data release. These source artifacts are replicated across **Source Cooperative, Zenodo, the Internet Archive, and Data for Canada infrastructure**, ensuring that the *method* of creation is preserved with the same redundancy as the *result*.
 
 ## Dissemination Process
 
 Once data products reach a production-ready state, the workflow is as follows:
 
-- **Cloud-Native First:** Priority is given to performant, system-to-system file formats (e.g., Parquet) to enable highly performant applications.
-- **Persistent Identification & Cataloging:** Every dataset version will be assigned a DOI for citation and immutability.
-  - The endpoint `https://data-01.dataforcanada.org/processed/` will strictly serve the **latest** version of a dataset.
-  - Global metadata will be aggregated into a single, queryable [STAC GeoParquet](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/) file. This catalog will track all versions and DOIs, directing users to our multi-tier storage network:
-    - **[Source Cooperative](https://source.coop/dataforcanada)** serves as our **primary mirror** for all datasets, including large-scale products like orthoimagery (see [Funding and Governance](https://docs.source.coop/#funding-and-governance)).
-    - **[Zenodo](https://zenodo.org/communities/dataforcanada/)** serves as our repository for **long-term preservation** and provides a mirror for users in Europe (see [Funding](https://about.zenodo.org/infrastructure/)).
-    - **[The Internet Archive](https://archive.org)** is utilized **strategically** for specific datasets to minimize load on their limited infrastructure (see [Funding](https://projects.propublica.org/nonprofits/organizations/943242767)).
-- **Decentralized Distribution:** We will pilot BitTorrent to maximize infrastructure resilience. By leveraging [HTTP Web Seeding (BEP 19)](https://www.bittorrent.org/beps/bep_0019.html), torrents will be seeded simultaneously by Source Cooperative, Zenodo, the Data for Canada infrastructure, and community peers, ensuring high availability without a single point of failure. Current laboratory work is available on the [dataforcanada/decentralized-distribution-labs](https://github.com/dataforcanada/decentralized-distribution-labs) repo.
+* **Cloud-Native First:** Priority is given to performant, system-to-system file formats (e.g., Parquet) to enable highly performant applications.
+* **Persistent Identification & Cataloging:** Every dataset version will be assigned a DOI for citation and immutability.
+* The endpoint `https://data-01.dataforcanada.org/processed/` will strictly serve the **latest** version of a dataset.
+* Global metadata will be aggregated into a single, queryable [STAC GeoParquet](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/) file. This catalog will track all versions and DOIs, directing users to our multi-tier storage network:
+* **[Source Cooperative](https://source.coop/dataforcanada)** serves as our **primary mirror** for all datasets, including large-scale products like orthoimagery (see [Funding and Governance](https://docs.source.coop/#funding-and-governance)).
+* **[Zenodo](https://zenodo.org/communities/dataforcanada/)** serves as our repository for **long-term preservation** and provides a mirror for users in Europe (see [Funding](https://about.zenodo.org/infrastructure/)).
+* **[The Internet Archive](https://archive.org)** is utilized **strategically** for specific datasets to minimize load on their limited infrastructure (see [Funding](https://projects.propublica.org/nonprofits/organizations/943242767)).
+
+* **Decentralized Distribution:** We will pilot BitTorrent to maximize infrastructure resilience. By leveraging [HTTP Web Seeding (BEP 19)](https://www.bittorrent.org/beps/bep_0019.html), torrents will be seeded simultaneously by Source Cooperative, Zenodo, the Data for Canada infrastructure, and community peers, ensuring high availability without a single point of failure. Current laboratory work is available on the [dataforcanada/decentralized-distribution-labs](https://github.com/dataforcanada/decentralized-distribution-labs) repo.
 
 ## Work in the Lab: Smart Nodes
 
@@ -83,8 +99,8 @@ To further democratize access and ensure the persistence of Canada’s open data
 
 A smart node functions as a "set-it-and-forget-it" volunteer server, an automated library branch for our data infrastructure.
 
-- **Automated Mirroring:** Unlike a standard download, a smart node automatically synchronizes with our central catalog. It intelligently fetches new or "at-risk" datasets to ensure they remain available even if the central portal experiences downtime.
-- **Volunteer-Powered Resilience:** This model allows partner institutions (universities, research labs) and public volunteers to donate bandwidth and storage. By running a smart node, contributors actively protect vital Canadian datasets from being lost or gated behind paywalls.
-- **Dynamic Storage Management:** The node software monitors network health, automatically prioritizing rare data to maintain high availability across the entire Data for Canada ecosystem.
+* **Automated Mirroring:** Unlike a standard download, a smart node automatically synchronizes with our central catalog. It intelligently fetches new or "at-risk" datasets to ensure they remain available even if the central portal experiences downtime.
+* **Volunteer-Powered Resilience:** This model allows partner institutions (universities, research labs) and public volunteers to donate bandwidth and storage. By running a smart node, contributors actively protect vital Canadian datasets from being lost or gated behind paywalls.
+* **Dynamic Storage Management:** The node software monitors network health, automatically prioritizing rare data to maintain high availability across the entire Data for Canada ecosystem.
 
 We are currently refining the concepts from  [smart-node-transmission](https://github.com/academictorrents/smartnode-transmission)  to work seamlessly with our STAC GeoParquet catalog, enabling a fully decentralized data mesh for Canadian geospatial information.
