@@ -6,7 +6,7 @@ next: /docs/processes/orthoimagery/
 
 Look through our [process-statcan-data-labs](https://github.com/dataforcanada/process-statcan-data-labs) repo for the datasets processed. There is still lots of work to do to make it ready for systems.
 
-## Download
+## Download and Preview
 
 Below is a table of datasets generated from our current processing pipeline. You can download the raw **Parquet** files directly or use the **Map Preview** links to inspect the data as vector tiles.
 
