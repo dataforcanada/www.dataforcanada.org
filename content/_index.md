@@ -62,6 +62,7 @@ See our processing pipeline in action. View samples and documentation for our cu
 
 ```mermaid
 flowchart TD
+    classDef linkNode stroke:#0000EE,color:#0000EE,stroke-width:2px;
     subgraph ds [Data Sources]
         Statistical@{ shape: lean-l}
         Foundation@{ shape: lean-l}
@@ -97,7 +98,7 @@ flowchart TD
 
     subgraph di [Distribution Infrastructure]
         ObjectStorage@{ shape: bow-rect, label: "Object Storage"}
-        Metadata@{ shape: rect}
+        Metadata@{ shape: rect, label: "FAIR Data Catalog"}
         HTTP@{ shape: rect, label: "Static Files"}
         DecentralizedDistribution@{ shape: rect, label: "Decentralized Distribution"}
     end
@@ -211,6 +212,7 @@ flowchart TD
     click JPEGXL "https://jpeg.org/jpegxl/" _blank
     click AV1 "https://aomedia.org/specifications/av1/" _blank
     click WARC "https://github.com/iipc/warc-specifications/" _blank
+    click HTTP "https://www.dataforcanada.org/docs/getting_started/" _blank
     click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click GeoSpatialServices "https://github.com/dataforcanada/geo-services-labs/" _blank
@@ -220,6 +222,11 @@ flowchart TD
     click BBOXServer "https://www.bbox.earth/" _blank
     click Panoramax "https://gitlab.com/panoramax" _blank
     click Pelias "https://pelias.io" _blank
+
+    %% APPLY STYLES TO LINKED NODES
+    class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
+    class Parquet,FlatGeoBuf,GeoPackage,FileGeodatabase,MVT,MLT,COG,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
+    class DecentralizedDistribution,HTTP,Metadata,GeoSpatialServices linkNode
 ```
 
 ## Get Involved
