@@ -29,7 +29,7 @@ Jurisdiction: Canada"]
         
         IA_Van["Internet Archive Mirror
 Location: Vancouver, CA
-Proto: HTTP
+Protocol: HTTP
 Jurisdiction: USA"]
     end
 
@@ -40,24 +40,24 @@ Jurisdiction: USA"]
         direction TB
         SourceCoop["Source Cooperative
 Location: Oregon, USA
-Proto: HTTP
+Protocol: HTTP
 Jurisdiction: USA"]
         
         R2["☁️ Cloudflare R2
 (Primary Object Storage)
 Location: Eastern North America
-Proto: HTTP
+Protocol: HTTP
 Jurisdiction: USA"]
         
         IA_SF["The Internet Archive
 Location: San Francisco, USA
-Proto: HTTP
+Protocol: HTTP
 Jurisdiction: USA"]
         
         Netcup["Netcup VPS
 Location: Virginia, USA
 Specs: 2.5Gbps / 2.5Gbps
-Proto: HTTP & BitTorrent
+Protocol: HTTP & BitTorrent
 Jurisdiction: Germany"]
     end
 
@@ -77,7 +77,7 @@ Jurisdiction: Netherlands"]
             Zenodo["Zenodo
 Location: Geneva
 (Replicated in Budapest)
-Proto: HTTP
+Protocol: HTTP
 Jurisdiction: Switzerland"]
         end
     end
