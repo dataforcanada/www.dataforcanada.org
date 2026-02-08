@@ -95,7 +95,7 @@ Our processing strategy relies on three immutable components to guarantee transp
 3. **Deterministic Builds:** By combining a *Build Manifest* with our *Environment Definitions*, any user can execute a **deterministic build**. This process guarantees a bit-for-bit identical copy of the official Data for Canada artifact, ensuring that the pipeline is independent of our specific servers.
 
 **Mirrored Source Artifacts:**
-Crucially, we do not rely solely on external version control systems like GitHub, which may change or disappear. A complete snapshot of the processing code, environment definitions, and manifests is bundled with every data release. These source artifacts are replicated across **Source Cooperative, Zenodo, the Internet Archive, and Data for Canada infrastructure**, ensuring that the *method* of creation is preserved with the same redundancy as the *result*.
+Crucially, we do not rely solely on external version control systems like GitHub, which may change or disappear. A complete snapshot of the processing code, environment definitions, and manifests is bundled with every data release. These source artifacts are replicated across **Source Cooperative, Zenodo, the Internet Archive, Data for Canada infrastructure, and the community**, ensuring that the *method* of creation is preserved with the same redundancy as the *result*.
 
 ## Dissemination Process
 
