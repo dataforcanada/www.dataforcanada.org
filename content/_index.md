@@ -64,7 +64,7 @@ flowchart TD
         Foundation@{ shape: lean-l}
         Orthoimagery@{ shape: lean-l}
         FieldImagery@{ shape: lean-l, label: "Field Imagery"}
-        EnvironmentClimate@{ shape: lean-l, label: "Environmental & Climate"}
+        EnvironmentClimate@{ shape: lean-l, label: "Environment, Climate, & Health"}
         Elevation@{ shape: lean-l}
         WebCorpus@{ shape: lean-l, label: "Web Corpus"}
     end
@@ -191,7 +191,7 @@ flowchart TD
     click Statistical "https://github.com/dataforcanada/process-statistical-labs/" _blank
     click Orthoimagery "https://github.com/dataforcanada/process-orthoimagery-labs/" _blank
     click FieldImagery "https://github.com/dataforcanada/process-field-imagery-labs/" _blank
-    click EnvironmentClimate "https://github.com/dataforcanada/process-environmental-climate-labs/" _blank
+    click EnvironmentClimate "https://github.com/dataforcanada/process-environmental-climate-health-labs/" _blank
     click Elevation "https://github.com/dataforcanada/process-elevation-labs/" _blank
     click WebCorpus "https://github.com/dataforcanada/process-web-corpus-labs/" _blank
 
