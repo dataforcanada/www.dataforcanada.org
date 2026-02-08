@@ -106,7 +106,7 @@ Jurisdiction: Switzerland"]
 | **CDN Services** | [Object Storage - Cloudflare Details](https://www.cloudflare.com/products/r2/) & [Serverless - Cloudflare Details](https://www.cloudflare.com/en-ca/plans/developer-platform/) (Variable) | $32.71 | $23.93 | €20.26 |
 | **Smart Node 01** | [Decentralized Distribution - SlashN Services Details](https://ultra.cc/#plan-pricing) - Dedicated BitTorrent client | $28.98 | $21.21 | €17.95 |
 | **Smart Node 02** | [Decentralized Distribution - SlashN Services Details](https://ultra.cc/#plan-pricing) - Dedicated BitTorrent client | $28.98 | $21.21 | €17.95 |
-| **VPS** | [Geospatial Services - Netcup Details](https://www.netcup.eu/server/arm-server/) - ARM64, 512 GB flash storage, 2.5Gbit/2.5Gbit | $14.64 | $10.72 | €9.07 |
+| **VPS** | [Geospatial Services - Netcup Details](https://www.netcup.eu/server/arm-server/) - ARM64 | $14.64 | $10.72 | €9.07 |
 | **TOTAL** | **Monthly Run Rate** | **$136.21** | **$99.67** | **€84.36** |
 
 **Note:** Currency conversions are based on rates from February 16, 2026.
