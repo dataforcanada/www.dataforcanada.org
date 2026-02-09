@@ -76,8 +76,8 @@ Jurisdiction: Netherlands"]
         
         subgraph Switzerland ["🇨🇭 Switzerland"]
             Zenodo["Zenodo
-Location: Geneva
-(Replicated in Budapest)
+Location: Geneva, CH
+(Replicated in Budapest, HU)
 Protocol: HTTP
 Jurisdiction: Switzerland"]
         end
