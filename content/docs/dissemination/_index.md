@@ -78,13 +78,16 @@ flowchart TD
     a11@{animate: true, animation: fast}
 
     %% Click Actions
-    click Artifacts "/docs/processes/" _blank
+    click Sources "https://www.dataforcanada.org/#high-level-overview/" _blank
+    click Processes "https://www.dataforcanada.org/docs/processes/" _blank
+    click Artifacts "https://www.dataforcanada.org/docs/getting_started/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click Zenodo "https://zenodo.org/communities/dataforcanada/" _blank
     click SourceCoop "https://source.coop/dataforcanada/" _blank
+    click InternetArchive "https://archive.org/details/@diegoripley/uploads/" _blank
 
     %% APPLY STYLES TO LINKED NODES
-    class Artifacts,Metadata,Zenodo,SourceCoop linkNode
+    class Sources,Processes,Artifacts,Metadata,SourceCoop,Zenodo,InternetArchive linkNode
 ```
 
 ## 🏗️ Open Processing Architecture
