@@ -58,7 +58,7 @@ Jurisdiction: USA"]
         Netcup["VPS 01
 Location: Manassas, Virginia, USA
 Specs: 2.5Gbps / 2.5Gbps, 512GB Flash Storage
-Protocol: HTTP & BitTorrent
+Protocol: HTTP & P2P
 Jurisdiction: Germany"]
     end
 
@@ -87,7 +87,7 @@ Jurisdiction: Switzerland"]
     %% CONNECTIONS
     %% ---------------------------------------------------------
     
-    NodeTO <==>|BitTorrent Sync P2P| NodeAMS
+    NodeTO <==>|P2P| NodeAMS
     IA_SF -.->|Internal Replication| IA_Van
     
     NodeTO -.->|HTTP Pull| SourceCoop
@@ -104,8 +104,8 @@ Jurisdiction: Switzerland"]
 | :--- | :--- | :--- | :--- | :--- |
 | **CDN** | [CDN - Cloudflare Details](https://www.cloudflare.com/plans/) - WAF, CDN (Amortized Annual) | $30.90 | $22.60 | €19.13 |
 | **CDN Services** | [Object Storage - Cloudflare Details](https://www.cloudflare.com/products/r2/) & [Serverless - Cloudflare Details](https://www.cloudflare.com/en-ca/plans/developer-platform/) (Variable) | $32.71 | $23.93 | €20.26 |
-| **Smart Node 01** | [Decentralized Distribution - SlashN Services Details](https://ultra.cc/#plan-pricing) - Dedicated BitTorrent client | $28.98 | $21.21 | €17.95 |
-| **Smart Node 02** | [Decentralized Distribution - SlashN Services Details](https://ultra.cc/#plan-pricing) - Dedicated BitTorrent client | $28.98 | $21.21 | €17.95 |
+| **Smart Node 01** | [Decentralized Distribution - SlashN Services Details](https://ultra.cc/#plan-pricing) - Dedicated <abbr title="Peer-to-Peer">P2P</abbr> client | $28.98 | $21.21 | €17.95 |
+| **Smart Node 02** | [Decentralized Distribution - SlashN Services Details](https://ultra.cc/#plan-pricing) - Dedicated <abbr title="Peer-to-Peer">P2P</abbr> client | $28.98 | $21.21 | €17.95 |
 | **VPS 01** | [Geospatial Services - Netcup Details](https://www.netcup.com/en/server/root-server) - ARM64 | $14.64 | $10.72 | €9.07 |
 | **TOTAL** | **Monthly Run Rate** | **$136.21** | **$99.67** | **€84.36** |
 

@@ -30,7 +30,7 @@ flowchart TD
     end
     
     Distribution[Decentralized Distribution]
-    Torrent[Accelerated Peer-to-Peer]
+    Torrent["Accelerated Peer-to-Peer (P2P)"]
     
     subgraph Consumers [Consumption]
         Users[Data People & Developers]
@@ -78,7 +78,7 @@ flowchart TD
     a11@{animate: true, animation: fast}
 
     %% Click Actions
-    click Sources "https://www.dataforcanada.org/#high-level-overview/" _blank
+    click Sources "https://www.dataforcanada.org/#high-level-overview" _blank
     click Processes "https://www.dataforcanada.org/docs/processes/" _blank
     click Artifacts "https://www.dataforcanada.org/docs/getting_started/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
@@ -119,7 +119,9 @@ Once data products reach a production-ready state, they enter a dissemination fl
 
 ### Decentralized Distribution
 
-We are piloting a peer-to-peer technology to maximize infrastructure resilience. By leveraging the [peer-to-peer HTTP  consumption feature](https://www.bittorrent.org/beps/bep_0019.html), users will be able to download simultaneously from Source Cooperative, Zenodo, Data for Canada infrastructure, and community peers. This ensures high availability without a single point of failure. Current laboratory work is available in the [Decentralized Distribution Labs](https://github.com/dataforcanada/decentralized-distribution-labs).
+
+
+We are piloting a <abbr title="Peer-to-Peer">P2P</abbr> technology, to maximize infrastructure resilience. By leveraging the [P2P HTTP  consumption feature](https://www.bittorrent.org/beps/bep_0019.html), users will be able to download simultaneously from Source Cooperative, Zenodo, Data for Canada infrastructure, and community peers. This ensures high availability without a single point of failure. Current laboratory work is available in the [Decentralized Distribution Labs](https://github.com/dataforcanada/decentralized-distribution-labs).
 
 ## Work in the Lab: Smart Nodes
 
@@ -129,7 +131,10 @@ A Smart Node functions as a "set-it-and-forget-it" volunteer server, an automate
 
 * **Automated Mirroring:** Unlike a standard download, a Smart Node automatically synchronizes with our central **FAIR Data Catalog**. It intelligently fetches new or "at-risk" datasets to ensure they remain available even if the central portal experiences downtime.
 * **Volunteer-Powered Resilience:** This model allows partner institutions (ex. universities, research labs) and public volunteers to donate bandwidth and storage. By running a Smart Node, contributors actively protect vital Canadian datasets from being lost or gated.
-* **Dynamic Storage Management:** The node software monitors network health to optimize resource usage. Leveraging the P2P technology's capability for **selective piece mapping**, the node does not need to store the entire catalog. Instead, it identifies specific file indices or "rare" pieces within the metadata and sends granular `REQUEST` messages for only those blocks. This allows a node with limited storage (ex. 500GB) to provide critical redundancy for a much larger archive (ex. 50TB) by surgically targeting only the data that is currently under shared.
+
+* **Dynamic Storage Management:** The node software monitors network health to optimize resource usage. Leveraging the  <abbr title="Peer-to-Peer">P2P</abbr> technology's capability for **selective piece mapping**, the node does not need to store the entire catalog. Instead, it identifies specific file indices or "rare" pieces within the metadata and sends granular `REQUEST` messages for only those blocks. This allows a node with limited storage (ex. 500GB) to provide critical redundancy for a much larger archive (ex. 50TB) by surgically targeting only the data that is currently under shared.
+
+
 
 We are currently refining the concepts from [smart-node-transmission](https://github.com/academictorrents/smartnode-transmission) to work seamlessly with our catalog, enabling a fully decentralized data mesh for Canadian geospatial information.
 
@@ -138,7 +143,7 @@ graph TD
     %% Node Definitions with custom labels
     Catalog[("FAIR Data Catalog")]
     SmartNode["Volunteer Smart Node<br/>(Limited Storage Optimization)"]
-    BTNetwork(["Peer to Peer Network<br/>(Massive Data Pool)"])
+    BTNetwork(["P2P Network<br/>(Massive Data Pool)"])
 
     %% The Process Flow
     Catalog -->|"1. Syncs metadata & identifies 'at-risk' data"| SmartNode
