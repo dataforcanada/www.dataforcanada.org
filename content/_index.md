@@ -22,7 +22,7 @@ We act as the transformation layer. We aggregate datasets with permissive licens
 * **For Systems:** Standardized data structures designed to feed directly into pipelines, data warehouses, and downstream services.
 
 **Our Stewardship:**
-Data for Canada takes ownership of the datasets we create, from start to finish. We ensure that data remains consistent and available, acting as a stable foundation for your work. By decoupling access from the original source, we ensure your pipelines don't break even if the upstream location changes or expires.
+Data for Canada takes ownership of the datasets we create, from start to finish. We ensure that data remains consistent and available, acting as a stable foundation for your work, and allowing for reliable analysis across **time and space**. By decoupling access from the original source, we ensure your pipelines don't break even if the upstream location changes or expires.
 
 ## Target Software Ecosystem
 
