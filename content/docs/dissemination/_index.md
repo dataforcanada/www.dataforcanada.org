@@ -30,7 +30,7 @@ flowchart TD
     end
     
     Distribution[Decentralized Distribution]
-    Torrent[BitTorrent Swarm]
+    Torrent[Accelerated Peer-to-Peer]
     
     subgraph Consumers [Consumption]
         Users[Data People & Developers]
@@ -67,7 +67,7 @@ flowchart TD
     mirrors a13@--> Systems
     a13@{animate: true, animation: slow}
     
-    mirrors a9@-.->|Seeding| Torrent
+    mirrors a9@-.->|Pooled| Torrent
     a9@{animate: true, animation: fast}
 
     %% Torrent Connections
@@ -117,19 +117,19 @@ Once data products reach a production-ready state, they enter a dissemination fl
     - **[The Internet Archive](https://archive.org)** is utilized **strategically** for specific datasets to ensure historical redundancy.
     - **[Data for Canada Infrastructure](https://www.dataforcanada.org/infrastructure/)** is utilized **strategically** for specific datasets of high-value.
 
-### Decentralized Distribution (BitTorrent)
+### Decentralized Distribution
 
-We are piloting BitTorrent to maximize infrastructure resilience. By leveraging [HTTP Web Seeding (BEP 19)](https://www.bittorrent.org/beps/bep_0019.html), torrents will be seeded simultaneously by Source Cooperative, Zenodo, Data for Canada infrastructure, and community peers. This ensures high availability without a single point of failure. Current laboratory work is available in the [Decentralized Distribution Labs](https://github.com/dataforcanada/decentralized-distribution-labs).
+We are piloting a peer-to-peer technology to maximize infrastructure resilience. By leveraging the [peer-to-peer HTTP  consumption feature](https://www.bittorrent.org/beps/bep_0019.html), users will be able to download simultaneously from Source Cooperative, Zenodo, Data for Canada infrastructure, and community peers. This ensures high availability without a single point of failure. Current laboratory work is available in the [Decentralized Distribution Labs](https://github.com/dataforcanada/decentralized-distribution-labs).
 
 ## Work in the Lab: Smart Nodes
 
-To further democratize access and ensure the persistence of Canada’s open data, we are experimenting with the features defined in previous work done by [Academic Torrents](https://academictorrents.com/docs/mirroring.html#smartnodes).
+To further democratize access and ensure the persistence of Canada’s open data, we are experimenting with the features defined in previous work done by other organizations.
 
 A Smart Node functions as a "set-it-and-forget-it" volunteer server, an automated library branch for our data infrastructure.
 
 * **Automated Mirroring:** Unlike a standard download, a Smart Node automatically synchronizes with our central **FAIR Data Catalog**. It intelligently fetches new or "at-risk" datasets to ensure they remain available even if the central portal experiences downtime.
 * **Volunteer-Powered Resilience:** This model allows partner institutions (ex. universities, research labs) and public volunteers to donate bandwidth and storage. By running a Smart Node, contributors actively protect vital Canadian datasets from being lost or gated.
-* **Dynamic Storage Management:** The node software monitors network health to optimize resource usage. Leveraging BitTorrent's capability for **selective piece mapping**, the node does not need to store the entire catalog. Instead, it identifies specific file indices or "rare" pieces within the metadata and sends granular `REQUEST` messages for only those blocks. This allows a node with limited storage (ex. 500GB) to provide critical redundancy for a much larger archive (ex. 50TB) by surgically targeting only the data that is currently under shared.
+* **Dynamic Storage Management:** The node software monitors network health to optimize resource usage. Leveraging the P2P technology's capability for **selective piece mapping**, the node does not need to store the entire catalog. Instead, it identifies specific file indices or "rare" pieces within the metadata and sends granular `REQUEST` messages for only those blocks. This allows a node with limited storage (ex. 500GB) to provide critical redundancy for a much larger archive (ex. 50TB) by surgically targeting only the data that is currently under shared.
 
 We are currently refining the concepts from [smart-node-transmission](https://github.com/academictorrents/smartnode-transmission) to work seamlessly with our catalog, enabling a fully decentralized data mesh for Canadian geospatial information.
 
@@ -138,7 +138,7 @@ graph TD
     %% Node Definitions with custom labels
     Catalog[("FAIR Data Catalog")]
     SmartNode["Volunteer Smart Node<br/>(Limited Storage Optimization)"]
-    BTNetwork(["BitTorrent Peer Network<br/>(Massive Data Pool)"])
+    BTNetwork(["Peer to Peer Network<br/>(Massive Data Pool)"])
 
     %% The Process Flow
     Catalog -->|"1. Syncs metadata & identifies 'at-risk' data"| SmartNode
