@@ -115,7 +115,7 @@ Once data products reach a production-ready state, they enter a dissemination fl
     - **[Source Cooperative](https://source.coop/dataforcanada)** serves as our **primary mirror** for all datasets, including large-scale products like orthoimagery.
     - **[Zenodo](https://zenodo.org/communities/dataforcanada/)** serves as our repository for **long-term academic preservation** and provides a high-speed mirror for European users.
     - **[The Internet Archive](https://archive.org)** is utilized **strategically** for specific datasets to ensure historical redundancy.
-    - **Data for Canada Infrastructure** is utilized **strategically** for specific datasets of high-value.
+    - **[Data for Canada Infrastructure](https://www.dataforcanada.org/infrastructure/)** is utilized **strategically** for specific datasets of high-value.
 
 ### Decentralized Distribution (BitTorrent)
 
