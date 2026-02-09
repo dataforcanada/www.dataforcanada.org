@@ -23,7 +23,7 @@ flowchart TD
     %% ---------------------------------------------------------
     subgraph Canada_Region ["🇨🇦 Physical Location: Canada"]
         direction TB
-        NodeTO["Smart Node
+        NodeTO["Smart Node 01
 Location: Toronto, CA
 Specs: 50Gbps / 50Gbps, 950GB Flash Storage
 Jurisdiction: Canada"]
@@ -55,9 +55,9 @@ Location: San Francisco, USA
 Protocol: HTTP
 Jurisdiction: USA"]
         
-        Netcup["Netcup VPS
+        Netcup["VPS 01
 Location: Manassas, Virginia, USA
-Specs: 2.5Gbps / 2.5Gbps, Flash Storage
+Specs: 2.5Gbps / 2.5Gbps, 512GB Flash Storage
 Protocol: HTTP & BitTorrent
 Jurisdiction: Germany"]
     end
@@ -68,7 +68,7 @@ Jurisdiction: Germany"]
     subgraph Europe_Region ["🇪🇺 Physical Location: Europe"]
         direction TB
         subgraph Netherlands ["🇳🇱 Netherlands"]
-            NodeAMS["Smart Node
+            NodeAMS["Smart Node 02
 Location: Amsterdam, NL
 Specs: 50Gbps / 50Gbps, 950GB Flash Storage
 Jurisdiction: Netherlands"]
@@ -106,7 +106,7 @@ Jurisdiction: Switzerland"]
 | **CDN Services** | [Object Storage - Cloudflare Details](https://www.cloudflare.com/products/r2/) & [Serverless - Cloudflare Details](https://www.cloudflare.com/en-ca/plans/developer-platform/) (Variable) | $32.71 | $23.93 | €20.26 |
 | **Smart Node 01** | [Decentralized Distribution - SlashN Services Details](https://ultra.cc/#plan-pricing) - Dedicated BitTorrent client | $28.98 | $21.21 | €17.95 |
 | **Smart Node 02** | [Decentralized Distribution - SlashN Services Details](https://ultra.cc/#plan-pricing) - Dedicated BitTorrent client | $28.98 | $21.21 | €17.95 |
-| **VPS** | [Geospatial Services - Netcup Details](https://www.netcup.com/en/server/root-server) - ARM64 | $14.64 | $10.72 | €9.07 |
+| **VPS 01** | [Geospatial Services - Netcup Details](https://www.netcup.com/en/server/root-server) - ARM64 | $14.64 | $10.72 | €9.07 |
 | **TOTAL** | **Monthly Run Rate** | **$136.21** | **$99.67** | **€84.36** |
 
 **Note:** Currency conversions are based on rates from February 16, 2026.
