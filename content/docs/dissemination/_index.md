@@ -21,10 +21,10 @@ flowchart TD
     end
 
     Sources[Open Data Sources]
-    Processes[Transformation Pipelines]
+    Processes[Processing Pipelines]
     Artifacts[Systems-Ready Data]
     
-    subgraph CoreInfra [Data for Canada Infrastructure]
+    subgraph CoreInfra [Data for Canada]
         Portal[Object Storage]
         Metadata[FAIR Data Catalog]
     end
@@ -34,7 +34,7 @@ flowchart TD
     
     subgraph Consumers [Consumption]
         Users[Data People & Developers]
-        Systems[Automated Systems]
+        Systems[Systems]
     end
 
     %% Flow with Animations
@@ -132,7 +132,7 @@ We are currently refining the concepts from [smart-node-transmission](https://gi
 graph TD
     %% Node Definitions with custom labels
     Catalog[("FAIR Data Catalog")]
-    SmartNode["Volunteer Smart Node<br/>(Limited Storage Optimization)"]
+    SmartNode["Volunteer Smart Node<br/>(Limited Storage)"]
     BTNetwork(["P2P Network<br/>(Massive Data Pool)"])
 
     %% The Process Flow
