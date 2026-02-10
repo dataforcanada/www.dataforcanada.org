@@ -26,7 +26,7 @@ flowchart TD
         NodeTO["Smart Node 01
 Location: Toronto, CA
 Specs: 50Gbps / 50Gbps, 950GB Flash Storage
-Jurisdiction: Canada"]
+Jurisdiction: Singapore"]
         
         IA_Van["Internet Archive Mirror
 Location: Vancouver, CA
@@ -40,6 +40,8 @@ Jurisdiction: USA"]
     subgraph USA_Region ["🇺🇸 Physical Location: USA"]
         direction TB
         SourceCoop["Source Cooperative
+(Mirror)
+AWS S3 (us-west-2)
 Location: Oregon, USA
 Protocol: HTTP
 Jurisdiction: USA"]
@@ -51,7 +53,7 @@ Protocol: HTTP
 Jurisdiction: USA"]
         
         IA_SF["The Internet Archive
-Location: San Francisco, USA
+Location: San Francisco, California, USA
 Protocol: HTTP
 Jurisdiction: USA"]
         
@@ -71,13 +73,19 @@ Jurisdiction: Germany"]
             NodeAMS["Smart Node 02
 Location: Amsterdam, NL
 Specs: 50Gbps / 50Gbps, 950GB Flash Storage
-Jurisdiction: Netherlands"]
+Jurisdiction: Singapore"]
         end
         
         subgraph Switzerland ["🇨🇭 Switzerland"]
             Zenodo["Zenodo
 Location: Geneva, CH
 (Replicated in Budapest, HU)
+Protocol: HTTP
+Jurisdiction: Switzerland"]
+        end
+        subgraph  Hungary["🇭🇺 Hungary"]
+            ZenodoMirror["Zenodo Mirror
+Location: Budapest, HU
 Protocol: HTTP
 Jurisdiction: Switzerland"]
         end
@@ -89,6 +97,7 @@ Jurisdiction: Switzerland"]
     
     NodeTO <==>|P2P| NodeAMS
     IA_SF -.->|Internal Replication| IA_Van
+    Zenodo -.->|Internal Replication| ZenodoMirror
     
     NodeTO -.->|HTTP Pull| SourceCoop
     NodeTO ==> R2
