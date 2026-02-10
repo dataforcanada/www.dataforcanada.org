@@ -126,8 +126,6 @@ A Smart Node functions as a "set-it-and-forget-it" volunteer server, an automate
 
 * **Dynamic Storage Management:** The node software monitors network health to optimize resource usage. Leveraging the  <abbr title="Peer-to-Peer">P2P</abbr> technology's capability for **selective piece mapping**, the node does not need to store the entire catalog. Instead, it identifies specific file indices or "rare" pieces within the metadata and sends granular `REQUEST` messages for only those blocks. This allows a node with limited storage (ex. 500GB) to provide critical redundancy for a much larger archive (ex. 50TB) by surgically targeting only the data that is currently under shared.
 
-
-
 We are currently refining the concepts from [smart-node-transmission](https://github.com/academictorrents/smartnode-transmission) to work seamlessly with our catalog, enabling a fully decentralized data mesh for Canadian geospatial information.
 
 ```mermaid
