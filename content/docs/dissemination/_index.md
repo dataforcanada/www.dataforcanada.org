@@ -84,6 +84,22 @@ flowchart TD
     class Sources,Processes,Artifacts,Metadata,SourceCoop,Zenodo,InternetArchive linkNode
 ```
 
+## Dissemination Process
+
+Once data products reach a production-ready state, they enter a dissemination flow designed for permanence and performance:
+
+* **Cloud-Native First:** Priority is given to performant, system-to-system file formats (e.g., Parquet) to enable high-throughput applications without the need for local parsing.
+* **Persistent Identification:** Every dataset version is assigned a DOI for citation and immutability.
+* **The FAIR Data Catalog:** Global metadata is aggregated into a single, queryable **[FAIR Data Catalog](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/)**. This catalog acts as the "brain" of the system, tracking all versions and DOIs, and directing users to the optimal source within our multi-tier storage network:
+  * **[Source Cooperative](https://source.coop/dataforcanada)** serves as our **primary mirror** for all datasets, including large-scale products like orthoimagery (see [Funding and Governance](https://docs.source.coop/#funding-and-governance)).
+  * **[Zenodo](https://zenodo.org/communities/dataforcanada/)** serves as our repository for **long-term academic preservation** and provides a high-speed mirror for European users (see [Funding](https://about.zenodo.org/infrastructure/)).
+  * **[The Internet Archive](https://archive.org)** is utilized **strategically** for specific datasets to ensure historical redundancy (see [Funding](https://projects.propublica.org/nonprofits/organizations/943242767)).
+  * **[Data for Canada Infrastructure](https://www.dataforcanada.org/infrastructure/)** is utilized **strategically** for specific datasets of high-value.
+
+### Decentralized Distribution
+
+We are piloting a <abbr title="Peer-to-Peer">P2P</abbr> technology, to maximize infrastructure resilience. By leveraging the [P2P HTTP  consumption feature](https://www.bittorrent.org/beps/bep_0019.html), users will be able to download simultaneously from Source Cooperative, Zenodo, Data for Canada infrastructure, and community peers. This ensures high availability without a single point of failure. Current laboratory work is available in the [Decentralized Distribution Labs](https://github.com/dataforcanada/decentralized-distribution-labs).
+
 ## 🏗️ Open Processing Architecture
 
 We believe that true open data requires open production. To ensure the longevity and resilience of Canada's data infrastructure, we treat our data pipelines as **open source software artifacts**. We provide the "blueprints" alongside the data, allowing any user to verify our work or rebuild the dataset from scratch on their own infrastructure.
@@ -99,21 +115,6 @@ Our processing strategy relies on three immutable components to guarantee transp
 **Mirrored Source Artifacts:**
 Crucially, we do not rely solely on external version control systems like GitHub, which may change or disappear. A complete snapshot of the processing code, environment definitions, and manifests is bundled with every data release. These source artifacts are replicated across **Source Cooperative, Zenodo, the Internet Archive, Data for Canada infrastructure, and the community**, ensuring that the *method* of creation is preserved with the same redundancy as the *result*.
 
-## Dissemination Process
-
-Once data products reach a production-ready state, they enter a dissemination flow designed for permanence and performance:
-
-* **Cloud-Native First:** Priority is given to performant, system-to-system file formats (e.g., Parquet) to enable high-throughput applications without the need for local parsing.
-* **Persistent Identification:** Every dataset version is assigned a DOI for citation and immutability.
-* **The FAIR Data Catalog:** Global metadata is aggregated into a single, queryable **[FAIR Data Catalog](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/)**. This catalog acts as the "brain" of the system, tracking all versions and DOIs, and directing users to the optimal source within our multi-tier storage network:
-    - **[Source Cooperative](https://source.coop/dataforcanada)** serves as our **primary mirror** for all datasets, including large-scale products like orthoimagery.
-    - **[Zenodo](https://zenodo.org/communities/dataforcanada/)** serves as our repository for **long-term academic preservation** and provides a high-speed mirror for European users.
-    - **[The Internet Archive](https://archive.org)** is utilized **strategically** for specific datasets to ensure historical redundancy.
-    - **[Data for Canada Infrastructure](https://www.dataforcanada.org/infrastructure/)** is utilized **strategically** for specific datasets of high-value.
-
-### Decentralized Distribution
-
-We are piloting a <abbr title="Peer-to-Peer">P2P</abbr> technology, to maximize infrastructure resilience. By leveraging the [P2P HTTP  consumption feature](https://www.bittorrent.org/beps/bep_0019.html), users will be able to download simultaneously from Source Cooperative, Zenodo, Data for Canada infrastructure, and community peers. This ensures high availability without a single point of failure. Current laboratory work is available in the [Decentralized Distribution Labs](https://github.com/dataforcanada/decentralized-distribution-labs).
 
 ## Work in the Lab: Smart Nodes
 
