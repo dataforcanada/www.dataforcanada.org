@@ -29,7 +29,7 @@ We treat field imagery as a data engineering challenge, ensuring "time-to-insigh
 1. **Ingestion**: Raw imagery is captured using diverse hardware (ex. 360° cameras, mobile rigs, meta glasses, etc.) and ingested by our systems. 
 2. **Privacy & Anonymization**: Before publication, all imagery undergoes a rigorous privacy scrub. We utilize automated detection pipelines to blur faces and license plates, ensuring compliance with Canadian privacy standards while maintaining data utility.
 3. **Standardization**: Images are processed into standardized, web-optimized tiles for the viewer and high-resolution archives for analysis.
-4. **Metadata Extraction**: We extract and normalize/strip EXIF and GPS telemetry, indexing it into a **STAC (SpatioTemporal Asset Catalog)** compliant API.
+4. **Metadata Extraction**: We extract and normalize/strip EXIF and GPS telemetry, indexing it into a **[FAIR Catalog](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/)** compliant API.
 
 ---
 
@@ -39,5 +39,5 @@ Unlike commercial platforms that only offer a "view" of the data, we provide the
 
 * **API Access**: Full programmatic access via the Panoramax REST API for querying imagery by location, date, or sequence.
 * **Bulk Datasets**: Curated dumps of street-level imagery available for computer vision training, asset management, and change detection models.
-* **STAC Integration**: Seamless integration with geospatial workflows (ex. DuckDB, QGIS, Python, R, Julia, etc.) using the STAC standard.
+* **[FAIR Data Catalog](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/) Integration**: Seamless integration with geospatial workflows (ex. DuckDB, QGIS, Python, R, Julia, etc.).
 `
