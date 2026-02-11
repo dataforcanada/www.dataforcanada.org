@@ -66,8 +66,8 @@ flowchart TD
     subgraph ds [Data Sources]
         Statistical@{ shape: lean-l}
         Foundation@{ shape: lean-l}
-        EnvironmentClimate@{ shape: lean-l, label: "Environment, Climate, & Health"}
         Orthoimagery@{ shape: lean-l}
+        EnvironmentClimate@{ shape: lean-l, label: "Environment, Climate, & Health"}
         FieldImagery@{ shape: lean-l, label: "Field Imagery"}
         Elevation@{ shape: lean-l}
         WebCorpus@{ shape: lean-l, label: "Web Corpus"}
@@ -123,12 +123,12 @@ flowchart TD
     a1@{animate: true, animation: slow}
     Foundation a2@--> Raw
     a2@{animate: true, animation: slow}
+    Orthoimagery a3@--> Raw
+    a3@{animate: true, animation: slow}
     EnvironmentClimate a5@--> Raw
     a5@{animate: true, animation: fast}
     FieldImagery a4@--> Raw
     a4@{animate:true, animation: fast}
-    Orthoimagery a3@--> Raw
-    a3@{animate: true, animation: slow}
     Elevation a6@--> Raw
     a6@{animate: true, animation: slow}
     WebCorpus a7@--> Raw
