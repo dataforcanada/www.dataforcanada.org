@@ -20,6 +20,9 @@ We are open to feedback on the current file naming convention.
 
 `[iso-region]_[source-identifier]_[theme]_[iso-date]_[variant].[extension]`
 
+**Example**:
+`ca-ab_edmonton-2023A00054811061_orthoimagery_2023_075mm.pmtiles`
+
 #### **Component Breakdown**
 
 | Segment | Definition | Format / Rules | Example |
@@ -47,8 +50,6 @@ This segment defines the "Who" or "Where" of the dataset.
 * **For Organization Datasets:** Use the **Organization Acronym** when the data is national or not tied to a single DGUID.
 * *Example:* `statcan`, `cmhc`, `nrcan`
 
-
-
 ### B. The DGUID (Capitalization Exception)
 
 If using a DGUID (Dissemination Geography Unique Identifier), you must adhere to Statistics Canada standards.
@@ -75,8 +76,6 @@ This field is strictly for **resolution** (e.g., `075mm`, `1m`) or content subse
 * **Rule:** **Do not include projection information** (e.g., `EPSG:3857`, `NAD83`) in the filename.
 * **Reasoning:** Projection details are handled exclusively in the file format metadata or the accompanying **[FAIR Data Catalog](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/)** item.
 
----
-
 ## 3. Example Scenarios
 
 ### **Scenario 1: High-Res Orthoimagery (Location Based)**
@@ -90,8 +89,6 @@ This field is strictly for **resolution** (e.g., `075mm`, `1m`) or content subse
 * **Context:** The Open Database of Buildings released by Statistics Canada on April 15, 2025.
 * **File Name:** `ca_statcan_open_database_of_buildings_2025-04-15.parquet`
 * **Reference:** [Preview and Download Census Data](https://www.dataforcanada.org/docs/processes/statistical_products/statistics_canada/census_data/#how-to-use-the-map-preview)
-
----
 
 ## 4. Helper Tools
 
