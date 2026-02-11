@@ -10,16 +10,12 @@ Commercial street-level imagery is often locked behind restrictive licenses, pro
 
 By self-hosting a **[Panoramax](https://panoramax.fr/)** instance, we provide a decentralized platform where field imagery is treated as a public utility: fully downloadable, API-accessible, and privacy-compliant.
 
----
-
 ## The Infrastructure
 
 Our field imagery pipeline is built on the **Panoramax** ecosystem, a federated open-source alternative to Google Street View that guarantees data permanence and open access. 
 
 * **Storage**: High-performance object storage backend for hosting terabytes of 360° and flat field imagery.
 * **Federation**: Our instance connects to the global Panoramax federation, ensuring that while the data is hosted in Canada, it is discoverable worldwide through the global panoramax catalog.
-
----
 
 ## The Processing Pipeline
 
@@ -29,8 +25,6 @@ We treat field imagery as a data engineering challenge, ensuring "time-to-insigh
 2. **Privacy & Anonymization**: Before publication, all imagery undergoes a rigorous privacy scrub. We utilize automated detection pipelines to blur faces and license plates, ensuring compliance with Canadian privacy standards while maintaining data utility.
 3. **Standardization**: Images are processed into systems-ready formats, making it ready for analysis.
 4. **Metadata Extraction**: We extract and normalize/strip identifiying information (ex. EXIF and GPS telemetry), indexing it into a **[FAIR Catalog](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/)**.
-
----
 
 ## Data Products
 
