@@ -66,9 +66,9 @@ flowchart TD
     subgraph ds [Data Sources]
         Statistical@{ shape: lean-l}
         Foundation@{ shape: lean-l}
+        EnvironmentClimate@{ shape: lean-l, label: "Environment, Climate, & Health"}
         Orthoimagery@{ shape: lean-l}
         FieldImagery@{ shape: lean-l, label: "Field Imagery"}
-        EnvironmentClimate@{ shape: lean-l, label: "Environment, Climate, & Health"}
         Elevation@{ shape: lean-l}
         WebCorpus@{ shape: lean-l, label: "Web Corpus"}
     end
@@ -84,7 +84,7 @@ flowchart TD
         VectorTiles@{ shape: lean-l, label: "Vector Tiles"}
         NextGenVectorTiles@{ shape: lean-l, label: "Next-Gen Vector Tiles"}
         PMTiles@{ shape: lean-l}
-        GeoPackage@{ shape: lean-l}
+        SQLite@{ shape: lean-l}
         FileGeodatabase@{shape: lean-l, label: "File Geodatabase"}
         GeoTIFF@{ shape: lean-l}
         Zarr@{ shape: lean-l}
@@ -123,12 +123,12 @@ flowchart TD
     a1@{animate: true, animation: slow}
     Foundation a2@--> Raw
     a2@{animate: true, animation: slow}
-    Orthoimagery a3@--> Raw
-    a3@{animate: true, animation: slow}
-    FieldImagery a4@--> Raw
-    a4@{animate:true, animation: fast}
     EnvironmentClimate a5@--> Raw
     a5@{animate: true, animation: fast}
+    FieldImagery a4@--> Raw
+    a4@{animate:true, animation: fast}
+    Orthoimagery a3@--> Raw
+    a3@{animate: true, animation: slow}
     Elevation a6@--> Raw
     a6@{animate: true, animation: slow}
     WebCorpus a7@--> Raw
@@ -140,6 +140,8 @@ flowchart TD
     Parquet a10@--> FlatGeoBuf
     a10@{animate: true, animation: fast}
     Parquet a100@--> FileGeodatabase
+    Parquet a110@--> SQLite
+    a110@{animate: true, animation: slow}
     a100@{animate: true, animation: slow}
     FlatGeoBuf a11@--> VectorTiles
     a11@{animate: true, animation: fast}
@@ -147,11 +149,11 @@ flowchart TD
     a91@{animate: true, animation: fast}
     VectorTiles a90@ --> PMTiles
     a90@{animate: true, animation: fast}
-    VectorTiles a96@ --> GeoPackage
+    VectorTiles a96@ --> SQLite
     a96@{animate: true, animation: slow}
     NextGenVectorTiles a92@ --> PMTiles
     a92@{animate: true, animation: slow}
-    NextGenVectorTiles a95@ --> GeoPackage
+    NextGenVectorTiles a95@ --> SQLite
     a95@{animate: true, animation: slow}
     Zarr a12@ --> WebP
     a12@{animate: true, animation: slow}
@@ -161,7 +163,7 @@ flowchart TD
     a14@{animate: true, animation: slow}
     WebP a93@--> PMTiles 
     a93@{animate: true, animation: slow}
-    WebP a94@--> GeoPackage
+    WebP a94@--> SQLite
     a94@{animate: true, animation: slow}
     WebP a103@--> JPG
     a103@{animate: true, animation: slow}
@@ -201,7 +203,7 @@ flowchart TD
 
     click Parquet "https://github.com/apache/parquet-format/" _blank
     click FlatGeoBuf "https://flatgeobuf.org/" _blank
-    click GeoPackage "https://www.geopackage.org/" _blank
+    click SQLite "https://www.geopackage.org/" _blank
     click FileGeodatabase "https://gdal.org/en/stable/drivers/vector/openfilegdb.html" _blank
     click VectorTiles "https://github.com/mapbox/vector-tile-spec/" _blank
     click NextGenVectorTiles "https://github.com/maplibre/maplibre-tile-spec/" _blank
@@ -225,7 +227,7 @@ flowchart TD
 
     %% APPLY STYLES TO LINKED NODES
     class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
-    class Parquet,FlatGeoBuf,GeoPackage,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
+    class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
     class DecentralizedDistribution,HTTP,Metadata,GeoSpatialServices linkNode
 ```
 
