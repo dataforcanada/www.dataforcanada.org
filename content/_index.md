@@ -11,6 +11,18 @@ Data for Canada exists to bridge the gap between open data availability, resilie
 
 Canada creates incredible amounts of open data, from foundational road networks to federal census statistics and orthoimagery. However, these datasets are often locked in legacy formats, fragmented portals, or structures that require significant engineering effort to normalize. For our target audience, the "time-to-insight" is often bottlenecked by data preparation.
 
+## What Guides Us
+
+We prioritize our work in a utilitarian manner, aiming to provide the greatest amount of good to the greatest amount of individuals. Our approach is guided by the principles of **digital preservation** and the need to keep public information accessible over the long term.
+
+Our approach is guided by the following:
+
+* [Link rot in LIS literature: a 20-year study of web citation decay, recovery and preservation challenges](https://doi.org/10.1108/AJIM-05-2025-0286)
+* [Guidance on assessing readiness to manage data according to Findable, Accessible, Interoperable, Reusable (FAIR) principles](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/guidance-assessing-readiness-manage-data-according-findable-accessible-interoperable-reusable-principles.html)
+* [GC White Paper: Data Sovereignty and Public Cloud](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty/gc-white-paper-data-sovereignty-public-cloud.html)
+* [Sustainability of Digital Formats: Planning for Library of Congress Collections](https://www.loc.gov/preservation/digital/formats/index.html)
+* [Cloud-Optimized Geospatial Formats Guide](https://guide.cloudnativegeo.org/)
+
 **Data Stability:**
 Beyond technical barriers, open data can be ephemeral. Links break, portals are reorganized, and priorities shift, causing valuable datasets to vanish from the public web. This instability makes it risky to build long-term research or software on top of data providers.
 
@@ -35,18 +47,6 @@ Our data is optimized for:
 * **Serving:** [GeoServer](https://geoserver.org/), [Martin](https://martin.maplibre.org/), and [ZOO-Project](https://zoo-project.org/).
 * **Serverless:** [Cloudflare Workers](https://workers.cloudflare.com/), [AWS Lambda](https://aws.amazon.com/lambda/), and [Google Cloud Run functions](https://cloud.google.com/functions).
 * **Enterprise:** Esri based products ([ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview), [ArcGIS Server](https://enterprise.arcgis.com/)).
-
-## What Guides Us
-
-We prioritize our work in a utilitarian manner, aiming to provide the greatest amount of good to the greatest amount of individuals. Our approach is guided by the principles of **digital preservation** and the need to keep public information accessible over the long term.
-
-Our approach is guided by the following:
-
-* [Link rot in LIS literature: a 20-year study of web citation decay, recovery and preservation challenges](https://doi.org/10.1108/AJIM-05-2025-0286)
-* [Guidance on assessing readiness to manage data according to Findable, Accessible, Interoperable, Reusable (FAIR) principles](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/guidance-assessing-readiness-manage-data-according-findable-accessible-interoperable-reusable-principles.html)
-* [GC White Paper: Data Sovereignty and Public Cloud](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty/gc-white-paper-data-sovereignty-public-cloud.html)
-* [Sustainability of Digital Formats: Planning for Library of Congress Collections](https://www.loc.gov/preservation/digital/formats/index.html)
-* [Cloud-Optimized Geospatial Formats Guide](https://guide.cloudnativegeo.org/)
 
 ## Explore Sample Datasets
 
@@ -81,12 +81,12 @@ flowchart TD
     subgraph df [Dissemination Formats]
         Parquet@{ shape: lean-l}
         FlatGeoBuf@{ shape: lean-l}
-        MVT@{ shape: lean-l}
-        MLT@{ shape: lean-l}
+        VectorTiles@{ shape: lean-l, label: "Vector Tiles"}
+        NextGenVectorTiles@{ shape: lean-l, label: "Next-Gen Vector Tiles"}
         PMTiles@{ shape: lean-l}
         GeoPackage@{ shape: lean-l}
         FileGeodatabase@{shape: lean-l, label: "File Geodatabase"}
-        COG@{ shape: lean-l}
+        GeoTIFF@{ shape: lean-l}
         Zarr@{ shape: lean-l}
         WebP@{ shape: lean-l}
         JPG@{ shape: lean-l}
@@ -141,23 +141,23 @@ flowchart TD
     a10@{animate: true, animation: fast}
     Parquet a100@--> FileGeodatabase
     a100@{animate: true, animation: slow}
-    FlatGeoBuf a11@--> MVT
+    FlatGeoBuf a11@--> VectorTiles
     a11@{animate: true, animation: fast}
-    FlatGeoBuf a91@--> MLT
+    FlatGeoBuf a91@--> NextGenVectorTiles
     a91@{animate: true, animation: fast}
-    MVT a90@ --> PMTiles
+    VectorTiles a90@ --> PMTiles
     a90@{animate: true, animation: fast}
-    MVT a96@ --> GeoPackage
+    VectorTiles a96@ --> GeoPackage
     a96@{animate: true, animation: slow}
-    MLT a92@ --> PMTiles
+    NextGenVectorTiles a92@ --> PMTiles
     a92@{animate: true, animation: slow}
-    MLT a95@ --> GeoPackage
+    NextGenVectorTiles a95@ --> GeoPackage
     a95@{animate: true, animation: slow}
     Zarr a12@ --> WebP
     a12@{animate: true, animation: slow}
     df a13@ --> di
     a13@{animate: true, animation: slow}
-    COG a14@--> WebP
+    GeoTIFF a14@--> WebP
     a14@{animate: true, animation: slow}
     WebP a93@--> PMTiles 
     a93@{animate: true, animation: slow}
@@ -203,9 +203,9 @@ flowchart TD
     click FlatGeoBuf "https://flatgeobuf.org/" _blank
     click GeoPackage "https://www.geopackage.org/" _blank
     click FileGeodatabase "https://gdal.org/en/stable/drivers/vector/openfilegdb.html" _blank
-    click MVT "https://github.com/mapbox/vector-tile-spec/" _blank
-    click MLT "https://github.com/maplibre/maplibre-tile-spec/" _blank
-    click COG "https://cogeo.org/" _blank
+    click VectorTiles "https://github.com/mapbox/vector-tile-spec/" _blank
+    click NextGenVectorTiles "https://github.com/maplibre/maplibre-tile-spec/" _blank
+    click GeoTIFF "https://cogeo.org/" _blank
     click Zarr "https://github.com/zarr-developers/geozarr-spec/" _blank
     click WebP "https://developers.google.com/speed/webp/" _blank
     click PMTiles "https://github.com/protomaps/PMTiles/blob/main/spec/v3/spec.md" _blank
@@ -225,7 +225,7 @@ flowchart TD
 
     %% APPLY STYLES TO LINKED NODES
     class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
-    class Parquet,FlatGeoBuf,GeoPackage,FileGeodatabase,MVT,MLT,COG,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
+    class Parquet,FlatGeoBuf,GeoPackage,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
     class DecentralizedDistribution,HTTP,Metadata,GeoSpatialServices linkNode
 ```
 
