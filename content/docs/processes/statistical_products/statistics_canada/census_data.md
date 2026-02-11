@@ -6,6 +6,16 @@ next: /docs/processes/orthoimagery/
 
 Look through our [process-statcan-data-labs](https://github.com/dataforcanada/process-statcan-data-labs) repo for the datasets processed. There is still lots of work to do to make it ready for systems.
 
+## Background
+
+{{< callout type="important" >}}
+  These concepts are key to working with Statistical and Census data from Statistics Canada.
+{{< /callout >}}
+
+To work with Census data, you need to look into Statistics Canada's [geographic hiearchy](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/fig/index-eng.cfm?ID=F1_1) and use the [Census of Population 2021 Dictionary](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/index-eng.cfm) to understand their conceptual model.
+
+![geographic hierarchy](geographic-hiearchy.svg).
+
 ## Download and Preview
 
 Below is a table of datasets generated from our current processing pipeline. You can download the raw **Parquet** files directly or use the **Map Preview** links to inspect the data as vector tiles.

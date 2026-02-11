@@ -6,6 +6,16 @@ prev: /docs/processes/statistical_products/
 
 Look through our [process-statcan-data-labs](https://github.com/dataforcanada/process-statcan-data-labs) repo for the datasets processed. There is still lots of work to do to make it ready for systems.
 
+## Background
+
+{{< callout type="important" >}}
+  These concepts are key to working with Statistical and Census data from Statistics Canada.
+{{< /callout >}}
+
+To work with Census data, you need to look into Statistics Canada's [geographic hiearchy](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/fig/index-eng.cfm?ID=F1_1) and use the [Census of Population 2021 Dictionary](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/index-eng.cfm) to understand their conceptual model.
+
+![geographic hierarchy](geographic-hiearchy.svg).
+
 ## Download and Preview
 
 Here is a table of some of the datasets created from the current process.
@@ -49,3 +59,4 @@ Here is a table of some of the datasets created from the current process.
 | Canada | CA  | 2021 | StatCan  | ca_statcan_dissemination_areas_cartographic_2021                                                                                                                              | [Download](https://data-01.labs.dataforcanada.org/processed/ca_statcan_dissemination_areas_cartographic_2021.parquet)                                   |                                                                                                               |                                                                                                                   |                                                                                                                 |
 | Canada | CA  | 2021 | StatCan  | [ca_statcan_dissemination_blocks_digital_2021](https://pmtiles.io/#url=https://data-01.labs.dataforcanada.org/processed/ca_statcan_dissemination_blocks_digital_2021.pmtiles) | [Download](https://data-01.labs.dataforcanada.org/processed/ca_statcan_dissemination_blocks_digital_2021.parquet)                                       | [Download](https://data-01.labs.dataforcanada.org/processed/ca_statcan_dissemination_blocks_digital_2021.fgb) | [Download](https://data-01.labs.dataforcanada.org/processed/ca_statcan_dissemination_blocks_digital_2021.pmtiles) | [TileJSON](https://tiles-01.labs.dataforcanada.org/processed/ca_statcan_dissemination_blocks_digital_2021.json) |
 | Canada | CA  | 2021 | StatCan  | ca_statcan_dissemination_blocks_cartographic_2021                                                                                                                             | [Download](https://data-01.labs.dataforcanada.org/processed/ca_statcan_dissemination_areas_cartographic_2021.parquet)                                   |                                                                                                               |                                                                                                                   |                                                                                                                 |
+
