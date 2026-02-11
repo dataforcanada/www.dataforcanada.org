@@ -62,9 +62,14 @@ See our processing pipeline in action. View samples and documentation for our cu
 
 **Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value [statistical](https://www.dataforcanada.org/docs/processes/statistical_products/), [foundational](https://www.dataforcanada.org/docs/processes/foundation/#download-and-preview), and [orthoimagery](https://www.dataforcanada.org/docs/processes/orthoimagery/#download-and-preview) datasets first.
 
+
 ```mermaid
 flowchart TD
     classDef linkNode stroke:#0000EE,color:#0000EE,stroke-width:2px;
+    
+    %% ---------------------------------------------------------
+    %% 1. DATA SOURCES
+    %% ---------------------------------------------------------
     subgraph ds [Data Sources]
         Statistical@{ shape: lean-l}
         Foundation@{ shape: lean-l}
@@ -75,29 +80,63 @@ flowchart TD
         WebCorpus@{ shape: lean-l, label: "Web Corpus"}
     end
 
+    %% ---------------------------------------------------------
+    %% 2. PROCESSING PIPELINE
+    %% ---------------------------------------------------------
     subgraph pp [Processing Pipeline]
         Raw@{ shape: rect, label: "Raw Data Ingestion"}
         Transform@{ shape: rect, label: "Transform and Optimize"}
+        
+        %% Internal Link
+        Raw --> Transform
     end
 
+    %% ---------------------------------------------------------
+    %% 3. DISSEMINATION FORMATS
+    %% ---------------------------------------------------------
     subgraph df [Dissemination Formats]
-        Parquet@{ shape: lean-l}
+        
+        %% Box: Long-Term Storage (Pastel Gold)
+        subgraph sot [Long-Term Storage]
+            Parquet@{ shape: lean-l}
+            Zarr@{ shape: lean-l}
+            GeoTIFF@{ shape: lean-l}
+            AV1@{ shape: lean-l, label: "Next-Gen Video"}
+            JPEGXL@{ shape: lean-l, label: "Next-Gen Imagery"}
+            WARC@{ shape: lean-l, label: "Unstructured Web Data"}
+        end
+
+        %% Intermediate format (Standalone)
         FlatGeoBuf@{ shape: lean-l}
-        VectorTiles@{ shape: lean-l, label: "Vector Tiles"}
-        NextGenVectorTiles@{ shape: lean-l, label: "Next-Gen Vector Tiles"}
-        PMTiles@{ shape: lean-l}
-        SQLite@{ shape: lean-l}
-        FileGeodatabase@{shape: lean-l, label: "File Geodatabase"}
-        GeoTIFF@{ shape: lean-l}
-        Zarr@{ shape: lean-l}
-        WebP@{ shape: lean-l}
-        JPG@{ shape: lean-l}
-        PNG@{ shape: lean-l}
-        JPEGXL@{ shape: lean-l, label: "JPEG XL"}
-        AV1@{ shape: lean-l, label: "AV1"}
-        WARC@{ shape: lean-l}
+
+        %% Box: Vector Tiles (Pastel Orange)
+        subgraph vt [Vector Tiles]
+            VectorTiles@{ shape: lean-l, label: "Mapbox Vector Tiles"}
+            NextGenVectorTiles@{ shape: lean-l, label: "Next-Gen Vector Tiles"}
+        end
+
+        %% Box: Visuals (Pastel Blue - No Name)
+        subgraph visuals [" "]
+            WebP@{ shape: lean-l}
+            JPG@{ shape: lean-l}
+            PNG@{ shape: lean-l}
+        end
+
+        %% Box: Portable Databases (Pastel Green)
+        subgraph pkg [Portable Databases]
+            PMTiles@{ shape: lean-l}
+            SQLite@{ shape: lean-l}
+        end
+
+        %% Box: Enterprise (Pastel Purple)
+        subgraph ent [Enterprise]
+            FileGeodatabase@{shape: lean-l, label: "File Geodatabase"}
+        end
     end
 
+    %% ---------------------------------------------------------
+    %% 4. DISTRIBUTION INFRASTRUCTURE
+    %% ---------------------------------------------------------
     subgraph di [Distribution Infrastructure]
         ObjectStorage@{ shape: bow-rect, label: "Object Storage"}
         Metadata@{ shape: rect, label: "FAIR Data Catalog"}
@@ -105,96 +144,119 @@ flowchart TD
         DecentralizedDistribution@{ shape: rect, label: "Decentralized Distribution"}
     end
 
+    %% ---------------------------------------------------------
+    %% 5. EXPERIMENTAL INFRASTRUCTURE
+    %% ---------------------------------------------------------
     subgraph ei [Experimental Infrastructure]
         GeoSpatialServices@{ shape: rect, label: "Geospatial Services"}
-        %%Martin@{ shape: rect}
-        %%GeoServer@{ shape: rect}
-        %%ZOOProject@{ shape: rect, label: "ZOO-Project"}
-        %%BBOXServer@{ shape: rect, label: "BBOX Server"}
-        %%Panoramax@{ shape: rect}
-        %%Pelias@{ shape: rect}
     end
 
+    %% ---------------------------------------------------------
+    %% 6. CONSUMPTION
+    %% ---------------------------------------------------------
     subgraph "Consumption"
         DataSci@{ shape: rect, label: "Data People & Developers"}
         Systems@{ shape: rect, label: "Systems"}
     end
 
-    %% Relationships
-    Statistical a1@--> Raw
+    %% =========================================================
+    %% RELATIONSHIPS
+    %% =========================================================
+
+    %% Data Sources --> Processing Pipeline (Box)
+    Statistical a1@--> pp
     a1@{animate: true, animation: slow}
-    Foundation a2@--> Raw
+    Foundation a2@--> pp
     a2@{animate: true, animation: slow}
-    Orthoimagery a3@--> Raw
+    Orthoimagery a3@--> pp
     a3@{animate: true, animation: slow}
-    EnvironmentClimate a5@--> Raw
+    EnvironmentClimate a5@--> pp
     a5@{animate: true, animation: fast}
-    FieldImagery a4@--> Raw
+    FieldImagery a4@--> pp
     a4@{animate:true, animation: fast}
-    Elevation a6@--> Raw
+    Elevation a6@--> pp
     a6@{animate: true, animation: slow}
-    WebCorpus a7@--> Raw
+    WebCorpus a7@--> pp
     a7@{animate: true, animation: fast}
-    Raw a8@--> Transform
-    a8@{animate: true, animation: slow}
-    Transform a9@--> df
+
+    %% Processing Pipeline --> Long-Term Storage (Box)
+    Transform a9@--> sot
     a9@{animate: true, animation: slow}
-    Parquet a10@--> FlatGeoBuf
+
+    %% Long-Term Storage --> FlatGeoBuf
+    sot a10@--> FlatGeoBuf
     a10@{animate: true, animation: fast}
-    Parquet a100@--> FileGeodatabase
-    Parquet a110@--> SQLite
-    a110@{animate: true, animation: slow}
-    a100@{animate: true, animation: slow}
-    FlatGeoBuf a11@--> VectorTiles
+    
+    %% FlatGeoBuf --> Vector Tiles (Box)
+    FlatGeoBuf a11@--> vt
     a11@{animate: true, animation: fast}
-    FlatGeoBuf a91@--> NextGenVectorTiles
-    a91@{animate: true, animation: fast}
-    VectorTiles a90@ --> PMTiles
-    a90@{animate: true, animation: fast}
-    VectorTiles a96@ --> SQLite
-    a96@{animate: true, animation: slow}
-    NextGenVectorTiles a92@ --> PMTiles
-    a92@{animate: true, animation: slow}
-    NextGenVectorTiles a95@ --> SQLite
-    a95@{animate: true, animation: slow}
-    Zarr a12@ --> WebP
+
+    %% Long-Term Storage --> Visuals (Box)
+    sot a12@--> visuals
     a12@{animate: true, animation: slow}
-    df a13@ --> di
-    a13@{animate: true, animation: slow}
-    GeoTIFF a14@--> WebP
-    a14@{animate: true, animation: slow}
-    WebP a93@--> PMTiles 
+
+    %% Vector Tiles --> Portable Databases (Box)
+    vt a90@--> pkg
+    a90@{animate: true, animation: fast}
+
+    %% Visuals --> Portable Databases (Box)
+    visuals a93@--> pkg
     a93@{animate: true, animation: slow}
-    WebP a94@--> SQLite
-    a94@{animate: true, animation: slow}
-    WebP a103@--> JPG
-    a103@{animate: true, animation: slow}
-    WebP a104@--> PNG
-    a104@{animate: true, animation: slow}
-	JPG a101@--> FileGeodatabase
-    a101@{animate: true, animation: slow}
-	PNG a102@--> FileGeodatabase
+
+    %% Long-Term Storage --> Enterprise (Box)
+    sot a100@--> ent
+    a100@{animate: true, animation: slow}
+
+    %% Visuals --> Enterprise (Box)
+    visuals a102@--> ent
     a102@{animate: true, animation: slow}
+
+    %% Dissemination Formats --> Distribution Infrastructure
+    df a13@--> di
+    a13@{animate: true, animation: slow}
+
+    %% Distribution Infrastructure Flow
     ObjectStorage a15@--> Metadata
     a15@{animate: true, animation: slow}
     Metadata a16@--> HTTP
     a16@{animate: true, animation: slow}
+    
     HTTP a17@--> ei
     a17@{animate: true, animation: slow}
     HTTP a18@--> DecentralizedDistribution
     a18@{animate: true, animation: slow}
     HTTP a19@--> DataSci
     a19@{animate: true, animation: slow}
+    
     DecentralizedDistribution a20@--> Systems
     a20@{animate: true, animation: fast}
     DecentralizedDistribution a21@--> DataSci
     a21@{animate: true, animation: fast}
+    
     Systems a22@ --> DataSci
     a22@{animate: true, animation: fast}
     ei a23@ --> DataSci
     a23@{animate: true, animation: slow}
 
-    %% URLs
+    %% =========================================================
+    %% STYLING
+    %% =========================================================
+    
+    %% Color Palette (Option 1: Functional)
+    style sot fill:#FFF9C4
+    style ent fill:#E1BEE7
+    style vt fill:#FFCCBC
+    style pkg fill:#C8E6C9
+    style visuals fill:#B3E5FC
+    
+    %% Link Node Styling
+    class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
+    class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
+    class DecentralizedDistribution,HTTP,Metadata,GeoSpatialServices linkNode
+
+    %% =========================================================
+    %% CLICK ACTIONS
+    %% =========================================================
     click Foundation "https://github.com/dataforcanada/process-foundation-labs/" _blank
     click Statistical "https://github.com/dataforcanada/process-statistical-labs/" _blank
     click Orthoimagery "https://github.com/dataforcanada/process-orthoimagery-labs/" _blank
@@ -220,18 +282,8 @@ flowchart TD
     click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click GeoSpatialServices "https://github.com/dataforcanada/geo-services-labs/" _blank
-    click Martin "https://martin.maplibre.org/" _blank
-    click GeoServer "https://geoserver.org/" _blank
-    click ZOOProject "https://zoo-project.org/" _blank
-    click BBOXServer "https://www.bbox.earth/" _blank
-    click Panoramax "https://gitlab.com/panoramax" _blank
-    click Pelias "https://pelias.io" _blank
-
-    %% APPLY STYLES TO LINKED NODES
-    class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
-    class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
-    class DecentralizedDistribution,HTTP,Metadata,GeoSpatialServices linkNode
 ```
+
 
 ## Get Involved
 
