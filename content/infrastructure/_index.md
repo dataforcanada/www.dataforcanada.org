@@ -72,6 +72,7 @@ sidebar:
                 location: 'Toronto, Ontario, Canada',
                 coords: [-79.38, 43.65], 
                 specs: '50Gbps / 50Gbps, 950GB Flash Storage',
+                protocol: 'P2P',
                 jurisdiction: 'Singapore',
                 color: '#9966CC' 
             },
@@ -129,6 +130,7 @@ sidebar:
                 location: 'Amsterdam, Netherlands',
                 coords: [4.90, 52.37],
                 specs: '50Gbps / 50Gbps, 950GB Flash Storage',
+                protocol: 'P2P',
                 jurisdiction: 'Singapore',
                 color: '#9966CC' 
             },
@@ -138,6 +140,7 @@ sidebar:
                 location: 'Amsterdam, Netherlands',
                 coords: [4.90, 52.37],
                 specs: '50Gbps / 50Gbps, 6TB HDD Storage',
+                protocol: 'P2P',
                 jurisdiction: 'Singapore',
                 color: '#9966CC' 
             },
