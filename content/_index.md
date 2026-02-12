@@ -88,7 +88,8 @@ flowchart TD
         DataforCanadaPackagesCollection@{ shape: rect, label: "Data for Canada Packages Collection"}
         Raw@{ shape: rect, label: "Raw Data Ingestion"}
         %% Internal Link
-        Raw --> DataforCanadaPackagesCollection
+        Raw a1000@ <--> DataforCanadaPackagesCollection
+        a1000@{animate: true, animation: slow}
     end
 
     %% ---------------------------------------------------------
@@ -141,7 +142,7 @@ flowchart TD
     subgraph di [Distribution Infrastructure]
         ObjectStorage@{ shape: bow-rect, label: "Object Storage"}
         Metadata@{ shape: rect, label: "FAIR Data Catalogue"}
-        HTTP@{ shape: rect, label: "Static Files"}
+        HTTP@{ shape: rect, label: "Systems-Ready Data"}
         DecentralizedDistribution@{ shape: rect, label: "Decentralized Distribution"}
     end
 
@@ -212,20 +213,20 @@ flowchart TD
     a102@{animate: true, animation: slow}
 
     %% Dissemination Formats --> Distribution Infrastructure
-    df a13@--> di
+    df a13@<--> di
     a13@{animate: true, animation: slow}
 
     %% Distribution Infrastructure Flow
-    ObjectStorage a15@--> Metadata
+    ObjectStorage a15@<--> Metadata
     a15@{animate: true, animation: slow}
-    Metadata a16@--> HTTP
+    Metadata a16@<--> HTTP
     a16@{animate: true, animation: slow}
     
-    HTTP a17@--> ei
+    HTTP a17@<--> ei
     a17@{animate: true, animation: slow}
-    HTTP a18@--> DecentralizedDistribution
+    HTTP a18@<--> DecentralizedDistribution
     a18@{animate: true, animation: slow}
-    HTTP a19@--> DataSci
+    HTTP a19@<--> DataSci
     a19@{animate: true, animation: slow}
     
     DecentralizedDistribution a20@--> Systems
@@ -233,9 +234,9 @@ flowchart TD
     DecentralizedDistribution a21@--> DataSci
     a21@{animate: true, animation: fast}
     
-    Systems a22@ --> DataSci
+    Systems a22@ <--> DataSci
     a22@{animate: true, animation: fast}
-    ei a23@ --> DataSci
+    ei a23@ <--> DataSci
     a23@{animate: true, animation: slow}
 
     %% =========================================================
@@ -247,6 +248,8 @@ classDef linkNode stroke:#333333,color:#333333,stroke-width:1.5px;
 style pp fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
 style DataforCanadaPackagesCollection fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style FAIRDataDis fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style DecentralizedDistribution fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style HTTP fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style Metadata fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style Raw fill:#E57373,stroke:#C62828,color:#000000
 
@@ -272,10 +275,10 @@ style FlatGeoBuf fill:#FBC02D,stroke:#F9A825,color:#000000
 style visuals fill:#FBC02D,stroke:#F9A825,color:#000000
 
 style ent fill:#66BB6A,stroke:#2E7D32,color:#000000
+style DataSci fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 
 class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
 class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
-class DecentralizedDistribution,HTTP,GeoSpatialServices linkNode
 
     %% =========================================================
     %% CLICK ACTIONS
@@ -305,7 +308,7 @@ class DecentralizedDistribution,HTTP,GeoSpatialServices linkNode
     click WARC "https://github.com/iipc/warc-specifications/" _blank
     click FAIRDataDis "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
 
-    click HTTP "https://www.dataforcanada.org/docs/getting_started/" _blank
+    click HTTP "https://www.dataforcanada.org/docs/" _blank
     click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click GeoSpatialServices "https://github.com/dataforcanada/geo-services-labs/" _blank
