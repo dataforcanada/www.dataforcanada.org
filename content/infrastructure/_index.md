@@ -72,9 +72,19 @@ sidebar:
                 location: 'Toronto, Ontario, Canada',
                 coords: [-79.38, 43.65], 
                 specs: '50Gbps / 50Gbps, 950GB Flash Storage',
-                protocol: 'P2P',
+                protocol: 'P2P, SSH',
                 jurisdiction: 'Singapore',
                 color: '#9966CC' 
+            },
+            {
+                id: 'geo-services-01',
+                name: 'Geo Services 01',
+                location: 'Tottenham, Ontario, Canada',
+                coords: [-77, 45],
+                specs: '2.5GBps / 200MBit, 60TB HDD Storage, 14TB Flash Storage',
+                protocol: 'All',
+                jurisdiction: 'Canada',
+                color: '#EA2839' 
             },
             { 
                 id: 'vancouver', 
@@ -120,9 +130,19 @@ sidebar:
                 location: 'Manassas, Virginia, USA',
                 coords: [-77.48, 38.75],
                 specs: '2.5Gbps / 2.5Gbps, 512GB Flash Storage',
-                protocol: 'HTTP & P2P',
+                protocol: 'All',
                 jurisdiction: 'Germany',
                 color: '#FFCC00' 
+            },
+            {
+                id: 'backup-node-01', 
+                name: 'Backup Node 01', 
+                location: 'Fremont, California, USA',
+                specs: '10Gbps / 10Gbps, 2TB Storage',
+                coords: [-121, 40],
+                protocol: 'SSH, Multi',
+                jurisdiction: 'USA',
+                color: '#002147' 
             },
             { 
                 id: 'smart-node-02', 
@@ -130,7 +150,7 @@ sidebar:
                 location: 'Amsterdam, Netherlands',
                 coords: [4.90, 52.37],
                 specs: '50Gbps / 50Gbps, 950GB Flash Storage',
-                protocol: 'P2P',
+                protocol: 'P2P, SSH',
                 jurisdiction: 'Singapore',
                 color: '#9966CC' 
             },
@@ -140,7 +160,7 @@ sidebar:
                 location: 'Amsterdam, Netherlands',
                 coords: [4.90, 52.37],
                 specs: '50Gbps / 50Gbps, 6TB HDD Storage',
-                protocol: 'P2P',
+                protocol: 'P2P, SSH',
                 jurisdiction: 'Singapore',
                 color: '#9966CC' 
             },
@@ -152,7 +172,7 @@ sidebar:
                 specs: 'Replicated in Budapest',
                 protocol: 'HTTP',
                 jurisdiction: 'Switzerland',
-                color: '#D52B1E' 
+                color: '#FFFFFF' 
             },
             { 
                 id: 'budapest', 
@@ -161,38 +181,10 @@ sidebar:
                 coords: [19.04, 47.50],
                 protocol: 'HTTP',
                 jurisdiction: 'Switzerland',
-                color: '#D52B1E' 
+                color: '#FFFFFF' 
             }
         ];
 
-        // Connections between nodes
-        const connections = [
-            { source: 'smart-node-01', target: 'smart-node-02', color: '#9966CC' },
-            { source: 'smart-node-01', target: 'smart-node-03', color: '#9966CC' },
-            { source: 'san-francisco', target: 'vancouver', color: '#999' },
-            { source: 'geneva', target: 'budapest', color: '#D52B1E' },
-            { source: 'smart-node-01', target: 'source-cooperative-oregon', color: '#9966CC' },
-            { source: 'smart-node-01', target: 'r2', color: '#9966CC' },
-            { source: 'smart-node-01', target: 'geneva', color: '#9966CC' },
-            { source: 'smart-node-01', target: 'san-francisco', color: '#9966CC' },
-            { source: 'smart-node-01', target: 'vps-01', color: '#9966CC' },
-            { source: 'smart-node-02', target: 'source-cooperative-oregon', color: '#9966CC' },
-            { source: 'smart-node-02', target: 'r2', color: '#9966CC' },
-            { source: 'smart-node-02', target: 'geneva', color: '#9966CC' },
-            { source: 'smart-node-02', target: 'san-francisco', color: '#9966CC' },
-            { source: 'smart-node-02', target: 'vps-01', color: '#9966CC' },
-            { source: 'smart-node-03', target: 'source-cooperative-oregon', color: '#9966CC' },
-            { source: 'smart-node-03', target: 'r2', color: '#9966CC' },
-            { source: 'smart-node-03', target: 'geneva', color: '#9966CC' },
-            { source: 'smart-node-03', target: 'san-francisco', color: '#9966CC' },
-            { source: 'smart-node-03', target: 'vps-01', color: '#9966CC' },
-            { source: 'vps-01', target: 'smart-node-02', color: '#FFCC00' },
-            { source: 'vps-01', target: 'smart-node-03', color: '#FFCC00' },
-            { source: 'vps-01', target: 'r2', color: '#FFCC00' },
-            { source: 'vps-01', target: 'san-francisco', color: '#FFCC00' },
-            { source: 'vps-01', target: 'source-cooperative-oregon', color: '#FFCC00' },
-            { source: 'vps-01', target: 'geneva', color: '#FFCC00' }
-        ];
 
         const width = 960;
         const height = 600;
@@ -202,7 +194,8 @@ sidebar:
             .attr('height', height);
 
         const projection = d3.geoNaturalEarth1()
-            .scale(180)
+            .scale(355)
+            .center([-30, 50])
             .translate([width / 2, height / 2]);
 
         const path = d3.geoPath().projection(projection);
@@ -278,23 +271,6 @@ sidebar:
                 .enter().append('path')
                 .attr('class', 'land')
                 .attr('d', path);
-
-            // Draw connections
-            const connectionGroup = g.append('g');
-            connections.forEach(conn => {
-                const source = nodes.find(n => n.id === conn.source);
-                const target = nodes.find(n => n.id === conn.target);
-                if (source && target) {
-                    connectionGroup.append('path')
-                        .datum({
-                            type: 'LineString',
-                            coordinates: [source.coords, target.coords]
-                        })
-                        .attr('class', 'connection')
-                        .attr('d', path)
-                        .attr('stroke', conn.color);
-                }
-            });
 
             // Draw nodes with offsets for overlapping positions
             const nodeGroup = g.append('g');
