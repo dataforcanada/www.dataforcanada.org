@@ -250,6 +250,7 @@ style DataforCanadaPackagesCollection fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style FAIRDataDis fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style DecentralizedDistribution fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style HTTP fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style Systems fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style Metadata fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style Raw fill:#E57373,stroke:#C62828,color:#000000
 
@@ -275,7 +276,8 @@ style FlatGeoBuf fill:#FBC02D,stroke:#F9A825,color:#000000
 style visuals fill:#FBC02D,stroke:#F9A825,color:#000000
 
 style ent fill:#66BB6A,stroke:#2E7D32,color:#000000
-style DataSci fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style DataSci fill:#FFB74D,stroke:#EF6C00,color:#000000
+
 
 class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
 class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
