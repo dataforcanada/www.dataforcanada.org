@@ -21,7 +21,7 @@ We are open to feedback on the current file naming convention.
 `[iso-region]_[source-identifier]_[theme]_[iso-date]_[variant]_[version].[extension]`
 
 **Example**:
-`ca-ab_edmonton-2023A00054811061_orthoimagery_2023_075mm_v0.0.1.pmtiles`
+`ca-ab_city-of-edmonton-2023A00054811061_orthoimagery_2023_075mm_v0.0.1.pmtiles`
 
 #### **Component Breakdown**
 
@@ -29,11 +29,11 @@ We are open to feedback on the current file naming convention.
 | :--- | :--- | :--- | :--- |
 | **1. ISO Region** | The ISO 3166-2 code for the jurisdiction. | Lowercase. Hyphenated. | `ca-ab`, `ca` |
 | **_** | *Separator* | Underscore |  |
-| **2. Source / Location ID** | **Organization** OR **Location**. | Use `[colloquial-name]-[dguid]` for locations, OR `[organization-name]` for national bodies. | `edmonton-2023A00054811061` OR `statcan` |
+| **2. Data Source and DGUID** | **Data Source**. | Use `[data-source-name]` for the data source. | `city-of-edmonton-2023A00054811061` OR `statcan` |
 | **_** | *Separator* | Underscore |  |
-| **3. Theme** | The primary category or title of the dataset. | Lowercase. **snake_case** allowed for longer titles. | `orthoimagery`, `open_database_of_buildings` |
+| **3. Theme** | The primary category or title of the dataset. | Lowercase. **snake_case** allowed for longer titles. | `orthoimagery` |
 | **_** | *Separator* | Underscore |  |
-| **4. ISO Date** | The vintage of the data source. | **ISO 8601**. Flexible precision. | `2023`, `2023-06`, `2023-06-01` |
+| **4. ISO Date** | The vintage of the data source. | **ISO 8601**. Flexible precision. | `2023`, `2023-06`, `2023-06-01`, `2026-02-11T19:50:58` |
 | **_** | *Separator* | Underscore |  |
 | **5. Variant** | Resolution or specific subset info. | **No Projections.** Alphanumeric. Units included. | `075mm`, `30cm` |
 | **_** | *Separator* | Underscore |  |
@@ -45,8 +45,8 @@ We are open to feedback on the current file naming convention.
 
 This segment defines the "Who" or "Where" of the dataset.
 
-* **For Geographic Datasets:** Use the **Colloquial Name** + **Hyphen** + **DGUID**.
-  * *Example:* `edmonton-2023A00054811061`
+* **For Geographic Datasets:** Use the **Data Source Name** + **Hyphen** + **DGUID**.
+  * *Example:* `city-of-edmonton-2023A00054811061`
 * **For Organization Datasets:** Use the **Organization Acronym** when the data is national or not tied to a single DGUID.
   * *Example:* `statcan`, `cmhc`, `nrcan`
 
@@ -92,8 +92,8 @@ We use **SemVer** (`vMAJOR.MINOR.PATCH`) to track changes to datasets.
 
 ### **Scenario 1: High-Res Orthoimagery (Location Based)**
 
-* **Context:** Initial release (v0.0.1) of 7.5cm pixel resolution imagery of Edmonton, Alberta from 2023.
-* **File Name:** `ca-ab_edmonton-2023A00054811061_orthoimagery_2023_075mm_v0.0.1.pmtiles`
+* **Context:** Initial release (v0.0.1) of 7.5cm pixel resolution imagery of City of Edmonton, Alberta from 2023.
+* **File Name:** `ca-ab_city-of-edmonton-2023A00054811061_orthoimagery_2023_075mm_v0.0.1.pmtiles`
 * **Reference:** [Preview and Download Orthoimagery](https://www.dataforcanada.org/docs/processes/orthoimagery/#download-and-preview)
 
 ### **Scenario 2: National Organization Data (Source Based)**
