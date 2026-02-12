@@ -165,19 +165,19 @@ flowchart TD
     %% =========================================================
 
     %% Data Sources <--> Data for Canada Packages Collection (Box)
-    Statistical a1@<--> Raw
+    Statistical a1@<--> pp
     a1@{animate: true, animation: slow}
-    Foundation a2@<--> Raw
+    Foundation a2@<--> pp
     a2@{animate: true, animation: slow}
-    Orthoimagery a3@<--> Raw
+    Orthoimagery a3@<--> pp
     a3@{animate: true, animation: slow}
-    EnvironmentClimate a5@<--> Raw
+    EnvironmentClimate a5@<--> pp
     a5@{animate: true, animation: fast}
-    FieldImagery a4@<--> Raw
+    FieldImagery a4@<--> pp
     a4@{animate:true, animation: fast}
-    Elevation a6@<--> Raw
+    Elevation a6@<--> pp
     a6@{animate: true, animation: slow}
-    WebCorpus a7@<--> Raw
+    WebCorpus a7@<--> pp
     a7@{animate: true, animation: fast}
 
     pp a10@--> df
