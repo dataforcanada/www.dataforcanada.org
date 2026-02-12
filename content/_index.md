@@ -62,7 +62,6 @@ See our processing pipeline in action. View samples and documentation for our cu
 
 **Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value [statistical](https://www.dataforcanada.org/docs/processes/statistical_products/), [foundational](https://www.dataforcanada.org/docs/processes/foundation/#download-and-preview), and [orthoimagery](https://www.dataforcanada.org/docs/processes/orthoimagery/#download-and-preview) datasets first.
 
-
 ```mermaid
 flowchart TD
     classDef linkNode stroke:#0000EE,color:#0000EE,stroke-width:2px;
@@ -104,6 +103,7 @@ flowchart TD
             AV1@{ shape: lean-l, label: "Next-Gen Video"}
             JPEGXL@{ shape: lean-l, label: "Next-Gen Imagery"}
             WARC@{ shape: lean-l, label: "Unstructured Web Data"}
+            FAIRDataDis@{ shape: lean-l, label: "FAIR Data Catalogue"}
         end
 
         %% Intermediate format (Standalone)
@@ -139,7 +139,7 @@ flowchart TD
     %% ---------------------------------------------------------
     subgraph di [Distribution Infrastructure]
         ObjectStorage@{ shape: bow-rect, label: "Object Storage"}
-        Metadata@{ shape: rect, label: "FAIR Data Catalog"}
+        Metadata@{ shape: rect, label: "FAIR Data Catalogue"}
         HTTP@{ shape: rect, label: "Static Files"}
         DecentralizedDistribution@{ shape: rect, label: "Decentralized Distribution"}
     end
@@ -241,8 +241,6 @@ flowchart TD
     %% =========================================================
     %% STYLING
     %% =========================================================
-    
-    %% Color Palette (Option 1: Functional)
     style sot fill:#FFF9C4
     style ent fill:#E1BEE7
     style vt fill:#FFCCBC
@@ -251,7 +249,7 @@ flowchart TD
     
     %% Link Node Styling
     class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
-    class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
+    class FAIRDataDis,Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
     class DecentralizedDistribution,HTTP,Metadata,GeoSpatialServices linkNode
 
     %% =========================================================
@@ -278,12 +276,13 @@ flowchart TD
     click JPEGXL "https://jpeg.org/jpegxl/" _blank
     click AV1 "https://aomedia.org/specifications/av1/" _blank
     click WARC "https://github.com/iipc/warc-specifications/" _blank
+    click FAIRDataDis "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
+
     click HTTP "https://www.dataforcanada.org/docs/getting_started/" _blank
     click DecentralizedDistribution "https://www.dataforcanada.org/docs/dissemination/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click GeoSpatialServices "https://github.com/dataforcanada/geo-services-labs/" _blank
 ```
-
 
 ## Get Involved
 
