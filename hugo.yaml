@@ -61,7 +61,7 @@ menu:
       url: https://data-01.labs.dataforcanada.org/processed/
       parent: datasets
     - name: 📚 Docs
-      url: /docs/
+      url: /docs/getting_started/
       weight: 3
     - name: 📬 Contact
       url: /contact/

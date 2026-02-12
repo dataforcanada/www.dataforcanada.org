@@ -14,6 +14,7 @@ Look through our [GitHub Organization](https://github.com/orgs/dataforcanada/rep
   {{< card link="/docs/getting_started/file_naming_convention/" title="File Naming Convention" icon="cog" >}}
   {{< card link="/docs/dissemination/" title="Data Dissemination Strategy" icon="globe" >}}
   {{< card link="/docs/processes/" title="Processes" icon="cube" >}}
+  {{< card link="/infrastructure/" title="Infrastructure" icon="office-building" >}}
 {{< /cards >}}
 
 ## Our Data
@@ -21,7 +22,10 @@ Look through our [GitHub Organization](https://github.com/orgs/dataforcanada/rep
 {{< cards cols="3" >}}
   {{< card link="https://data-01.labs.dataforcanada.org/processed/" title="Data in The Lab" icon="cloud-download" >}}
   {{< card link="https://data-01.dataforcanada.org/processed/" title="Production Data" icon="check-circle" >}}
-  {{< card link="https://source.coop/dataforcanada/" title="Source Coop Mirror" icon="beaker" >}}
+{{< /cards >}}
+
+{{< cards cols="1" >}}
+  {{< card link="https://source.coop/dataforcanada/" title="Source Cooperative Mirror" icon="beaker" >}}
   {{< card link="https://zenodo.org/communities/dataforcanada/records/" title="Zenodo Mirror" icon="academic-cap" >}}
   {{< card link="https://archive.org/details/@diegoripley/uploads/" title="Internet Archive Mirror" icon="library" >}}
 {{< /cards >}}
