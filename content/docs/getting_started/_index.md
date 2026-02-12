@@ -1,17 +1,27 @@
 ---
 title: 🚀 Getting Started
 weight: 1
-next: /docs/processes
+next: /docs/gettings_started/file_naming_convention/
 sidebar:
   open: true
 ---
 
 Look through our [GitHub Organization](https://github.com/orgs/dataforcanada/repositories) to see ongoing work being done in this project.
 
-{{< cards >}}
+## Start Here
+
+{{< cards cols="2" >}}
   {{< card link="/docs/getting_started/file_naming_convention/" title="File Naming Convention" icon="cog" >}}
+  {{< card link="/docs/dissemination/" title="Data Dissemination Strategy" icon="globe" >}}
+  {{< card link="/docs/processes/" title="Processes" icon="cube" >}}
+{{< /cards >}}
+
+## Our Data
+
+{{< cards cols="3" >}}
   {{< card link="https://data-01.labs.dataforcanada.org/processed/" title="Data in The Lab" icon="cloud-download" >}}
   {{< card link="https://data-01.dataforcanada.org/processed/" title="Production Data" icon="check-circle" >}}
-  {{< card link="/docs/processes/" title="Processes" icon="cog" >}}
-  {{< card link="/docs/dissemination/" title="Data Dissemination Strategy" icon="globe" >}}
+  {{< card link="https://source.coop/dataforcanada/" title="Source Coop Mirror" icon="beaker" >}}
+  {{< card link="https://zenodo.org/communities/dataforcanada/records/" title="Zenodo Mirror" icon="academic-cap" >}}
+  {{< card link="https://archive.org/details/@diegoripley/uploads/" title="Internet Archive Mirror" icon="library" >}}
 {{< /cards >}}
