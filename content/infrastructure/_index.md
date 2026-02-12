@@ -90,7 +90,7 @@ sidebar:
                 name: 'Source Cooperative', 
                 location: 'Oregon, USA',
                 coords: [-122.68, 45.52],
-                specs: 'AWS S3 (us-west-2)',
+                specs: 'AWS S3 (us-west-2), ~50TB HDD Storage',
                 protocol: 'HTTP',
                 jurisdiction: 'USA',
                 color: '#002147' 
