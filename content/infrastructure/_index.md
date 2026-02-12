@@ -192,16 +192,16 @@ sidebar:
         ];
 
 
-        const width = 960;
-        const height = 600;
+        const width = 750;
+        const height = 400;
 
         const svg = d3.select('#map')
             .attr('width', width)
             .attr('height', height);
 
         const projection = d3.geoNaturalEarth1()
-            .scale(355)
-            .center([-30, 50])
+            .scale(280)
+            .center([-75, 65])
             .translate([width / 2, height / 2]);
 
         const path = d3.geoPath().projection(projection);
