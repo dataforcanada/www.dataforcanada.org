@@ -46,6 +46,7 @@ Our data is optimized for:
 | :--- | :--- |
 | **Core & Desktop** | [GDAL/OGR](https://gdal.org/), [QGIS](https://qgis.org/), [QField](https://qfield.org/) |
 | **Python & Data** | [GeoPandas](https://geopandas.org/), [Lonboard](https://developmentseed.org/lonboard/latest/), [DuckDB](https://duckdb.org/), [SedonaDB](https://sedona.apache.org/sedonadb/latest/)|
+| **Database** | [PostgreSQL](https://www.postgresql.org/) with [PostGIS](https://postgis.net/) and [pg_mooncake](https://www.mooncake.dev/pgmooncake/) extensions |
 | **Serving** | [GeoServer](https://geoserver.org/), [Martin](https://martin.maplibre.org/), [ZOO-Project](https://zoo-project.org/) |
 | **Serverless** | [Cloudflare Workers](https://workers.cloudflare.com/), [AWS Lambda](https://aws.amazon.com/lambda/), [Google Cloud Run functions](https://cloud.google.com/functions) |
 | **Enterprise** | [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview), [ArcGIS Enterprise](https://enterprise.arcgis.com/) |
@@ -241,6 +242,12 @@ flowchart TD
     %% =========================================================
     %% STYLING
     %% =========================================================
+
+    %% Opera concertmaster
+    style FAIRDataDis fill:#722F37,stroke:#333,stroke-width:2px,color:#fff
+    style Metadata fill:#722F37,stroke:#333,stroke-width:2px,color:#fff
+
+    %% The work
     style sot fill:#FFF9C4
     style ent fill:#E1BEE7
     style vt fill:#FFCCBC
@@ -249,8 +256,8 @@ flowchart TD
     
     %% Link Node Styling
     class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
-    class FAIRDataDis,Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
-    class DecentralizedDistribution,HTTP,Metadata,GeoSpatialServices linkNode
+    class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
+    class DecentralizedDistribution,HTTP,GeoSpatialServices linkNode
 
     %% =========================================================
     %% CLICK ACTIONS
