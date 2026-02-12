@@ -18,19 +18,19 @@ flowchart TD
         SourceCoop[Source Cooperative]
         Zenodo[Zenodo]
         InternetArchive[Internet Archive]
+        Community[Community]
     end
 
     Sources[Open Data Sources]
-    Processes[Processing Pipelines]
+    Processes[Data for Canada Packages Collection]
     Artifacts[Systems-Ready Data]
     
-    subgraph CoreInfra [Data for Canada]
+    subgraph CoreInfra [Infrastructure]
         Portal[Object Storage]
-        Metadata[FAIR Data Catalog]
+        Metadata[FAIR Data Catalogue]
     end
     
-    Distribution[Decentralized Distribution]
-    Torrent["P2P Technology"]
+    P2P["P2P Technology"]
     
     subgraph Consumers [Consumption]
         Users[Data People & Developers]
@@ -38,38 +38,49 @@ flowchart TD
     end
 
     %% Flow with Animations
-    Sources a1@--> Processes
+    Sources a1@<--> Processes
     a1@{animate: true, animation: slow}
     
-    Processes a2@--> Artifacts
+    Processes a2@<--> Artifacts
     a2@{animate: true, animation: slow}
     
-    Artifacts a3@--> Portal
+    Artifacts a3@<--> CoreInfra
     a3@{animate: true, animation: slow}
     
-    Portal a4@--> Metadata
+    Portal a4@<--> Metadata
     a4@{animate: true, animation: fast}
     
-    Metadata a5@--> Distribution
+    Metadata a5@<--> mirrors
     a5@{animate: true, animation: fast}
 
-    %% Distribution Logic
-    Distribution a7@-.->|Primary| mirrors
-    a7@{animate: true, animation: slow}
-    
-    Distribution a8@-.->|Resiliency| Torrent
+    CoreInfra a8@<-.->P2P
     a8@{animate: true, animation: slow}
 
     %% Mirror Connections
-    mirrors a12@--> Consumers
+    mirrors a12@<--> Consumers
     a12@{animate: true, animation: slow}
     
-    mirrors a9@-.->|Pooled| Torrent
+    mirrors a9@<-.->|Pooled| P2P
     a9@{animate: true, animation: fast}
 
-    %% Torrent Connections
-    Torrent a10@--> Consumers
+    %% P2P Connections
+    P2P a10@<--> Consumers
     a10@{animate: true, animation: fast}
+    
+    style Sources fill:#FFB74D,stroke:#EF6C00,color:#000000
+    style Artifacts fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    %% Opera concertmaster
+    style Metadata fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    class Metadata Metadata
+    style Processes fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    class Processes Processes
+    style SourceCoop fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    style Zenodo fill:#FFB74D,stroke:#EF6C00,color:#000000
+    style Community fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
+    style P2P fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    style InternetArchive fill:#66BB6A,stroke:#2E7D32,color:#000000
+    style Users fill:#FFB74D,stroke:#EF6C00,color:#000000
+    style Systems fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     
     %% Click Actions
     click Sources "https://www.dataforcanada.org/#high-level-overview" _blank
@@ -81,7 +92,7 @@ flowchart TD
     click InternetArchive "https://archive.org/details/@diegoripley/uploads/" _blank
 
     %% APPLY STYLES TO LINKED NODES
-    class Sources,Processes,Artifacts,Metadata,SourceCoop,Zenodo,InternetArchive linkNode
+    class Sources linkNode
 ```
 
 ## Dissemination Process
@@ -90,7 +101,7 @@ Once data products reach a production-ready state, they enter a dissemination fl
 
 * **Cloud-Native First:** Priority is given to performant, system-to-system file formats (e.g., Parquet) to enable high-throughput applications without the need for local parsing.
 * **Persistent Identification:** Every dataset version is assigned a DOI for citation and immutability.
-* **The FAIR Data Catalog:** Global metadata is aggregated into a single, queryable **[FAIR Data Catalog](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/)**. This catalog acts as the "brain" of the system, tracking all versions and DOIs, and directing users to the optimal source within our multi-tier storage network:
+* **The FAIR Data Catalogue:** Global metadata is aggregated into a single, queryable **[FAIR Data Catalogue](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/)**. This catalog acts as the "brain" of the system, tracking all versions and DOIs, and directing users to the optimal source within our multi-tier storage network:
   * **[Source Cooperative](https://source.coop/dataforcanada)** serves as our **primary mirror** for all datasets, including large-scale products like orthoimagery (see [Funding and Governance](https://docs.source.coop/#funding-and-governance)).
   * **[Zenodo](https://zenodo.org/communities/dataforcanada/)** serves as our repository for **long-term academic preservation** and provides a high-speed mirror for European users (see [Funding](https://about.zenodo.org/infrastructure/)).
   * **[The Internet Archive](https://archive.org)** is utilized **strategically** for specific datasets to ensure historical redundancy (see [Funding](https://projects.propublica.org/nonprofits/organizations/943242767)).
@@ -115,7 +126,6 @@ Our processing strategy relies on three immutable components to guarantee transp
 **Mirrored Source Artifacts:**
 Crucially, we do not rely solely on external version control systems like GitHub, which may change or disappear. A complete snapshot of the processing code, environment definitions, and manifests is bundled with every data release. These source artifacts are replicated across **Source Cooperative, Zenodo, the Internet Archive, Data for Canada infrastructure, and the community**, ensuring that the *method* of creation is preserved with the same redundancy as the *result*.
 
-
 ## Work in the Lab: Smart Nodes
 
 To further democratize access and ensure the persistence of Canada’s open data, we are experimenting with the features defined in previous work done by other organizations.
@@ -131,13 +141,11 @@ We are currently refining the concepts from [smart-node-transmission](https://gi
 
 ```mermaid
 graph TD
-    %% Node Definitions with custom labels
-    Catalog[("FAIR Data Catalog")]
+    Catalogue[("FAIR Data Catalogue")]
     SmartNode["Volunteer Smart Node<br/>(Limited Storage)"]
-    BTNetwork(["P2P Network<br/>(Massive Data Pool)"])
+    BTNetwork(["P2P Community Peers<br/>(Massive Data Pool)"])
 
-    %% The Process Flow
-    Catalog -->|"1. Syncs metadata"| SmartNode
+    Catalogue -->|"1. Syncs metadata"| SmartNode
     
     note["Note: The Node does NOT<br/>download the whole file."]
     SmartNode -.- note
@@ -146,12 +154,14 @@ graph TD
     
     BTNetwork -.->|"3. Transfers ONLY the requested blocks"| SmartNode
 
-    %% Optional Styling for visual clarity
-    classDef central fill:#e1f5fe,stroke:#0277bd,stroke-width:2px;
+    classDef central fill:#722F37,stroke:#333,stroke-width:2px,color:#fff; 
     classDef node fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,stroke-dasharray: 5 5;
     classDef network fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
     
-    class Catalog central;
+    class Catalogue central;
     class SmartNode node;
     class BTNetwork network;
+
+    click Catalogue "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/";
+    click SmartNode "https://www.dataforcanada.org/infrastructure/";
 ```
