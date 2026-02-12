@@ -81,18 +81,18 @@ flowchart TD
     end
 
     %% ---------------------------------------------------------
-    %% 2. PROCESSING PIPELINE
+    %% 3. PROCESSING PIPELINE
     %% ---------------------------------------------------------
     subgraph pp [Processing Pipeline]
+        %% Not the orchestrator, but a key towards achieving project mission.
+        DataforCanadaPackagesCollection@{ shape: rect, label: "Data for Canada Packages Collection"}
         Raw@{ shape: rect, label: "Raw Data Ingestion"}
-        Transform@{ shape: rect, label: "Transform and Optimize"}
-        
         %% Internal Link
-        Raw --> Transform
+        Raw --> DataforCanadaPackagesCollection
     end
 
     %% ---------------------------------------------------------
-    %% 3. DISSEMINATION FORMATS
+    %% 4. DISSEMINATION FORMATS
     %% ---------------------------------------------------------
     subgraph df [Dissemination Formats]
         
@@ -136,7 +136,7 @@ flowchart TD
     end
 
     %% ---------------------------------------------------------
-    %% 4. DISTRIBUTION INFRASTRUCTURE
+    %% 5. DISTRIBUTION INFRASTRUCTURE
     %% ---------------------------------------------------------
     subgraph di [Distribution Infrastructure]
         ObjectStorage@{ shape: bow-rect, label: "Object Storage"}
@@ -146,14 +146,14 @@ flowchart TD
     end
 
     %% ---------------------------------------------------------
-    %% 5. EXPERIMENTAL INFRASTRUCTURE
+    %% 6. EXPERIMENTAL INFRASTRUCTURE
     %% ---------------------------------------------------------
     subgraph ei [Experimental Infrastructure]
         GeoSpatialServices@{ shape: rect, label: "Geospatial Services"}
     end
 
     %% ---------------------------------------------------------
-    %% 6. CONSUMPTION
+    %% 7. CONSUMPTION
     %% ---------------------------------------------------------
     subgraph "Consumption"
         DataSci@{ shape: rect, label: "Data People & Developers"}
@@ -164,48 +164,47 @@ flowchart TD
     %% RELATIONSHIPS
     %% =========================================================
 
-    %% Data Sources --> Processing Pipeline (Box)
-    Statistical a1@--> pp
+    %% Data Sources <--> Data for Canada Packages Collection (Box)
+    Statistical a1@<--> Raw
     a1@{animate: true, animation: slow}
-    Foundation a2@--> pp
+    Foundation a2@<--> Raw
     a2@{animate: true, animation: slow}
-    Orthoimagery a3@--> pp
+    Orthoimagery a3@<--> Raw
     a3@{animate: true, animation: slow}
-    EnvironmentClimate a5@--> pp
+    EnvironmentClimate a5@<--> Raw
     a5@{animate: true, animation: fast}
-    FieldImagery a4@--> pp
+    FieldImagery a4@<--> Raw
     a4@{animate:true, animation: fast}
-    Elevation a6@--> pp
+    Elevation a6@<--> Raw
     a6@{animate: true, animation: slow}
-    WebCorpus a7@--> pp
+    WebCorpus a7@<--> Raw
     a7@{animate: true, animation: fast}
 
-    %% Processing Pipeline --> Long-Term Storage (Box)
-    Transform a9@--> sot
-    a9@{animate: true, animation: slow}
+    pp a10@--> df
+    a10@{animate: true, animation: fast}
 
     %% Long-Term Storage --> FlatGeoBuf
-    sot a10@--> FlatGeoBuf
+    sot a10@<--> FlatGeoBuf
     a10@{animate: true, animation: fast}
     
     %% FlatGeoBuf --> Vector Tiles (Box)
     FlatGeoBuf a11@--> vt
     a11@{animate: true, animation: fast}
 
-    %% Long-Term Storage --> Visuals (Box)
-    sot a12@--> visuals
+    %% Long-Term Storage <--> Visuals (Box)
+    sot a12@<--> visuals
     a12@{animate: true, animation: slow}
 
     %% Vector Tiles --> Portable Databases (Box)
-    vt a90@--> pkg
+    vt a90@<--> pkg
     a90@{animate: true, animation: fast}
 
     %% Visuals --> Portable Databases (Box)
-    visuals a93@--> pkg
+    visuals a93@<--> pkg
     a93@{animate: true, animation: slow}
 
     %% Long-Term Storage --> Enterprise (Box)
-    sot a100@--> ent
+    sot a100@<--> ent
     a100@{animate: true, animation: slow}
 
     %% Visuals --> Enterprise (Box)
@@ -243,25 +242,46 @@ flowchart TD
     %% STYLING
     %% =========================================================
 
-    %% Opera concertmaster
-    style FAIRDataDis fill:#722F37,stroke:#333,stroke-width:2px,color:#fff
-    style Metadata fill:#722F37,stroke:#333,stroke-width:2px,color:#fff
+classDef linkNode stroke:#333333,color:#333333,stroke-width:1.5px;
 
-    %% The work
-    style sot fill:#FFF9C4
-    style ent fill:#E1BEE7
-    style vt fill:#FFCCBC
-    style pkg fill:#C8E6C9
-    style visuals fill:#B3E5FC
-    
-    %% Link Node Styling
-    class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
-    class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
-    class DecentralizedDistribution,HTTP,GeoSpatialServices linkNode
+style pp fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
+style DataforCanadaPackagesCollection fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style FAIRDataDis fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style Metadata fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style Raw fill:#E57373,stroke:#C62828,color:#000000
+
+style df fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
+style sot fill:#EF9A9A,stroke:#C62828,color:#000000
+
+style Parquet fill:#FFCDD2,stroke:#E57373,color:#000000
+style Zarr fill:#FFCDD2,stroke:#E57373,color:#000000
+style GeoTIFF fill:#FFCDD2,stroke:#E57373,color:#000000
+style JPEGXL fill:#FFCDD2,stroke:#E57373,color:#000000
+style WARC fill:#FFCDD2,stroke:#E57373,color:#000000
+style AV1 fill:#FFCDD2,stroke:#E57373,color:#000000
+
+style ds fill:#FB8C00,stroke:#E65100,color:#000000
+
+style pkg fill:#FFB74D,stroke:#EF6C00,color:#000000
+style SQLite fill:#EF6C00,stroke:#E65100,color:#000000
+style PMTiles fill:#FFCC80,stroke:#FB8C00,color:#000000
+
+style vt fill:#FBC02D,stroke:#F9A825,color:#000000
+style FlatGeoBuf fill:#FBC02D,stroke:#F9A825,color:#000000
+
+style visuals fill:#FBC02D,stroke:#F9A825,color:#000000
+
+style ent fill:#66BB6A,stroke:#2E7D32,color:#000000
+
+class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
+class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
+class DecentralizedDistribution,HTTP,GeoSpatialServices linkNode
 
     %% =========================================================
     %% CLICK ACTIONS
     %% =========================================================
+    click DataforCanadaPackagesCollection "https://github.com/dataforcanada/dataforcanadapkgs-labs/" _blank
+
     click Foundation "https://github.com/dataforcanada/process-foundation-labs/" _blank
     click Statistical "https://github.com/dataforcanada/process-statistical-labs/" _blank
     click Orthoimagery "https://github.com/dataforcanada/process-orthoimagery-labs/" _blank
@@ -303,7 +323,7 @@ We are looking for academic institutions, research organizations, or **infrastru
 
 ### Contributing & Feedback
 
-Right now, we primarily need **feedback on our datasets and the underlying processes** used to generate them. If you have thoughts on data quality, format optimization, or pipeline improvements, we want to hear from you.
+Right now, we primarily need **feedback on file naming convention, our datasets and their underlying processes, and the infrastructure** used to generate them. If you have thoughts on data quality, format optimization, or pipeline improvements, we want to hear from you.
 
 * **Discussions:** Head over to [#dataforcanada:matrix.org](https://matrix.to/#/#dataforcanada:matrix.org) to chat, or go to the individual process GitHub repos to comment on specific issues.
 
