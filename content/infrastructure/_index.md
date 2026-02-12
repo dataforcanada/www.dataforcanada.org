@@ -185,6 +185,12 @@ sidebar:
             }
         ];
 
+        // Connections between nodes
+        const connections = [
+            { source: 'san-francisco', target: 'vancouver', color: '#002147' },
+            { source: 'geneva', target: 'budapest', color: '#FFFFFF' }
+        ];
+
 
         const width = 960;
         const height = 600;
@@ -208,6 +214,7 @@ sidebar:
             .datum(graticule)
             .attr('class', 'graticule')
             .attr('d', path);
+
 
         // Group nodes by location to handle overlapping
         const nodesByLocation = {};
@@ -271,6 +278,23 @@ sidebar:
                 .enter().append('path')
                 .attr('class', 'land')
                 .attr('d', path);
+            // Draw connections
+            const connectionGroup = g.append('g');
+            connections.forEach(conn => {
+                const source = nodes.find(n => n.id === conn.source);
+                const target = nodes.find(n => n.id === conn.target);
+                if (source && target) {
+                    connectionGroup.append('path')
+                        .datum({
+                            type: 'LineString',
+                            coordinates: [source.coords, target.coords]
+                        })
+                        .attr('class', 'connection')
+                        .attr('d', path)
+                        .attr('stroke', conn.color);
+                }
+            });
+
 
             // Draw nodes with offsets for overlapping positions
             const nodeGroup = g.append('g');
