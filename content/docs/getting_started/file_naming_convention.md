@@ -28,7 +28,7 @@ We are open to feedback on the current file naming convention.
 
 #### **Syntax**
 
-`[iso-region]_[source-identifier]_[theme]_[iso-date]_[variant]_[version].[extension]`
+`[iso-region]_[source-identifier]-DGUID_[packages_collection]_[iso-date]_[variant]_[version].[extension]`
 
 **Example**:
 `ca-ab_city-of-edmonton-2023A00054811061_orthoimagery_2023_075mm_v0.0.1.pmtiles`
@@ -37,7 +37,7 @@ We are open to feedback on the current file naming convention.
 
 | Segment | Definition | Format / Rules | Example |
 | :--- | :--- | :--- | :--- |
-| **1. ISO Region** | The ISO 3166-2 code for the jurisdiction. | Lowercase. Hyphenated. | `ca-ab`, `ca` |
+| **1. ISO Region** | The ISO 3166-2 code for the jurisdiction. | Lowercase. Hyphenated. | `ca`, `ca-ab` |
 | **_** | *Separator* | Underscore |  |
 | **2. Data Source and DGUID** | **Data Source and DGUID**. | Use `[data-source-name]` for the data source and the DGUID for the geographic area it covers. | `city-of-edmonton-2023A00054811061`, `statcan-2021A000011124` |
 | **_** | *Separator* | Underscore |  |
