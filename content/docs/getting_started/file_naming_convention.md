@@ -8,6 +8,16 @@ sidebar:
 
 ## Data for Canada: File Naming Convention (DFC-FNC)
 
+## Background
+
+{{< callout type="important" >}}
+  You will need to understand these concepts to fully grasp the file naming convention.
+{{< /callout >}}
+
+See Statistics Canada's [geographic hiearchy](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/fig/index-eng.cfm?ID=F1_1) and use the [Census of Population 2021 Dictionary](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/index-eng.cfm) to understand their conceptual model of representing Canada.
+
+![geographic hierarchy](geographic-hiearchy.svg).
+
 ### 1. The Current Schema
 
 All published datasets must adhere to the following structure to ensure files are machine-parsable, sortable by region, and identifiable by human readers. **This file naming convention will be modified as we solidify our processes**.
@@ -29,7 +39,7 @@ We are open to feedback on the current file naming convention.
 | :--- | :--- | :--- | :--- |
 | **1. ISO Region** | The ISO 3166-2 code for the jurisdiction. | Lowercase. Hyphenated. | `ca-ab`, `ca` |
 | **_** | *Separator* | Underscore |  |
-| **2. Data Source and DGUID** | **Data Source**. | Use `[data-source-name]` for the data source. | `city-of-edmonton-2023A00054811061` OR `statcan` |
+| **2. Data Source and DGUID** | **Data Source and DGUID**. | Use `[data-source-name]` for the data source and the DGUID for the geographic area it covers. | `city-of-edmonton-2023A00054811061`, `statcan-2021A000011124` |
 | **_** | *Separator* | Underscore |  |
 | **3. Theme** | The primary category or title of the dataset. | Lowercase. **snake_case** allowed for longer titles. | `orthoimagery` |
 | **_** | *Separator* | Underscore |  |
@@ -43,12 +53,10 @@ We are open to feedback on the current file naming convention.
 
 ### A. Source / Location ID (Flexible)
 
-This segment defines the "Who" or "Where" of the dataset.
+This segment defines the "Who" of the dataset.
 
-* **For Geographic Datasets:** Use the **Data Source Name** + **Hyphen** + **DGUID**.
+* Use the **Data Source Name** + **Hyphen** + **DGUID**.
   * *Example:* `city-of-edmonton-2023A00054811061`
-* **For Organization Datasets:** Use the **Organization Acronym** when the data is national or not tied to a single DGUID.
-  * *Example:* `statcan`, `cmhc`, `nrcan`
 
 ### B. The DGUID (Capitalization Exception)
 
@@ -66,8 +74,8 @@ Dates follow strictly **ISO 8601**, but the precision can vary based on the natu
 
 **Examples of Date Precision:**
 
-* **Month Precision:** `ca_statcan_national_address_register_2024-12_v0.0.1.parquet`
-* **Day Precision:** `ca_statcan_open_database_of_buildings_2025-04-15_v0.0.1.parquet`
+* **Month Precision:** `ca_statcan-TOFILL_2024-12_v0.0.1.parquet`
+* **Day Precision:** `ca_statcan-TOFILL_2025-04-15_v0.0.1.parquet`
 
 ### D. Variant
 
@@ -99,7 +107,7 @@ We use **SemVer** (`vMAJOR.MINOR.PATCH`) to track changes to datasets.
 ### **Scenario 2: National Organization Data (Source Based)**
 
 * **Context:** The Open Database of Buildings released by Statistics Canada on April 15, 2025.
-* **File Name:** `ca_statcan_census_pop_dissemination_areas_tabular_2021_v0.0.1.parquet`
+* **File Name:** `ca_statcan_TOFILL_2021_v0.0.1.parquet`
 * **Reference:** [Preview and Download Census Data](https://www.dataforcanada.org/docs/processes/statistical_products/statistics_canada/census_data/#how-to-use-the-map-preview)
 
 ## 4. Helper Tools
