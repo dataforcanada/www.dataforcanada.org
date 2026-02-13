@@ -100,7 +100,11 @@ We use **SemVer** (`vMAJOR.MINOR.PATCH`) to track changes to datasets.
 
 ### **Statistics Canada Geography Search**
 
-To accurately populate the **Location ID** segment of the schema, use this tool to find 2021 Census geographies and their corresponding DGUIDs.
+{{< callout type="warning" >}}
+  In the tool below, you can click on each individual **DGUID** to see their associated geography.
+{{< /callout >}}
+
+To accurately populate the **DGUID** segment of the schema, use this tool to find 2021 Census geographies and their corresponding DGUIDs.
 
 * **Tool URL:** [https://statcan-geography.labs.dataforcanada.org/](https://statcan-geography.labs.dataforcanada.org/)
 * **Source Code:** [GitHub Repository](https://github.com/dataforcanada/statcan-geography.labs.dataforcanada.org)
