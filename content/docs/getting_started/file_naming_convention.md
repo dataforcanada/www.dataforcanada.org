@@ -28,7 +28,7 @@ We are open to feedback on the current file naming convention.
 
 #### **Syntax**
 
-`[iso-region]_[source-identifier]-DGUID_[packages_collection]_[iso-date]_[variant]_[version].[extension]`
+`[iso-region]_[source-identifier]-[DGUID]_[packages_collection]_[iso-date]_[variant]_[version].[extension]`
 
 **Example**:
 `ca-ab_city-of-edmonton-2023A00054811061_orthoimagery_2023_075mm_v0.0.1.pmtiles`
@@ -37,11 +37,11 @@ We are open to feedback on the current file naming convention.
 
 | Segment | Definition | Format / Rules | Example |
 | :--- | :--- | :--- | :--- |
-| **1. ISO Region** | The ISO 3166-2 code for the jurisdiction. | Lowercase. Hyphenated. | `ca`, `ca-ab` |
+| **1. ISO Region** | The [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-2:CA), which is a two-letter country code, or [ISO 3166-2](https://www.iso.org/obp/ui/#iso:pub:PUB500001:en) which identifies the principal subdivisions (ex. provinces, states, etc.) | Lowercase. Hyphenated. | `ca`, `ca-ab` |
 | **_** | *Separator* | Underscore |  |
 | **2. Data Source and DGUID** | **Data Source and DGUID**. | Use `[data-source-name]` for the data source and the DGUID for the geographic area it covers. | `city-of-edmonton-2023A00054811061`, `statcan-2021A000011124` |
 | **_** | *Separator* | Underscore |  |
-| **3. Theme** | The primary category or title of the dataset. | Lowercase. **snake_case** allowed for longer titles. | `orthoimagery` |
+| **3. Package** | The package name for the dataset (see [High-Level Overview](https://www.dataforcanada.org/#high-level-overview)). | Lowercase. **snake_case** allowed for longer titles. | `orthoimagery` |
 | **_** | *Separator* | Underscore |  |
 | **4. ISO Date** | The vintage of the data source. | **ISO 8601**. Flexible precision. | `2023`, `2023-06`, `2023-06-01`, `2026-02-11T19:50:58` |
 | **_** | *Separator* | Underscore |  |
@@ -74,8 +74,8 @@ Dates follow strictly **ISO 8601**, but the precision can vary based on the natu
 
 **Examples of Date Precision:**
 
-* **Month Precision:** `ca_statcan-TOFILL_2024-12_v0.0.1.parquet`
-* **Day Precision:** `ca_statcan-TOFILL_2025-04-15_v0.0.1.parquet`
+* **Month Precision:** `ca_statcan-2024A000011124_2024-12_v0.0.1.parquet`
+* **Day Precision:** `ca_statcan-2025A000011124_2025-04-15_v0.0.1.parquet`
 
 ### D. Variant
 
@@ -95,20 +95,6 @@ We use **SemVer** (`vMAJOR.MINOR.PATCH`) to track changes to datasets.
 | **MAJOR** | **Breaking Change.** The schema changed, columns were renamed/removed, or the meaning of the data changed significantly. Old code will break. | `v0.0.1` → `v1.0.0`<br>*(Renamed column `geo_id` to `dguid`)* |
 | **MINOR** | **New Feature (Non-Breaking).** New columns were added, or coverage was expanded, but old columns remain. Old code still runs. | `v0.0.1` → `v0.1.0`<br>*(Added a `population_density` column)* |
 | **PATCH** | **Bug Fix.** Incorrect data values were fixed, but the schema (columns) is identical. | `v0.0.1` → `v0.0.2`<br>*(Fixed typo in metadata or coordinate precision)* |
-
-## 3. Example Scenarios
-
-### **Scenario 1: High-Res Orthoimagery (Location Based)**
-
-* **Context:** Initial release (v0.0.1) of 7.5cm pixel resolution imagery of City of Edmonton, Alberta from 2023.
-* **File Name:** `ca-ab_city-of-edmonton-2023A00054811061_orthoimagery_2023_075mm_v0.0.1.pmtiles`
-* **Reference:** [Preview and Download Orthoimagery](https://www.dataforcanada.org/docs/processes/orthoimagery/#download-and-preview)
-
-### **Scenario 2: National Organization Data (Source Based)**
-
-* **Context:** The Open Database of Buildings released by Statistics Canada on April 15, 2025.
-* **File Name:** `ca_statcan_TOFILL_2021_v0.0.1.parquet`
-* **Reference:** [Preview and Download Census Data](https://www.dataforcanada.org/docs/processes/statistical_products/statistics_canada/census_data/#how-to-use-the-map-preview)
 
 ## 4. Helper Tools
 
