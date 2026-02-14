@@ -143,24 +143,23 @@ We are currently refining the concepts from [smart-node-transmission](https://gi
 graph TD
     Catalogue[("FAIR Data Catalogue")]
     SmartNode["Volunteer Smart Node<br/>(Limited Storage)"]
-    BTNetwork(["P2P Community Peers<br/>(Massive Data Pool)"])
+    P2PNetwork(["P2P Community Peers<br/>(Massive Data Pool)"])
 
     Catalogue -->|"1. Syncs metadata"| SmartNode
     
     note["Note: The Node does NOT<br/>download the whole file."]
     SmartNode -.- note
 
-    SmartNode -->|"2. Sends granular REQUESTs for specific pieces only<br/>(e.g., 'Send Piece #804 of Dataset B')"| BTNetwork
+    SmartNode -->|"2. Sends granular REQUESTs for specific pieces only<br/>(e.g., 'Send Piece #804 of Dataset B')"| P2PNetwork
     
-    BTNetwork -.->|"3. Transfers ONLY the requested blocks"| SmartNode
+    P2PNetwork -.->|"3. Transfers ONLY the requested blocks"| SmartNode
 
-    classDef central fill:#722F37,stroke:#333,stroke-width:2px,color:#fff; 
     classDef node fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,stroke-dasharray: 5 5;
     classDef network fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
     
-    class Catalogue central;
-    class SmartNode node;
-    class BTNetwork network;
+    style Catalogue fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    style P2PNetwork fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    style SmartNode fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 
     click Catalogue "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/";
     click SmartNode "https://www.dataforcanada.org/infrastructure/";
