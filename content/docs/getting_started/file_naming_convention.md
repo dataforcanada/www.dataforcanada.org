@@ -82,7 +82,7 @@ Dates follow strictly **ISO 8601**, but the precision can vary based on the natu
 This field is strictly for **resolution** (e.g., `075mm`, `1m`) or content subsets.
 
 * **Rule:** **Do not include projection information** (e.g., `EPSG:3857`, `NAD83`) in the filename.
-* **Reasoning:** Projection details are handled exclusively in the file format metadata or the accompanying **[FAIR Data Catalog](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/)** item.
+* **Reasoning:** Projection details are handled exclusively in the file format metadata or the accompanying **[FAIR Data Catalogue](https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/)** item.
 
 ### E. Semantic Versioning
 
