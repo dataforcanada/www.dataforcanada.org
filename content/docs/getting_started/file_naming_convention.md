@@ -96,7 +96,7 @@ We use **SemVer** (`vMAJOR.MINOR.PATCH`) to track changes to datasets.
 | **MINOR** | **New Feature (Non-Breaking).** New columns were added, or coverage was expanded, but old columns remain. Old code still runs. | `v0.0.1` → `v0.1.0`<br>*(Added a `population_density` column)* |
 | **PATCH** | **Bug Fix.** Incorrect data values were fixed, but the schema (columns) is identical. | `v0.0.1` → `v0.0.2`<br>*(Fixed typo in metadata or coordinate precision)* |
 
-## 4. Helper Tools
+## 3. Helper Tools
 
 ### **Statistics Canada Geography Search**
 
