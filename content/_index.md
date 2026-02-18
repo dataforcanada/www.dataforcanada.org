@@ -86,10 +86,7 @@ flowchart TD
     subgraph pp [Processing Pipeline]
         %% Not the orchestrator, but a key towards achieving project mission.
         DataforCanadaPackagesCollection@{ shape: rect, label: "Data for Canada Packages Collection"}
-        Raw@{ shape: rect, label: "Raw Data Ingestion"}
         %% Internal Link
-        Raw a1000@ <--> DataforCanadaPackagesCollection
-        a1000@{animate: true, animation: slow}
     end
 
     %% ---------------------------------------------------------
@@ -185,8 +182,8 @@ flowchart TD
     a10@{animate: true, animation: fast}
 
     %% Long-Term Storage --> FlatGeoBuf
-    sot a10@<--> FlatGeoBuf
-    a10@{animate: true, animation: fast}
+    sot a10000@<--> FlatGeoBuf
+    a10000@{animate: true, animation: fast}
     
     %% FlatGeoBuf --> Vector Tiles (Box)
     FlatGeoBuf a11@--> vt
@@ -245,16 +242,15 @@ flowchart TD
 
 classDef linkNode stroke:#333333,color:#333333,stroke-width:1.5px;
 
-style pp fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
+%%style pp fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
 style DataforCanadaPackagesCollection fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style FAIRDataDis fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style DecentralizedDistribution fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style HTTP fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style Systems fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style Metadata fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
-style Raw fill:#E57373,stroke:#C62828,color:#000000
 
-style df fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
+%%style df fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
 style sot fill:#EF9A9A,stroke:#C62828,color:#000000
 
 style Parquet fill:#FFCDD2,stroke:#E57373,color:#000000
@@ -276,7 +272,8 @@ style FlatGeoBuf fill:#FBC02D,stroke:#F9A825,color:#000000
 style visuals fill:#FBC02D,stroke:#F9A825,color:#000000
 
 style ent fill:#66BB6A,stroke:#2E7D32,color:#000000
-style DataSci fill:#FFB74D,stroke:#EF6C00,color:#000000
+style DataSci fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
+style GeoSpatialServices fill:#FFCC80,stroke:#FB8C00,color:#000000
 
 
 class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
