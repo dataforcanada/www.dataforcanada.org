@@ -84,7 +84,7 @@ See our processing pipeline in action. View samples and documentation for our cu
 </style>
 {{< /rawhtml >}}
 
-{{< svg src="static/high-level-overview-homepage.svg" alt="My Mermaid Diagram" >}}
+{{< svg src="static/high-level-overview-homepage.svg" alt="High Level Overview" >}}
 
 ## Get Involved
 
