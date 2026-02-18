@@ -1,0 +1,4 @@
+{{ $file := .Get "src" }}
+<div class="inline-svg-container {{ .Get "class" }}">
+  {{ readFile $file | safeHTML }}
+</div>
