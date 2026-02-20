@@ -4,7 +4,7 @@ weight: 1
 prev: /docs/d4c-pkgs/d4c-datapkg-statistical/
 ---
 
-Look through our [process-statcan-data-labs](https://github.com/dataforcanada/process-statcan-data-labs) repo for the datasets processed. There is still lots of work to do to make it ready for systems.
+Look through our [d4c-datapkg-statistical](https://github.com/dataforcanada/d4c-datapkg-statistical) repo for the datasets processed.
 
 ## Background
 

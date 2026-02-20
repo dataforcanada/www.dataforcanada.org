@@ -1,5 +1,5 @@
 ---
-title: Field Imagery
+title: d4c-datapkg-field-imagery
 weight: 4
 next: /docs/d4c-infra-distribution/
 ---

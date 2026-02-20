@@ -1,7 +1,7 @@
 ---
 title: Census Data
 weight: 2
-next: /docs/d4c-datapkg-orthoimagery
+#next: /docs/d4c-datapkg-orthoimagery/
 ---
 
 ## Background

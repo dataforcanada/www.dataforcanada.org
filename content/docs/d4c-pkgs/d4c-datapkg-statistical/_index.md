@@ -1,5 +1,5 @@
 ---
-title: Statistical
+title: d4c-datapkg-statistical
 weight: 2
 toc: true
 prev: /docs/d4c-pkgs/foundation/
@@ -10,7 +10,7 @@ sidebar:
 
 ## Statistics Canada Data
 
-The following two sections goes over the Statistics Canada data that was processed at [process-statcan-data-labs](https://github.com/dataforcanada/process-statcan-data-labs) There is still lots of work to do to make it ready for systems.
+The following two sections goes over the Statistics Canada data that was processed at [d4c-datapkg-statistical](https://github.com/dataforcanada/d4c-datapkg-statistical) There is still lots of work to do to make it ready for systems.
 
 {{< cards >}}
   {{< card link="/docs/d4c-pkgs/d4c-datapkg-statistical/statistics_canada/statistical_administrative_boundaries/" title="Statistical and Administrative Boundaries" icon="globe" >}}

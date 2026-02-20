@@ -56,9 +56,9 @@ Our data is optimized for:
 
 See our processing pipeline in action. View samples and documentation for our current priority processes:
 
-* [**Statistical Products**](https://www.dataforcanada.org/docs/processes/statistical_products/): Census data and other quantitative datasets.
-* [**Foundation**](https://www.dataforcanada.org/docs/processes/foundation/#download-and-preview/): Core geospatial layers including address point, road networks, and buildings.
-* [**Orthoimagery**](https://www.dataforcanada.org/docs/processes/orthoimagery/#download-and-preview): High-resolution orthoimagery.
+* [**Statistical Products**](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-statistical/): Census data and other quantitative datasets.
+* [**Foundation**](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-foundation/#download-and-preview/): Core geospatial layers including address point, road networks, and buildings.
+* [**Orthoimagery**](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-orthoimagery/#download-and-preview): High-resolution orthoimagery.
 
 ## High-Level Overview
 

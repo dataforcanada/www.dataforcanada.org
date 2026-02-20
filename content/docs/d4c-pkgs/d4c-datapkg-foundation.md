@@ -1,9 +1,9 @@
 ---
-title: Foundation
+title: d4c-datapkg-foundation
 weight: 1
 ---
 
-Look through our [process-foundation-labs](https://github.com/dataforcanada/process-foundation-labs) repo for the datasets that are currently being processed. There is still lots of work to do to make it ready for systems. 
+Look through our [d4c-datapkg-foundation](https://github.com/dataforcanada/d4c-datapkg-foundation) repo for the datasets that are currently being processed. There is still lots of work to do to make it ready for systems. 
 
 ## Download and Preview
 
