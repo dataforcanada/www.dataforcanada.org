@@ -81,13 +81,14 @@ flowchart TD
     style Community fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
     style P2P fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style InternetArchive fill:#66BB6A,stroke:#2E7D32,color:#000000
-    style Users fill:#FFB74D,stroke:#EF6C00,color:#000000
+    style Users fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style Systems fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     
     %% Click Actions
+	click P2P "https://tixati.com/specs/bittorrent" _blank
     click Tigris "https://www.tigrisdata.com/docs/overview/" _blank
     click Sources "https://www.dataforcanada.org/#high-level-overview" _blank
-    click Processes "https://www.dataforcanada.org/docs/processes/" _blank
+    click Processes "https://www.dataforcanada.org/docs/d4c-pkgs/" _blank
     click Artifacts "https://www.dataforcanada.org/docs/getting_started/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click Zenodo "https://zenodo.org/communities/dataforcanada/" _blank
@@ -112,7 +113,7 @@ Once data products reach a production-ready state, they enter a dissemination fl
 
 ### Decentralized Distribution
 
-We are piloting a <abbr title="Peer-to-Peer">P2P</abbr> technology, to maximize infrastructure resilience. By leveraging the [P2P HTTP  consumption feature](https://www.bittorrent.org/beps/bep_0019.html), users will be able to download simultaneously from Source Cooperative, Zenodo, Data for Canada infrastructure, and community peers. This ensures high availability without a single point of failure. Current laboratory work is available in the [Decentralized Distribution Labs](https://github.com/dataforcanada/decentralized-distribution-labs).
+We are piloting a <abbr title="Peer-to-Peer">P2P</abbr> technology, to maximize infrastructure resilience. By leveraging the [P2P HTTP  consumption feature](https://www.bittorrent.org/beps/bep_0019.html), users will be able to download simultaneously from Source Cooperative, Zenodo, Data for Canada infrastructure, and community peers. This ensures high availability without a single point of failure. Current laboratory work is available in the [d4c-infra-distribution](https://github.com/dataforcanada/d4c-infra-distribution).
 
 ## 🏗️ Open Processing Architecture
 
