@@ -6,19 +6,19 @@
 
 ## About
 
-[![Deploy Hugo site to R2](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_website.yaml/badge.svg)](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_website.yaml)
-[![Deploy Worker](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_worker.yaml/badge.svg)](https://github.com/dataforcanada/www.dataforcanada.org/actions/workflows/deploy_worker.yaml)
+[![Deploy Hugo site to R2](https://github.com/dataforcanada/d4c-service-main-site/actions/workflows/deploy_website.yaml/badge.svg)](https://github.com/dataforcanada/d4c-service-main-site/actions/workflows/deploy_website.yaml)
+[![Deploy Worker](https://github.com/dataforcanada/d4c-service-main-site/actions/workflows/deploy_worker.yaml/badge.svg)](https://github.com/dataforcanada/d4c-service-main-site/actions/workflows/deploy_worker.yaml)
 
-This repo has the code for the Data for Canada project website, [www.dataforcanada.org](https://www.dataforcanada.org). The website is generated as a static website with Hugo and is served via a Cloudflare worker that reads a Cloudflare R2 bucket.
+This repo has the code for the Data for Canada project website. The website is generated as a static website with Hugo. 
 
 ## How to Run Locally
 
 ```shell
 # Clone the repository
-git clone git@github.com:dataforcanada/www.dataforcanada.org.git
+git clone git@github.com:dataforcanada/d4c-service-main-site.git
 
 # Navigate to the project directory
-cd www.dataforcanada.org
+cd d4c-service-main-site
 
 # In Dev Container
 hugo server --disableFastRender --noHTTPCache -p 1313
