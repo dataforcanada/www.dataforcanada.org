@@ -1,7 +1,7 @@
 ---
 title: "Data Packages"
 summary: d4c-pkgs
-weight: 2
+weight: 3
 prev: /docs/getting_started
 next: /docs/dissemination
 sidebar:
@@ -11,8 +11,8 @@ sidebar:
 This project is composed of multiple `data packages` (`d4c-pkgs`).
 
 {{< cards >}}
-  {{< card link="/docs/data_packages/foundation/" title="Foundation" icon="office-building" >}}
-  {{< card link="/docs/data_packages/statistical_products/" title="Statistical" icon="presentation-chart-bar" >}}
+  {{< card link="/docs/d4c-pkgs/foundation/" title="Foundation" icon="office-building" >}}
+  {{< card link="/docs/d4c-pkgs/d4c-datapkg-statistical/" title="Statistical" icon="presentation-chart-bar" >}}
   {{< card link="/docs/data_packages/orthoimagery/" title="Orthoimagery" icon="photograph" >}}
   {{< card link="/docs/data_packages/field_imagery/" title="Field Imagery" icon="eye" >}}
 {{< /cards >}}

@@ -1,6 +1,6 @@
 ---
 title: Data Dissemination Strategy
-weight: 3
+weight: 4
 prev: /docs/processes/field_imagery/
 next: /contact/
 ---

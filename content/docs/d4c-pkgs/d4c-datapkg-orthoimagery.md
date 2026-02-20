@@ -1,12 +1,12 @@
 ---
-title: Orthoimagery
+title: Orthoimagery 
 weight: 3
-prev: /docs/processes/statistical_products/statistics_canada/census_data/
-next: /docs/processes/field_imagery/
+prev: /docs/d4c-pkgs/d4c-datapkg-statistical/statistics_canada/census_data/
+next: /docs/d4c-pkgs/d4c-datapkg-field-imagery/
 ---
 
-# Orthoimagery Process Labs
-Look through our [process-orthoimagery-labs](https://github.com/dataforcanada/process-orthoimagery-labs) repo for the datasets processed and datasets currently being acquired. There is still lots of work to do to make it ready for systems. While the data processing workflow is still under development, you can [preview sample datasets](#download-and-preview) below.
+## Orthoimagery Process Labs
+Look through our [d4c-datapkg-orthoimagery](https://github.com/dataforcanada/d4c-datapkg-orthoimagery) repo for the datasets processed and datasets currently being acquired. There is still lots of work to do to make it ready for systems. While the data processing workflow is still under development, you can [preview sample datasets](#download-and-preview) below.
 
 ## Development Environment
 
