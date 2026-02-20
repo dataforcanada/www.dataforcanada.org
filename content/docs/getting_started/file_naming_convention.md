@@ -1,6 +1,6 @@
 ---
 title: File Naming Convention
-weight: 2
+weight: 1
 next: /docs/processes
 sidebar:
   open: true
@@ -28,10 +28,10 @@ We are open to feedback on the current file naming convention.
 
 #### **Syntax**
 
-`[iso-region]_[source-identifier]-[DGUID]_[packages_collection]_[iso-date]_[variant]_[version].[extension]`
+`[iso-region]_[source-identifier]-[DGUID]_[data-pkg]_[iso-date]_[variant]_[version].[extension]`
 
 **Example**:
-`ca-ab_city-of-edmonton-2023A00054811061_orthoimagery_2023_075mm_v0.0.1.pmtiles`
+`ca-ab_city-of-edmonton-2023A00054811061_d4c-datapkg-orthoimagery_2023_075mm_v0.0.1.pmtiles`
 
 #### **Component Breakdown**
 
@@ -39,9 +39,9 @@ We are open to feedback on the current file naming convention.
 | :--- | :--- | :--- | :--- |
 | **1. ISO Region** | The [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-2:CA), which is a two-letter country code, or [ISO 3166-2](https://www.iso.org/obp/ui/#iso:pub:PUB500001:en) which identifies the principal subdivisions (ex. provinces, states, etc.) | Lowercase. Hyphenated. | `ca`, `ca-ab` |
 | **_** | *Separator* | Underscore |  |
-| **2. Data Source and DGUID** | **Data Source and DGUID**. | Use `[data-source-name]` for the data source and the DGUID for the geographic area it covers. | `city-of-edmonton-2023A00054811061`, `statcan-2021A000011124` |
+| **2. Data Source and [DGUID](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo055)** | **Data Source and [DGUID](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo055)**. | Use `[data-source-name]` for the data source and the DGUID for the geographic area it covers. | `city-of-edmonton-2023A00054811061`, `statcan-2021A000011124` |
 | **_** | *Separator* | Underscore |  |
-| **3. Package** | The package name for the dataset (see [High-Level Overview](https://www.dataforcanada.org/#high-level-overview)). | Lowercase. **snake_case** allowed for longer titles. | `orthoimagery` |
+| **3. Data Package** | The package name for the dataset (see [High-Level Overview](https://www.dataforcanada.org/#high-level-overview)). | Lowercase. `d4c-datapkg-orthoimagery` |
 | **_** | *Separator* | Underscore |  |
 | **4. ISO Date** | The vintage of the data source. | **ISO 8601**. Flexible precision. | `2023`, `2023-06`, `2023-06-01`, `2026-02-11T19:50:58` |
 | **_** | *Separator* | Underscore |  |
@@ -55,15 +55,15 @@ We are open to feedback on the current file naming convention.
 
 This segment defines the "Who" of the dataset.
 
-* Use the **Data Source Name** + **Hyphen** + **DGUID**.
+* Use the **Data Source Name** + **Hyphen** + **[DGUID](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo055)**.
   * *Example:* `city-of-edmonton-2023A00054811061`
 
 ### B. The DGUID (Capitalization Exception)
 
-If using a DGUID (Dissemination Geography Unique Identifier), you must adhere to Statistics Canada standards.
+If using a [DGUID](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo055) (Dissemination Geography Unique Identifier), you must adhere to Statistics Canada standards.
 
 * **Link:** [Statistics Canada: DGUID Definition](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo055)
-* **Rule:** While the rest of the filename is lowercase, you **must capitalize the structural type letter** (e.g., 'A' for Administrative areas, 'S' for Statistical areas) within the DGUID.
+* **Rule:** While the rest of the filename is lowercase, you **must capitalize the structural type letter** (e.g., 'A' for Administrative areas, 'S' for Statistical areas) within the [DGUID](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo055).
 * **Example:** `2021A0005...` (Correct) vs `2021a0005...` (Incorrect).
 
 ### C. ISO Date Flexibility
@@ -74,8 +74,8 @@ Dates follow strictly **ISO 8601**, but the precision can vary based on the natu
 
 **Examples of Date Precision:**
 
-* **Month Precision:** `ca_statcan-2024A000011124_2024-12_v0.0.1.parquet`
-* **Day Precision:** `ca_statcan-2025A000011124_2025-04-15_v0.0.1.parquet`
+* **Month Precision:** `ca_statcan-2024A000011124_d4c-datapkg-statistical_2024-12_v0.0.1.parquet`
+* **Day Precision:** `ca_statcan-2025A000011124_d4c-datapkg-statistical_2025-04-15_v0.0.1.parquet`
 
 ### D. Variant
 
@@ -101,10 +101,10 @@ We use **SemVer** (`vMAJOR.MINOR.PATCH`) to track changes to datasets.
 ### **Statistics Canada Geography Search**
 
 {{< callout type="warning" >}}
-  In the tool below, you can click on each individual **DGUID** to see their associated geography.
+  In the tool below, you can click on each individual **[DGUID](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo055)** to see their associated geography.
 {{< /callout >}}
 
-To accurately populate the **DGUID** segment of the schema, use this tool to find 2021 Census geographies and their corresponding DGUIDs.
+To accurately populate the **[DGUID](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo055)** segment of the schema, use this tool to find 2021 Census geographies and their corresponding DGUIDs.
 
 * **Tool URL:** [https://statcan-geography.labs.dataforcanada.org/](https://statcan-geography.labs.dataforcanada.org/)
 * **Source Code:** [GitHub Repository](https://github.com/dataforcanada/statcan-geography.labs.dataforcanada.org)
