@@ -17,9 +17,9 @@ flowchart TD
     %% ---------------------------------------------------------
     %% 3. PROCESSING PIPELINE
     %% ---------------------------------------------------------
-    subgraph pp [Processing Pipeline]
+    subgraph pp
         %% Not the orchestrator, but a key towards achieving project mission.
-        DataforCanadaPackagesCollection@{ shape: rect, label: "Data for Canada Packages Collection"}
+        DataforCanadaPackagesCollection@{ shape: rect, label: "Data Packages"}
         %% Internal Link
     end
 
@@ -216,15 +216,15 @@ class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,G
     %% =========================================================
     %% CLICK ACTIONS
     %% =========================================================
-    click DataforCanadaPackagesCollection "https://github.com/dataforcanada/dataforcanadapkgs-labs/" _blank
+    click DataforCanadaPackagesCollection "https://github.com/dataforcanada/d4c-pkgs" _blank
 
-    click Foundation "https://github.com/dataforcanada/process-foundation-labs/" _blank
-    click Statistical "https://github.com/dataforcanada/process-statistical-labs/" _blank
-    click Orthoimagery "https://github.com/dataforcanada/process-orthoimagery-labs/" _blank
-    click FieldImagery "https://github.com/dataforcanada/process-field-imagery-labs/" _blank
-    click EnvironmentClimate "https://github.com/dataforcanada/process-environmental-climate-health-labs/" _blank
-    click Elevation "https://github.com/dataforcanada/process-elevation-labs/" _blank
-    click WebCorpus "https://github.com/dataforcanada/process-web-corpus-labs/" _blank
+    click Foundation "https://github.com/dataforcanada/d4c-datapkg-foundation" _blank
+    click Statistical "https://github.com/dataforcanada/process-statistical-labs" _blank
+    click Orthoimagery "https://github.com/dataforcanada/d4c-datapkg-orthoimagery" _blank
+    click FieldImagery "" _blank
+    click EnvironmentClimate "https://github.com/dataforcanada/d4c-datapkg-environment-climate-health" _blank
+    click Elevation "https://github.com/dataforcanada/process-elevation-labs" _blank
+    click WebCorpus "" _blank
 
     click Parquet "https://github.com/apache/parquet-format/" _blank
     click FlatGeoBuf "https://flatgeobuf.org/" _blank

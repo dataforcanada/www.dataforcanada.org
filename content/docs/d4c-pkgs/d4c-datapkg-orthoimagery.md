@@ -18,7 +18,7 @@ The specifications for the tile packages are defined in this code.
 
 ```bash
 #!/bin/bash
-PROJECT_DIR="~/Documents/Personal/Projects/dataforcanada/process-orthoimagery-labs"
+PROJECT_DIR="~/Documents/Personal/Projects/dataforcanada/d4c-datapkg-orthoimagery"
 DATASET_ID="ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm"
 DATA_DIR="${PROJECT_DIR}/data"
 DATA_INPUT_DIR="${DATA_DIR}/input/${DATASET_ID}"
