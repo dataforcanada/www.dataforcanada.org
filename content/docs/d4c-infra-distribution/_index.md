@@ -18,6 +18,7 @@ flowchart TD
         SourceCoop[Source Cooperative]
         Zenodo[Zenodo]
         InternetArchive[Internet Archive]
+        Tigris[Tigris]
         Community[Community]
     end
 
@@ -75,6 +76,7 @@ flowchart TD
     style Processes fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     class Processes Processes
     style SourceCoop fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    style Tigris fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style Zenodo fill:#FFB74D,stroke:#EF6C00,color:#000000
     style Community fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
     style P2P fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
@@ -83,6 +85,7 @@ flowchart TD
     style Systems fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     
     %% Click Actions
+    click Tigris "https://www.tigrisdata.com/docs/overview/" _blank
     click Sources "https://www.dataforcanada.org/#high-level-overview" _blank
     click Processes "https://www.dataforcanada.org/docs/processes/" _blank
     click Artifacts "https://www.dataforcanada.org/docs/getting_started/" _blank
