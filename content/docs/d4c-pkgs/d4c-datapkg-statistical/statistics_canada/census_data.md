@@ -4,10 +4,6 @@ weight: 2
 next: /docs/d4c-datapkg-orthoimagery
 ---
 
-I have updated the README.md to reflect the new repository URL, standardized dataset naming conventions, and the updated PMTiles base URL.
-
----
-
 ## Background
 
 {{< callout type="important" >}}
