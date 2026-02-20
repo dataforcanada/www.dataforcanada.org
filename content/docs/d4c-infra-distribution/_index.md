@@ -16,10 +16,10 @@ flowchart TD
     classDef linkNode stroke:#0000EE,color:#0000EE,stroke-width:2px;
     subgraph mirrors [Mirrors & Preservation]
         SourceCoop[Source Cooperative]
-        Zenodo[Zenodo]
-        InternetArchive[Internet Archive]
         Tigris[Tigris]
         Community[Community]
+        Zenodo[Zenodo]
+        InternetArchive[Internet Archive]
     end
 
     Sources[Open Data Sources]
@@ -78,7 +78,7 @@ flowchart TD
     style SourceCoop fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style Tigris fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style Zenodo fill:#FFB74D,stroke:#EF6C00,color:#000000
-    style Community fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
+    style Community fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style P2P fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style InternetArchive fill:#66BB6A,stroke:#2E7D32,color:#000000
     style Users fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
@@ -89,7 +89,6 @@ flowchart TD
     click Tigris "https://www.tigrisdata.com/docs/overview/" _blank
     click Sources "https://www.dataforcanada.org/#high-level-overview" _blank
     click Processes "https://www.dataforcanada.org/docs/d4c-pkgs/" _blank
-    click Artifacts "https://www.dataforcanada.org/docs/getting_started/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click Zenodo "https://zenodo.org/communities/dataforcanada/" _blank
     click SourceCoop "https://source.coop/dataforcanada/" _blank
