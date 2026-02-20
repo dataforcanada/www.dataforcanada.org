@@ -102,7 +102,7 @@ We are looking for academic institutions, research organizations, or **infrastru
 
 ### Contributing & Feedback
 
-Right now, we primarily need **feedback on file naming convention, our [data packages](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-statistical/statistics_canada/census_data/), and the infrastructure** used to generate them. If you have thoughts on data quality, format optimization, or pipeline improvements, we want to hear from you.
+Right now, we primarily need **feedback on file naming convention, our [data packages](https://www.dataforcanada.org/docs/d4c-pkgs/), and the infrastructure** used to generate them. If you have thoughts on data quality, format optimization, or pipeline improvements, we want to hear from you.
 
 * **Discussions:** Head over to [#dataforcanada:matrix.org](https://matrix.to/#/#dataforcanada:matrix.org) to chat, or go to the individual process GitHub repos to comment on specific issues.
 
