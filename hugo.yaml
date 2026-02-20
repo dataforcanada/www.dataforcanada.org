@@ -116,11 +116,11 @@ params:
     type: giscus
 
     giscus:
-      repo: dataforcanada/www.dataforcanada.org
+      repo: dataforcanada/d4c-service-main-site
       repoId: R_kgDOPAaEeA
       category: General
       categoryId: DIC_kwDOPAaEeM4Cr4dH
 
   editURL:
     enable: true
-    base: "https://github.com/dataforcanada/www.dataforcanada.org/edit/main/content"
+    base: "https://github.com/dataforcanada/d4c-service-main-site/edit/main/content"
