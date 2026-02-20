@@ -1,7 +1,7 @@
 ---
 title: Data Dissemination Strategy
 weight: 4
-prev: /docs/processes/field_imagery/
+prev: /docs/d4c-pkgs/d4c-datapkg-field-imagery/
 next: /contact/
 ---
 

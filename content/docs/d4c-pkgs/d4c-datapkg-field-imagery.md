@@ -1,7 +1,7 @@
 ---
 title: Field Imagery
 weight: 4
-next: /docs/dissemination/
+next: /docs/d4c-infra-distribution/
 ---
 
 ## The Mission
