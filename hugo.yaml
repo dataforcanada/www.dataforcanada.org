@@ -29,6 +29,7 @@ outputs:
   home: 
   - html
   - rss
+  - llms
   page: 
   - html
   - rss
@@ -46,31 +47,31 @@ outputs:
 
 menu:
   main:
-    - name: 🟢 Status
+    - name: Status
       weight: 1
       url: "https://status.dataforcanada.org"
     - identifier: datasets
-      name: 📁 Datasets
+      name: Datasets
       weight: 2
     - identifier: Production
-      name: ✅ Production
+      name: Production
       url: https://data-01.dataforcanada.org/processed/
       parent: datasets
     - identifier: Labs
-      name: 🚧 Labs
+      name: Labs
       url: https://data-01.labs.dataforcanada.org/processed/
       parent: datasets
-    - name: 📚 Docs
-      url: /docs/
+    - name: Docs
+      pageRef: /docs/
       weight: 3
-    - name: 📬 Contact
-      url: /contact/
+    - name: Contact
+      pageRef: /contact/
       weight: 4
-    - name: ⚓ Infrastructure
+    - name: Infrastructure
       url: /infrastructure/
       weight: 5
-    - name: 📬 Contact
-      url: /contact/
+    - name: Contact
+      pageRef: /contact/
       weight: 6
     - name: Search
       weight: 7
@@ -83,11 +84,13 @@ menu:
         icon: github
 
 params:
-  displayUpdatedDate: true
   theme:
     default: light
 
-  externalLinkDectoration: true
+  page:
+    # full (100%), wide (90rem), normal (1280px)
+    width: full
+
   navbar:
     displayTitle: true
     displayLogo: true
@@ -96,14 +99,17 @@ params:
       link: /
       width: 32
       height: 32
-
-  page:
-    # full (100%), wide (90rem), normal (1280px)
-    width: full
+  search:
+    flexsearch:
+      tokenize: forward
 
   footer:
     displayCopyright: True
     displayPoweredBy: True
+
+  displayUpdatedDate: true
+  dateFormat: "Monday, January 2, 2006 at 3:04 PM MST"
+  #externalLinkDecoration: true
 
   comments:
     enable: true

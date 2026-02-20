@@ -80,7 +80,9 @@ See our processing pipeline in action. View samples and documentation for our cu
         width: 100%;
         height: auto;
         max-width: 100%;
+        background-color: transparent !important;
     }
+    
 </style>
 {{< /rawhtml >}}
 

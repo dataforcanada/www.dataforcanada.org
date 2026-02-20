@@ -1,5 +1,5 @@
 ---
-title: 🧱 Foundation
+title: Foundation
 weight: 1
 ---
 

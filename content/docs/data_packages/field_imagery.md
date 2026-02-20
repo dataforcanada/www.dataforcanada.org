@@ -1,5 +1,5 @@
 ---
-title: 📸 Field Imagery
+title: Field Imagery
 weight: 4
 next: /docs/dissemination/
 ---

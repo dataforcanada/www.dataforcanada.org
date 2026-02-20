@@ -1,5 +1,5 @@
 ---
-title: 🛰️ Orthoimagery
+title: Orthoimagery
 weight: 3
 prev: /docs/processes/statistical_products/statistics_canada/census_data/
 next: /docs/processes/field_imagery/

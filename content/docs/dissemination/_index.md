@@ -1,5 +1,5 @@
 ---
-title: 🌐 Data Dissemination Strategy
+title: Data Dissemination Strategy
 weight: 3
 prev: /docs/processes/field_imagery/
 next: /contact/
@@ -22,7 +22,7 @@ flowchart TD
     end
 
     Sources[Open Data Sources]
-    Processes[Data for Canada Packages Collection]
+    Processes[Data Packages]
     Artifacts[Systems-Ready Data]
     
     subgraph CoreInfra [Infrastructure]
