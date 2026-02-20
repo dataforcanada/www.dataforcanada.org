@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Docs
 weight: 1
 next: /docs/gettings_started/file_naming_convention/
 sidebar:
@@ -12,7 +12,7 @@ Look through our [GitHub Organization](https://github.com/orgs/dataforcanada/rep
 
 {{< cards cols="2" >}}
   {{< card link="/docs/getting_started/file_naming_convention/" title="File Naming Convention" icon="cog" >}}
-  {{< card link="/docs/dissemination/" title="Data Dissemination Strategy" icon="globe" >}}
+  {{< card link="/docs/d4c-infra-distribution/" title="Data Dissemination Strategy" icon="globe" >}}
   {{< card link="/docs/d4c-pkgs/" title="Data for Canada Packages" icon="cube" >}}
   {{< card link="/infrastructure/" title="Infrastructure" icon="office-building" >}}
 {{< /cards >}}
