@@ -31,7 +31,7 @@ Our approach is guided by the following:
 
 We act as the transformation layer. We aggregate datasets with permissive licenses and process them into "digestible" standards optimized for modern downstream applications.
 
-* **For Data Engineers, Researchers/Scientists, and Developers:** Skip the cleaning phase. Access normalized, documented data ready for analysis.
+* **For Data Engineers, Researchers/Scientists, and Developers (AKA Data People):** Skip the cleaning phase. Access normalized, documented data ready for analysis.
 * **For Systems:** Standardized data structures designed to feed directly into pipelines, data warehouses, and downstream services.
 
 **Our Stewardship:**
