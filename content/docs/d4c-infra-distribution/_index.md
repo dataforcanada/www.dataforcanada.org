@@ -18,8 +18,8 @@ flowchart TD
         SourceCoop[Source Cooperative]
         Tigris[Tigris]
         Community[Community]
-        Zenodo[Zenodo]
         Cloudflare
+        Zenodo[Zenodo]
         InternetArchive[Internet Archive]
         Metadata[FAIR Data Catalogue]
     end
