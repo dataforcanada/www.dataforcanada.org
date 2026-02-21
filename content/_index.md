@@ -54,7 +54,7 @@ Our data is optimized for:
 
 ## Explore Sample Datasets
 
-See our processing pipeline in action. View samples and documentation for our current priority processes:
+See our processing pipeline in action. View samples and documentation for our current priority data packages (AKA `d4c-pkgs`):
 
 * [**Statistical Products**](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-statistical/): Census data and other quantitative datasets.
 * [**Foundation**](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-foundation/#download-and-preview/): Core geospatial layers including address point, road networks, and buildings.
