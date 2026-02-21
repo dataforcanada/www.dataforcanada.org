@@ -17,11 +17,7 @@ flowchart TD
     %% ---------------------------------------------------------
     %% 3. PROCESSING PIPELINE
     %% ---------------------------------------------------------
-    subgraph pp
-        %% Not the orchestrator, but a key towards achieving project mission.
-        DataforCanadaPackagesCollection@{ shape: rect, label: "Data Packages"}
-        %% Internal Link
-    end
+    DataforCanadaPackagesCollection@{ shape: rect, label: "Data Packages"}
 
     %% ---------------------------------------------------------
     %% 4. DISSEMINATION FORMATS
@@ -97,22 +93,22 @@ flowchart TD
     %% =========================================================
 
     %% Data Sources <--> Data for Canada Packages Collection (Box)
-    Statistical a1@<--> pp
+    Statistical a1@<--> DataforCanadaPackagesCollection
     a1@{animate: true, animation: slow}
-    Foundation a2@<--> pp
+    Foundation a2@<--> DataforCanadaPackagesCollection
     a2@{animate: true, animation: slow}
-    Orthoimagery a3@<--> pp
+    Orthoimagery a3@<--> DataforCanadaPackagesCollection
     a3@{animate: true, animation: slow}
-    EnvironmentClimate a5@<--> pp
+    EnvironmentClimate a5@<--> DataforCanadaPackagesCollection
     a5@{animate: true, animation: fast}
-    FieldImagery a4@<--> pp
+    FieldImagery a4@<--> DataforCanadaPackagesCollection
     a4@{animate:true, animation: fast}
-    Elevation a6@<--> pp
+    Elevation a6@<--> DataforCanadaPackagesCollection
     a6@{animate: true, animation: slow}
-    WebCorpus a7@<--> pp
+    WebCorpus a7@<--> DataforCanadaPackagesCollection
     a7@{animate: true, animation: fast}
 
-    pp a10@--> df
+    DataforCanadaPackagesCollection a10@--> df
     a10@{animate: true, animation: fast}
 
     %% Long-Term Storage --> FlatGeoBuf
@@ -176,7 +172,6 @@ flowchart TD
 
 classDef linkNode stroke:#333333,color:#333333,stroke-width:1.5px;
 
-%%style pp fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
 style DataforCanadaPackagesCollection fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style FAIRDataDis fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style DecentralizedDistribution fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
