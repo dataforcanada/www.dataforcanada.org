@@ -1,5 +1,5 @@
 ---
-title: d4c-datapkg-statistical
+title: Statistical
 weight: 2
 toc: true
 prev: /docs/d4c-pkgs/foundation/

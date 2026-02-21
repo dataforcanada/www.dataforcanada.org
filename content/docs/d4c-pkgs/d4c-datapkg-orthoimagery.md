@@ -1,5 +1,5 @@
 ---
-title: d4c-datapkg-orthoimagery 
+title: Orthoimagery
 weight: 3
 prev: /docs/d4c-pkgs/d4c-datapkg-statistical/statistics_canada/census_data/
 next: /docs/d4c-pkgs/d4c-datapkg-field-imagery/

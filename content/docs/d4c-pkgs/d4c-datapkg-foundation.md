@@ -1,5 +1,5 @@
 ---
-title: d4c-datapkg-foundation
+title: Foundation
 weight: 1
 ---
 

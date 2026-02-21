@@ -9,9 +9,12 @@ flowchart TD
         Foundation@{ shape: lean-l}
         Orthoimagery@{ shape: lean-l}
         EnvironmentClimate@{ shape: lean-l, label: "Environment, Climate, & Health"}
+        style EnvironmentClimate fill:#FBC02D,stroke:#F9A825,color:#000000
         FieldImagery@{ shape: lean-l, label: "Field Imagery"}
-        Elevation@{ shape: lean-l}
+        style FieldImagery fill:#FBC02D,stroke:#F9A825,color:#000000
         WebCorpus@{ shape: lean-l, label: "Web Corpus"}
+        Elevation@{ shape: lean-l}
+        style WebCorpus fill:#66BB6A,stroke:#2E7D32,color:#000000
     end
 
     %% ---------------------------------------------------------
@@ -41,33 +44,46 @@ flowchart TD
         %% Box: Vector Tiles (Pastel Orange)
         subgraph vt [Vector Tiles]
             VectorTiles@{ shape: lean-l, label: "Mapbox Vector Tiles"}
+            style VectorTiles fill:#66BB6A,stroke:#2E7D32,color:#000000
             NextGenVectorTiles@{ shape: lean-l, label: "Next-Gen Vector Tiles"}
+            style NextGenVectorTiles fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
         end
 
         %% Box: Visuals (Pastel Blue - No Name)
         subgraph visuals [" "]
+            %% AVIF is not an option since QGIS does not seem to support it (I was surprised when my generated file was not compatible)
             WebP@{ shape: lean-l}
+            style WebP fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
             JPG@{ shape: lean-l}
+            style JPG fill:#66BB6A,stroke:#2E7D32,color:#000000
             PNG@{ shape: lean-l}
+            style PNG fill:#66BB6A,stroke:#2E7D32,color:#000000
         end
 
         %% Box: Portable Databases (Pastel Green)
         subgraph pkg [Portable Databases]
+            %% Good format, but has some issues. I encountered issues when merging multiple adjoining PMTile files, the author is aware of these issues
             PMTiles@{ shape: lean-l}
+            %% Compatability with every OS. 
+            %% Fun fact, you don't even need an OS for running SQLite 
+            %% https://sqlite.org/selfcontained.html
             SQLite@{ shape: lean-l}
         end
 
         %% Box: Enterprise (Pastel Purple)
         subgraph ent [Enterprise]
             FileGeodatabase@{shape: lean-l, label: "File Geodatabase"}
+            style FileGeodatabase fill:#fff,stroke:#2E7D32,color:#000000
         end
     end
 
     %% ---------------------------------------------------------
     %% 5. DISTRIBUTION INFRASTRUCTURE
     %% ---------------------------------------------------------
-    subgraph di [Distribution Infrastructure]
-        ObjectStorage@{ shape: bow-rect, label: "Object Storage"}
+    subgraph di [Distribution]
+        %% My goals involve going beyond object storage, so use generic term
+        ObjectStorage@{ shape: bow-rect, label: "Storage"}
+        style ObjectStorage fill:#FBC02D,stroke:#F9A825,color:#000000
         Metadata@{ shape: rect, label: "FAIR Data Catalogue"}
         HTTP@{ shape: rect, label: "Systems-Ready Data"}
         DecentralizedDistribution@{ shape: rect, label: "Decentralized Distribution"}
@@ -78,6 +94,8 @@ flowchart TD
     %% ---------------------------------------------------------
     subgraph ei [Experimental Infrastructure]
         GeoSpatialServices@{ shape: rect, label: "Geospatial Services"}
+        %% Does not make sense. Focus on delivering the data 
+        style GeoSpatialServices fill:#66BB6A,stroke:#2E7D32,color:#000000
     end
 
     %% ---------------------------------------------------------
@@ -178,6 +196,10 @@ style DecentralizedDistribution fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style HTTP fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style Systems fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
 style Metadata fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style Statistical fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style Foundation fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style Orthoimagery fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+style Elevation fill:#66BB6A,stroke:#2E7D32,color:#000000
 
 %%style df fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
 style sot fill:#EF9A9A,stroke:#C62828,color:#000000
@@ -202,10 +224,9 @@ style visuals fill:#FBC02D,stroke:#F9A825,color:#000000
 
 style ent fill:#66BB6A,stroke:#2E7D32,color:#000000
 style DataSci fill:#D32F2F,stroke:#8E0000,color:#FFFFFF
-style GeoSpatialServices fill:#FFCC80,stroke:#FB8C00,color:#000000
 
 
-class Foundation,Statistical,Orthoimagery,FieldImagery,EnvironmentClimate,Elevation,WebCorpus linkNode
+class FieldImagery linkNode
 class Parquet,FlatGeoBuf,SQLite,FileGeodatabase,VectorTiles,NextGenVectorTiles,GeoTIFF,Zarr,WebP,PMTiles,JPEGXL,AV1,WARC linkNode
 
     %% =========================================================
