@@ -12,9 +12,10 @@ flowchart TD
         style EnvironmentClimate fill:#FBC02D,stroke:#F9A825,color:#000000
         FieldImagery@{ shape: lean-l, label: "Field Imagery"}
         style FieldImagery fill:#FBC02D,stroke:#F9A825,color:#000000
+        %% My little secret, this is one of my highest priorities, but I have to learn more about how Internet Archive does the job and improve it. They do it way too inneficiently (ex. capture a webpage hundreds of times per day), and they don't allow capturing from multiple locations. A webpage can be served differently depending on IP level data, corporate proxies, when you control certificates, etc
         WebCorpus@{ shape: lean-l, label: "Web Corpus"}
-        Elevation@{ shape: lean-l}
         style WebCorpus fill:#66BB6A,stroke:#2E7D32,color:#000000
+        Elevation@{ shape: lean-l}
     end
 
     %% ---------------------------------------------------------
@@ -210,8 +211,6 @@ style GeoTIFF fill:#FFCDD2,stroke:#E57373,color:#000000
 style JPEGXL fill:#FFCDD2,stroke:#E57373,color:#000000
 style WARC fill:#FFCDD2,stroke:#E57373,color:#000000
 style AV1 fill:#FFCDD2,stroke:#E57373,color:#000000
-
-style ds fill:#FB8C00,stroke:#E65100,color:#000000
 
 style pkg fill:#FFB74D,stroke:#EF6C00,color:#000000
 style SQLite fill:#EF6C00,stroke:#E65100,color:#000000
