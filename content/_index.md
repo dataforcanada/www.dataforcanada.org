@@ -62,7 +62,7 @@ See our processing pipeline in action. View samples and documentation for our cu
 
 ## High-Level Overview
 
-**Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value [statistical](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-statistical/), [foundational](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-orthoimagery/#download-and-preview), and [orthoimagery](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-orthoimagery/#download-and-preview) datasets first.
+**Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value [statistical](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-statistical/), [foundational](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-foundation/#download-and-preview), and [orthoimagery](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-orthoimagery/#download-and-preview) datasets first.
 
 {{< rawhtml >}}
 <style>
