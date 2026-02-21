@@ -61,6 +61,8 @@ flowchart TD
     mirrors a12@<--> Consumers
     a12@{animate: true, animation: slow}
     
+    Metadata a30@<--> P2P
+    a30@{animate: true, animation: fast}
     mirrors a9@<--> P2P
     a9@{animate: true, animation: fast}
 
