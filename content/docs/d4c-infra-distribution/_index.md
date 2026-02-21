@@ -15,13 +15,13 @@ We prioritize interoperability, long-term preservation, and decentralized resili
 flowchart TD
     classDef linkNode stroke:#0000EE,color:#0000EE,stroke-width:2px;
     subgraph mirrors [Mirrors & Preservation]
-        Metadata[FAIR Data Catalogue]
         SourceCoop[Source Cooperative]
         Tigris[Tigris]
         Community[Community]
         Zenodo[Zenodo]
         Cloudflare
         InternetArchive[Internet Archive]
+        Metadata[FAIR Data Catalogue]
     end
 
     Sources[Open Data Sources]
@@ -61,8 +61,10 @@ flowchart TD
     mirrors a12@<--> Consumers
     a12@{animate: true, animation: slow}
     
-    Metadata a30@<--> P2P
-    a30@{animate: true, animation: fast}
+
+    %% Hint, the FAIR Data Catalogue can also be decentralized 🤯
+    %%Metadata a30@<--> P2P
+    %%a30@{animate: true, animation: fast}
     mirrors a9@<--> P2P
     a9@{animate: true, animation: fast}
 
