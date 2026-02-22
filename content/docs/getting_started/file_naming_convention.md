@@ -1,6 +1,6 @@
 ---
 title: "File Naming Convention"
-weight: 1
+weight: 2
 next: /docs/d4c-pkgs
 sidebar:
   open: true
