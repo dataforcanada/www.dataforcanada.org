@@ -18,8 +18,8 @@ See Statistics Canada's [geographic hiearchy](https://www12.statcan.gc.ca/census
 
 <!-- OK I can't get this to work, SO annoying-->
 <!--{{% details title="https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/fig/index-eng.cfm?ID=F1_1" closed="true" %}}-->
-![geographic hierarchy](geographic-hiearchy.svg).
 <!--{{% /details %}}-->
+![geographic hierarchy](geographic-hiearchy.svg).
 
 ## 1. The Current Schema
 
