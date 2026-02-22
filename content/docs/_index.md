@@ -12,6 +12,7 @@ Look through our [GitHub Organization](https://github.com/orgs/dataforcanada/rep
 
 {{< cards cols="2" >}}
   {{< card link="/docs/getting_started/file_naming_convention/" title="File Naming Convention" icon="cog" >}}
+  {{< card link="https://github.com/dataforcanada/d4c-community" title="Data for Canada Community" icon="chat" >}}
   {{< card link="/docs/d4c-infra-distribution/" title="Data Dissemination Strategy" icon="globe" >}}
   {{< card link="/docs/d4c-pkgs/" title="Data for Canada Packages" icon="cube" >}}
   {{< card link="/infrastructure/" title="Infrastructure" icon="office-building" >}}
@@ -19,13 +20,15 @@ Look through our [GitHub Organization](https://github.com/orgs/dataforcanada/rep
 
 ## Our Data
 
-{{< cards cols="3" >}}
-  {{< card link="https://data-01.labs.dataforcanada.org/processed/" title="Data in The Lab" icon="cloud-download" >}}
-  {{< card link="https://data-01.dataforcanada.org/processed/" title="Production Data" icon="check-circle" >}}
-{{< /cards >}}
+<!--Use Cloudflare strategically-->
+<!--{{< cards cols="3" >}}-->
+<!--  {{< card link="https://data-01.dataforcanada.org/processed/" title="Data" icon="check-circle" >}}-->
+<!--{{< /cards >}}-->
 
 {{< cards cols="1" >}}
-  {{< card link="https://source.coop/dataforcanada/" title="Source Cooperative Mirror" icon="beaker" >}}
-  {{< card link="https://zenodo.org/communities/dataforcanada/records/" title="Zenodo Mirror" icon="academic-cap" >}}
-  {{< card link="https://archive.org/details/@diegoripley/uploads/" title="Internet Archive Mirror" icon="library" >}}
+  {{< card link="https://source.coop/dataforcanada/" title="Source Cooperative Strategic Mirror" icon="beaker" >}}
+  {{< card link="https://source.coop/dataforcanada/" title="Tigris Strategic Mirror" icon="globe" >}}
+  {{< card link="https://zenodo.org/communities/dataforcanada/records/" title="Zenodo Strategic Mirror" icon="academic-cap" >}}
+  {{< card link="https://archive.org/details/@diegoripley/uploads/" title="Internet Archive Strategic Mirror" icon="library" >}}
+  {{< card link="/#get-involved" title="Community" icon="sun" >}}
 {{< /cards >}}
