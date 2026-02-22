@@ -1,6 +1,7 @@
 ---
-title: "Blog"
+title: "Archive"
 draft: true
+layout: archives
 ---
 
 <div style="text-align: center; margin-top: 1em;">
