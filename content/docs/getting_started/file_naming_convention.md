@@ -1,10 +1,12 @@
 ---
-title: "Data for Canada: File Naming Convention (DFC-FNC)"
+title: "File Naming Convention"
 weight: 1
 next: /docs/d4c-pkgs
 sidebar:
   open: true
 ---
+
+## Data for Canada File Naming Convention (D4C-FNC)
 
 {{< callout type="important">}}
 We are open to feedback on the current file naming convention.
