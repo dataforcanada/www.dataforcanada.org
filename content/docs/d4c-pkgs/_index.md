@@ -8,7 +8,7 @@ sidebar:
   open: true
 ---
 
-This project is composed of multiple `data packages` (`d4c-pkgs`).
+This project is composed of multiple `data packages` (`D4C-PKGS`).
 
 {{< cards >}}
   {{< card link="/docs/d4c-pkgs/d4c-datapkg-foundation/" title="Foundation" icon="office-building" >}}
