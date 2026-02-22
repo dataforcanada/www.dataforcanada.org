@@ -108,8 +108,8 @@ params:
   imageZoom:
     enable: true
 
-  # TODO: get this working
-  displayUpdatedAuthor: true
+  # Turn on when there are teams
+  #displayUpdatedAuthor: true
 
   displayUpdatedDate: true
   dateFormat: "Monday, January 2, 2006 at 3:04 PM MST"
