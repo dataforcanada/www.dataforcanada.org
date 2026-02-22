@@ -10,22 +10,26 @@ sidebar:
 
 ## Background
 
-{{< callout type="important" >}}
-  You will need to understand these concepts to fully grasp the file naming convention.
+{{< callout type="info">}}
+You will need to understand these concepts to fully grasp the file naming convention.
 {{< /callout >}}
 
 See Statistics Canada's [geographic hiearchy](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/fig/index-eng.cfm?ID=F1_1) and use the [Census of Population 2021 Dictionary](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/index-eng.cfm) to understand their conceptual model of representing Canada.
 
+<!-- OK I can't get this to work, SO annoying-->
+<!--{{% details title="https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/fig/index-eng.cfm?ID=F1_1" closed="true" %}}-->
 ![geographic hierarchy](geographic-hiearchy.svg).
+<!--{{% /details %}}-->
 
-### 1. The Current Schema
+## 1. The Current Schema
 
 All published datasets must adhere to the following structure to ensure files are machine-parsable, sortable by region, and identifiable by human readers. **This file naming convention will be modified as we solidify our processes**.
 
-{{< callout >}}
+{{< callout type="important">}}
 We are open to feedback on the current file naming convention.
 {{< /callout >}}
 
+{{% details title="File Naming Convention" closed="true" %}}
 #### **Syntax**
 
 `[iso-region]_[data-source-name]-[DGUID]_[data-pkg]_[iso-date]_[variant]_[version].[extension]`
@@ -48,12 +52,11 @@ We are open to feedback on the current file naming convention.
 | **5. Variant**                                                                                                                    | Resolution or specific subset info.                                                                                                                                                                                                                    | **No Projections.** Alphanumeric. Units included.                                                                                                                                                 | `075mm`, `30cm`                                               |
 | **_**                                                                                                                             | *Separator*                                                                                                                                                                                                                                            | Underscore                                                                                                                                                                                        |                                                               |
 | **6. Version**                                                                                                                    | **Semantic Versioning**.                                                                                                                                                                                                                               | `v[Major].[Minor].[Patch]`                                                                                                                                                                        | `v0.0.1`                                                      |
+{{% /details %}}
 
 ## 2. Component Detail
+
 {{% details title="Details" closed="true" %}}
-
-
-
 
 ### A. Source / Location ID (Flexible)
 
