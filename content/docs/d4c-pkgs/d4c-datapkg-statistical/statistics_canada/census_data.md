@@ -4,17 +4,19 @@ weight: 2
 #next: /docs/d4c-datapkg-orthoimagery/
 ---
 
+Look through our [d4c-datapkg-statistical](https://github.com/dataforcanada/d4c-datapkg-statistical) repo for the datasets processed.
+
 ## Background
 
 {{< callout type="important" >}}
-These concepts are key to working with Statistical and Census data from Statistics Canada.
+  The concepts listed in [terms](/docs/getting_started/terms/#1-statistical-data-package) concepts are key to working with Statistical and Census data from Statistics Canada.
 {{< /callout >}}
-
-To work with Census data, you need to look into Statistics Canada's [geographic hierarchy](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/fig/index-eng.cfm?ID=F1_1) and use the [Census of Population 2021 Dictionary](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/index-eng.cfm) to understand their conceptual model.
 
 ## Download and Preview
 
-Below is a table of datasets generated from our current [d4c-datapkg-statistical](https://github.com/dataforcanada/d4c-datapkg-statistical) processing pipeline. You can download the raw **Parquet** files directly or use the **Map Preview** links to inspect the data as vector tiles.
+You can download the raw **Parquet** files directly or use the **Map Preview** links to inspect the data as vector tiles.
+
+{{< details title="Instructions" closed="true" >}}
 
 ### How to use the Map Preview
 
@@ -37,6 +39,7 @@ In the top-right "Search fields" box, enter the attribute key using the format `
 
 **4. Update the Map**
 Click the **"Recalculate Classes"** button. This will refresh the map legend and choropleth coloring based on the currently visible extent.
+{{< /details >}}
 
 {{< callout type="info">}}
 **Note on Data Availability:** Dissemination blocks currently only contain these **[3 specific characteristics](https://github.com/dataforcanada/d4c-datapkg-statistical/issues/6)**.

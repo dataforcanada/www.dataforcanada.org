@@ -9,12 +9,17 @@ Look through our [d4c-datapkg-statistical](https://github.com/dataforcanada/d4c-
 ## Background
 
 {{< callout type="important" >}}
-  These concepts are key to working with Statistical and Census data from Statistics Canada.
+  The concepts listed in [terms](/docs/getting_started/terms/#1-statistical-data-package) concepts are key to working with Statistical and Census data from Statistics Canada.
 {{< /callout >}}
 
-
-
 ## Download and Preview
+
+{{< callout type="note">}}
+**Credit:**
+
+* The location search functionality in our map previews is powered by the **[PHAC Geocoder](https://geocoder.alpha.phac.gc.ca/)**.
+* The basemaps is generously served through [OpenFreeMap](https://openfreemap.org/).
+{{< /callout >}}
 
 | Place | ISO | Date | Provider | Dataset ID & Preview | Parquet |
 | --- | --- | --- | --- | --- | --- |
