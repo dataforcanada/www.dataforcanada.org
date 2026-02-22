@@ -49,8 +49,6 @@ Click the **"Recalculate Classes"** button. This will refresh the map legend and
 * The basemaps is generously served through [OpenFreeMap](https://openfreemap.org/).
 {{< /callout >}}
 
-Here is the table with the Dataset ID & Preview URLs removed:
-
 | Place  | ISO | Date | Provider | Dataset ID & Preview                                                                                                                                                                                                          | Parquet                                                                                                                                                                                                                     |
 | ------ | --- | ---- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Canada | CA  | 2021 | StatCan  | ca_statcan_2021A000011124_d4c-datapkg-statistical_census_pop_provinces_territories_2021_v0.1.0-beta                                                                                                                           | [Download](https://source.coop/dataforcanada/d4c-datapkg-statistical/processed/ca_statcan_2021A000011124_d4c-datapkg-statistical_census_pop_provinces_territories_2021_v0.1.0-beta.parquet)                                 |
