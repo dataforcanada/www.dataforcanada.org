@@ -1,12 +1,14 @@
 ---
-title: File Naming Convention
+title: "Data for Canada: File Naming Convention (DFC-FNC)"
 weight: 1
 next: /docs/d4c-pkgs
 sidebar:
   open: true
 ---
 
-## Data for Canada: File Naming Convention (DFC-FNC)
+{{< callout type="important">}}
+We are open to feedback on the current file naming convention.
+{{< /callout >}}
 
 ## Background
 
@@ -25,19 +27,16 @@ See Statistics Canada's [geographic hiearchy](https://www12.statcan.gc.ca/census
 
 All published datasets must adhere to the following structure to ensure files are machine-parsable, sortable by region, and identifiable by human readers. **This file naming convention will be modified as we solidify our processes**.
 
-{{< callout type="important">}}
-We are open to feedback on the current file naming convention.
-{{< /callout >}}
-
 {{% details title="File Naming Convention" closed="true" %}}
-#### **Syntax**
+
+### **Syntax**
 
 `[iso-region]_[data-source-name]-[DGUID]_[data-pkg]_[iso-date]_[variant]_[version].[extension]`
 
 **Example**:
 **[ca_statcan_2021A000011124_d4c-datapkg-statistical_census_pop_census_metropolitan_areas_and_census_agglomerations_2021_v0.1.0-beta.parquet](https://source.coop/dataforcanada/d4c-datapkg-statistical/processed/ca_statcan_2021A000011124_d4c-datapkg-statistical_census_pop_census_metropolitan_areas_and_census_agglomerations_2021_v0.1.0-beta.parquet)**
 
-#### **Component Breakdown**
+### **Component Breakdown**
 
 | Segment                                                                                                                           | Definition                                                                                                                                                                                                                                             | Format / Rules                                                                                                                                                                                    | Example                                                       |
 | :-------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------ |
@@ -102,8 +101,7 @@ We use **SemVer** (`vMAJOR.MINOR.PATCH`) to track changes to datasets.
 
 ## 3. Helper Tools
 
-### **Statistics Canada Geography Search**
-
+{{% details title="Statistics Canada Geography Search" closed="true" %}}
 {{< callout type="warning" >}}
   In the tool below, you can click on each individual **[DGUID](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo055)** to see their associated geography.
 {{< /callout >}}
@@ -113,3 +111,4 @@ To accurately populate the **[DGUID](https://www12.statcan.gc.ca/census-recensem
 * **Tool URL:** [https://statcan-geography.labs.dataforcanada.org/](https://statcan-geography.labs.dataforcanada.org/)
 * **Source Code:** [GitHub Repository](https://github.com/dataforcanada/statcan-geography.labs.dataforcanada.org)
 * **Usage:** Enter a city or region name to retrieve the correct colloquial name and DGUID pairing (e.g., searching "Ottawa" returns `2021A00053506008`).
+{{% /details %}}
