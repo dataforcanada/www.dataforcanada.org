@@ -27,6 +27,7 @@ Our approach is guided by the following:
 * [Science Needs a Social Network for Sharing Big Data](https://hackmd.io/wKKm4cIDR6a9kYwZ3srVFg?view)
 * [Cloud-Optimized Geospatial Formats Guide](https://guide.cloudnativegeo.org/)
 * [GC White Paper: Data Sovereignty and Public Cloud](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty/gc-white-paper-data-sovereignty-public-cloud.html)
+
 ## The Solution
 
 We act as the transformation layer. We aggregate datasets with permissive licenses and process them into "digestible" standards optimized for modern downstream applications.
@@ -92,19 +93,24 @@ See our processing pipeline in action. View samples and documentation for our cu
 
 ## Get Involved
 
-We are actively looking for new members and partners to help shape this project.
+We are actively looking for members and partners who want to help scale the Canadian open data ecosystem. Whether you represent an institution or are an individual developer, there are several ways to support the mission.
 
-### 🇨🇦 Infrastructure Support: Selective Mirroring
+### Infrastructure Support & Global Mirroring
 
-To support data sovereignty, safeguard against data loss, and improve local access speeds, **we are currently seeking selective mirroring in Canada**.
+To safeguard against data loss and improve global access speeds, we are seeking **Global Infrastructure Partners** to help host and distribute our datasets.
 
-We are looking for academic institutions, research organizations, or **infrastructure partners** interested in hosting mirrors of specific, high-value dataset subsets. If you have bandwidth and storage capacity to spare for the Canadian open data ecosystem, please [contact us](https://www.dataforcanada.org/contact/).
+* **Selective Mirroring:** We are looking for academic institutions, research organizations, or infrastructure partners worldwide interested in hosting mirrors of specific, high-value dataset subsets (e.g., Census, foundation, and orthoimagery data).
+* **Build Infrastructure:** We are seeking partners to host our **build and ETL infrastructure**. If you have available compute resources (High-CPU/RAM instances or specialized CI/CD runners) to help accelerate our data transformation layer, please [contact us](https://www.dataforcanada.org/contact/).
 
 ### Contributing & Feedback
 
-Right now, we primarily need **feedback on file naming convention, our [data packages](https://www.dataforcanada.org/docs/d4c-pkgs/), and the infrastructure** used to generate them. If you have thoughts on data quality, format optimization, or pipeline improvements, we want to hear from you.
+We welcome any type of feedback—from bug reports in our transformation logic to suggestions on data schema improvements. For technical feedback or to contribute to specific data pipelines, please visit the relevant repositories:
 
-* **Discussions:** Head over to [#dataforcanada:matrix.org](https://matrix.to/#/#dataforcanada:matrix.org) to chat, or go to the individual process GitHub repos to comment on specific issues.
+* **[d4c-datapkg-statistical](https://github.com/dataforcanada/d4c-datapkg-statistical)**
+* **[d4c-datapkg-foundation](https://github.com/dataforcanada/d4c-datapkg-foundation)**
+* **[d4c-datapkg-orthoimagery](https://github.com/dataforcanada/d4c-datapkg-orthoimagery)**
+
+Join the conversation at [#dataforcanada:matrix.org](https://matrix.to/#/#dataforcanada:matrix.org) to chat, or provide feedback directly on the GitHub repositories listed above.
 
 ## License
 
