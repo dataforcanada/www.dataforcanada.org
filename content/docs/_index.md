@@ -11,6 +11,7 @@ Look through our [GitHub Organization](https://github.com/orgs/dataforcanada/rep
 ## Start Here
 
 {{< cards cols="2" >}}
+  {{< card link="/docs/getting_started/terminology/" title="Terminology" icon="bookmark" >}}
   {{< card link="/docs/getting_started/file_naming_convention/" title="File Naming Convention" icon="cog" >}}
   {{< card link="https://github.com/dataforcanada/d4c-community" title="Data for Canada Community" icon="chat" >}}
   {{< card link="/docs/d4c-infra-distribution/" title="Data Dissemination Strategy" icon="lightning-bolt" >}}

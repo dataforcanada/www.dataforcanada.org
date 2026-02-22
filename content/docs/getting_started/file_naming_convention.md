@@ -14,16 +14,9 @@ We are open to feedback on the current file naming convention.
 
 ## Background
 
-{{< callout type="info">}}
-You will need to understand these concepts to fully grasp the file naming convention.
+{{< callout type="important" >}}
+  The concepts listed in [terms](/docs/getting_started/terms/#1-statistical-data-package) are key to working with Statistical and Census data from Statistics Canada.
 {{< /callout >}}
-
-See Statistics Canada's [geographic hiearchy](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/fig/index-eng.cfm?ID=F1_1) and use the [Census of Population 2021 Dictionary](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/index-eng.cfm) to understand their conceptual model of representing Canada.
-
-<!-- OK I can't get this to work, SO annoying-->
-<!--{{% details title="https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/fig/index-eng.cfm?ID=F1_1" closed="true" %}}-->
-<!--{{% /details %}}-->
-![geographic hierarchy](geographic-hiearchy.svg).
 
 ## 1. The Current Schema
 
