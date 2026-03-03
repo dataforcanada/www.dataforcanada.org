@@ -61,7 +61,7 @@ Here is a table of some of the datasets created from the current process.
 
 | Place | ISO | Year | Provider | Dataset ID | PMTiles |
 | --- | --- | --- | --- | --- | --- |
-| Canada | CA | 2025 | Versatiles | ca_versatiles-2021A000011124_d4c-datapkg-orthoimagery_2025-08-10_satellite_v0.1.0-beta | In Lab |
+| Canada | CA | 2025 | Versatiles | ca_versatiles-2021A000011124_d4c-datapkg-orthoimagery_2025-08-10_satellite | In Lab |
 | Canada | CA | 2020 | NRCan | ca_nrcan-2021A000011124_d4c-datapkg-orthoimagery_2020_30m_v0.1.0-beta | In Lab |
 | Edmonton | CA-AB | 2023 | Edmonton | ca-ab_edmonton-2023A00054811061_d4c-datapkg-orthoimagery_2023_075mm_v0.1.0-beta | In Lab |
 | Red Deer | CA-AB | 2024 | Red Deer | ca-ab_red-deer-2024A00054808011_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta | In Lab |
