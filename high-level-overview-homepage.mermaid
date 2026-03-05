@@ -7,11 +7,12 @@ flowchart TD
     subgraph ds [Data Sources]
         Statistical@{ shape: lean-l}
         Foundation@{ shape: lean-l}
+        %% I have some big ideas for this data package, but it will take some exploratory work
         EnvClimate@{ shape: lean-l, label: "Environment, Climate, & Health"}
         Orthoimagery@{ shape: lean-l}
         FieldImagery@{ shape: lean-l, label: "Field Imagery"}
-        WebCorpus@{ shape: lean-l, label: "Web Corpus"}
         Elevation@{ shape: lean-l}
+        WebCorpus@{ shape: lean-l, label: "Web Corpus"}
     end
 
     DataPkgs@{ shape: rect, label: "Data Packages"}
@@ -21,9 +22,11 @@ flowchart TD
             Parquet@{ shape: lean-l}
             Zarr@{ shape: lean-l}
             GeoTIFF@{ shape: lean-l}
-            AV1@{ shape: lean-l, label: "Next-Gen Video"}
-            JPEGXL@{ shape: lean-l, label: "Next-Gen Imagery"}
-            WARC@{ shape: lean-l, label: "Unstructured Web Data"}
+            JPEGXL@{ shape: lean-l, label: "JPEG XL"}
+            AV1@{ shape: lean-l, label: "AV1"}
+            %% Commented out since I'm pretty sure this is not ideal file format. Ideal file format is Parquet and other file formats outlined depending on need. For example, let's say we archive media posts from various platforms (ex. X, BlueSky, etc.), there's no need to archive the webpage if we can just parse the content and have significant savings.
+            %% If we do archive webpages, I want there to be a deduplicating component similar to BTRFS, The Internet Archive is way too wasteful with the way they archive webpages.
+            %%WARC@{ shape: lean-l, label: "Unstructured Web Data"}
             FAIRCat@{ shape: lean-l, label: "FAIR Data Catalogue"}
         end
 
@@ -35,6 +38,7 @@ flowchart TD
         end
 
         subgraph visuals [" "]
+            AVIF@{ shape: lean-l}
             WebP@{ shape: lean-l}
             JPG@{ shape: lean-l}
             PNG@{ shape: lean-l}
@@ -58,7 +62,7 @@ flowchart TD
     end
 
     subgraph ei [Experimental Infrastructure]
-        GeoServices@{ shape: rect, label: "Geospatial Services"}
+        Services@{ shape: rect, label: "Services"}
     end
 
     subgraph consumption [Consumption]
@@ -72,14 +76,14 @@ flowchart TD
     e2@{animate: true, animation: slow}
     Orthoimagery e3@<--> DataPkgs
     e3@{animate: true, animation: slow}
+    FieldImagery e7@<--> DataPkgs
+    e7@{animate: true, animation: fast}
     EnvClimate e4@<--> DataPkgs
     e4@{animate: true, animation: fast}
     Elevation e5@<--> DataPkgs
     e5@{animate: true, animation: slow}
     WebCorpus e6@<--> DataPkgs
     e6@{animate: true, animation: fast}
-    FieldImagery e7@<--> DataPkgs
-    e7@{animate: true, animation: fast}
 
     DataPkgs e8@--> df
     e8@{animate: true, animation: fast}
@@ -136,24 +140,27 @@ flowchart TD
         L1[High]:::legendRed ~~~ L2[Medium]:::legendYellow ~~~ L3[Low]:::legendGreen
     end
 
-    style EnvClimate fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    style EnvClimate fill:#FBC02D,stroke:#F9A825,color:#000000
     style Orthoimagery fill:#FBC02D,stroke:#F9A825,color:#000000
     style FieldImagery fill:#FBC02D,stroke:#F9A825,color:#000000
     style WebCorpus fill:#66BB6A,stroke:#2E7D32,color:#000000
-    style Elevation fill:#FBC02D,stroke:#F9A825,color:#000000
+    style Elevation fill:#66BB6A,stroke:#2E7D32,color:#000000
 
     style VectorTiles fill:#66BB6A,stroke:#2E7D32,color:#000000
     style NextGenVT fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
-    style WebP fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    %% This is in the ideal file format. As of 2026-03-05, it is mostly supported across major browsers
+    style AVIF fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    style WebP fill:#FFCC80,stroke:#FB8C00,color:#000000
     style JPG fill:#66BB6A,stroke:#2E7D32,color:#000000
     style PNG fill:#66BB6A,stroke:#2E7D32,color:#000000
     style FileGDB fill:#fff,stroke:#2E7D32,color:#000000
-    style GeoServices fill:#66BB6A,stroke:#2E7D32,color:#000000
+    style Services fill:#FBC02D,stroke:#F9A825,color:#000000
     style ObjStorage fill:#FBC02D,stroke:#F9A825,color:#000000
 
     style DataPkgs fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style FAIRCat fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
-    style DecenDist fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    %% I'm not as concerned about distribution of data. I have made some progress on smart nodes so that's going to be a YUGE release
+    style DecenDist fill:#FBC02D,stroke:#F9A825,color:#000000
     style HTTP fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style Systems fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style Metadata fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
@@ -163,9 +170,9 @@ flowchart TD
     style sot fill:#EF9A9A,stroke:#C62828,color:#000000
     style Parquet fill:#FFCDD2,stroke:#E57373,color:#000000
     style Zarr fill:#FFCDD2,stroke:#E57373,color:#000000
-    style GeoTIFF fill:#FFCDD2,stroke:#E57373,color:#000000
+    style GeoTIFF fill:#FFCC80,stroke:#FB8C00,color:#000000
     style JPEGXL fill:#FFCDD2,stroke:#E57373,color:#000000
-    style WARC fill:#FFCDD2,stroke:#E57373,color:#000000
+    %%style WARC fill:#FFCDD2,stroke:#E57373,color:#000000
     style AV1 fill:#FFCDD2,stroke:#E57373,color:#000000
 
     style pkg fill:#FFB74D,stroke:#EF6C00,color:#000000
@@ -204,7 +211,7 @@ flowchart TD
     click PMTiles "https://github.com/protomaps/PMTiles/blob/main/spec/v3/spec.md" _blank
     click JPEGXL "https://jpeg.org/jpegxl/" _blank
     click AV1 "https://aomedia.org/specifications/av1/" _blank
-    click WARC "https://github.com/iipc/warc-specifications/" _blank
+    %%click WARC "https://github.com/iipc/warc-specifications/" _blank
     click FAIRCat "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click HTTP "https://www.dataforcanada.org/docs/" _blank
     click DecenDist "https://www.dataforcanada.org/docs/d4c-infra-distribution/" _blank
