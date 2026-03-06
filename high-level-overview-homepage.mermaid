@@ -74,12 +74,12 @@ flowchart TD
     e1@{animate: true, animation: slow}
     Foundation e2@<--> DataPkgs
     e2@{animate: true, animation: slow}
+    EnvClimate e4@<--> DataPkgs
+    e4@{animate: true, animation: fast}
     Orthoimagery e3@<--> DataPkgs
     e3@{animate: true, animation: slow}
     FieldImagery e7@<--> DataPkgs
     e7@{animate: true, animation: fast}
-    EnvClimate e4@<--> DataPkgs
-    e4@{animate: true, animation: fast}
     Elevation e5@<--> DataPkgs
     e5@{animate: true, animation: slow}
     WebCorpus e6@<--> DataPkgs
@@ -140,7 +140,7 @@ flowchart TD
         L1[High]:::legendRed ~~~ L2[Medium]:::legendYellow ~~~ L3[Low]:::legendGreen
     end
 
-    style EnvClimate fill:#FBC02D,stroke:#F9A825,color:#000000
+    style EnvClimate fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style Orthoimagery fill:#FBC02D,stroke:#F9A825,color:#000000
     style FieldImagery fill:#FBC02D,stroke:#F9A825,color:#000000
     style WebCorpus fill:#66BB6A,stroke:#2E7D32,color:#000000
