@@ -21,7 +21,7 @@ flowchart TD
     %% TODO: 3D Tiles. Need to take a closer look at this file format, I am not experienced with it
     GLB@{ shape: rect, label: "glTF GLB"}
     FlatCityBuf@{ shape: rect}
-    
+
         subgraph sot [Long-Term Storage]
             Parquet@{ shape: lean-l}
             Zarr@{ shape: lean-l}
@@ -206,6 +206,7 @@ flowchart TD
     click FieldImagery "https://github.com/dataforcanada/d4c-datapkg-field-imagery" _blank
     click EnvClimate "https://github.com/dataforcanada/d4c-datapkg-environment-climate-health" _blank
     click Elevation "https://github.com/dataforcanada/d4c-datapkg-elevation" _blank
+    click FlatCityBuf "https://github.com/cityjson/flatcitybuf" _blank
     click WebCorpus "https://github.com/dataforcanada/d4c-datapkg-web-corpus" _blank
     click Parquet "https://github.com/apache/parquet-format/" _blank
     click FlatGeoBuf "https://flatgeobuf.org/" _blank
