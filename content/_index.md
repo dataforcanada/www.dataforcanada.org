@@ -49,7 +49,7 @@ Our data is optimized for:
 | **Core & Desktop** | [GDAL/OGR](https://gdal.org/), [QGIS](https://qgis.org/), [QField](https://qfield.org/) |
 | **Python & Data** | [GeoPandas](https://geopandas.org/), [Lonboard](https://developmentseed.org/lonboard/latest/), [DuckDB](https://duckdb.org/), [SedonaDB](https://sedona.apache.org/sedonadb/latest/)|
 | **Database** | [PostgreSQL](https://www.postgresql.org/) with [PostGIS](https://postgis.net/) and [pg_mooncake](https://www.mooncake.dev/pgmooncake/) extensions |
-| **Serving** | [GeoServer](https://geoserver.org/), [Martin](https://martin.maplibre.org/), [TiTiler](https://developmentseed.org/titiler/), [ZOO-Project](https://zoo-project.org/), via multi-resolution grid (ex. [DGGS](https://ogcapi.ogc.org/dggs/)) |
+| **Serving** | [GeoServer](https://geoserver.org/), [Martin](https://martin.maplibre.org/), [TiTiler](https://developmentseed.org/titiler/), [ZOO-Project](https://zoo-project.org/), and via multi-resolution grid (ex. [DGGS](https://ogcapi.ogc.org/dggs/)) |
 | **Serverless** | [Cloudflare Workers](https://workers.cloudflare.com/), [AWS Lambda](https://aws.amazon.com/lambda/), [Google Cloud Run functions](https://cloud.google.com/functions) |
 | **Enterprise** | [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview), [ArcGIS Enterprise](https://enterprise.arcgis.com/) |
 
