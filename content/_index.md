@@ -49,7 +49,7 @@ Our data is optimized for:
 | **Core & Desktop** | [GDAL/OGR](https://gdal.org/), [QGIS](https://qgis.org/), [QField](https://qfield.org/) |
 | **Python & Data** | [GeoPandas](https://geopandas.org/), [Lonboard](https://developmentseed.org/lonboard/latest/), [DuckDB](https://duckdb.org/), [SedonaDB](https://sedona.apache.org/sedonadb/latest/)|
 | **Database** | [PostgreSQL](https://www.postgresql.org/) with [PostGIS](https://postgis.net/) and [pg_mooncake](https://www.mooncake.dev/pgmooncake/) extensions |
-| **Serving** | [GeoServer](https://geoserver.org/), [Martin](https://martin.maplibre.org/), [TiTiler](https://developmentseed.org/titiler/), [ZOO-Project](https://zoo-project.org/), [DGGS](https://ogcapi.ogc.org/dggs/) |
+| **Serving** | [GeoServer](https://geoserver.org/), [Martin](https://martin.maplibre.org/), [TiTiler](https://developmentseed.org/titiler/), [ZOO-Project](https://zoo-project.org/), via multi-resolution grid (ex. [DGGS](https://ogcapi.ogc.org/dggs/)) |
 | **Serverless** | [Cloudflare Workers](https://workers.cloudflare.com/), [AWS Lambda](https://aws.amazon.com/lambda/), [Google Cloud Run functions](https://cloud.google.com/functions) |
 | **Enterprise** | [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview), [ArcGIS Enterprise](https://enterprise.arcgis.com/) |
 
@@ -63,7 +63,7 @@ See our processing pipeline in action. View samples and documentation for our cu
 
 ## High-Level Overview
 
-**Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value [statistical](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-statistical/), [foundational](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-foundation/#download-and-preview), and [orthoimagery](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-orthoimagery/#download-and-preview) datasets first.
+**Note:** The data sources in the diagram below are **prioritized from left to right**, reflecting our current focus on processing high-value [statistical](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-statistical/), [foundational](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-foundation/#download-and-preview), [environmental, climate, and health-impact datasets](https://github.com/dataforcanada/d4c-datapkg-environment-climate-health), and [orthoimagery](https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-orthoimagery/#download-and-preview) datasets first.
 
 {{< rawhtml >}}
 <style>
@@ -99,7 +99,7 @@ We are actively looking for members and partners who want to help scale the Cana
 
 To safeguard against data loss and improve global access speeds, we are seeking **Global Infrastructure Partners** to help host and distribute our datasets.
 
-* **Selective Mirroring:** We are looking for academic institutions, research organizations, or infrastructure partners worldwide interested in hosting mirrors of specific, high-value dataset subsets (e.g., Census, foundation, and orthoimagery data).
+* **Selective Mirroring:** We are looking for academic institutions, research organizations, or infrastructure partners worldwide interested in hosting mirrors of specific, high-value dataset subsets (e.g., statistical, foundation, and orthoimagery data).
 * **Build Infrastructure:** We are seeking partners to host our **build and ETL infrastructure**. If you have available compute resources (High-CPU/RAM instances or specialized CI/CD runners) to help accelerate our data transformation layer, please [contact us](https://www.dataforcanada.org/contact/).
 
 ### Contributing & Feedback
@@ -108,6 +108,7 @@ We welcome any type of feedback—from bug reports in our transformation logic t
 
 * **[d4c-datapkg-statistical](https://github.com/dataforcanada/d4c-datapkg-statistical)**
 * **[d4c-datapkg-foundation](https://github.com/dataforcanada/d4c-datapkg-foundation)**
+* **[d4c-datapkg-environment-climate-health](https://github.com/dataforcanada/d4c-datapkg-environment-climate-health)**
 * **[d4c-datapkg-orthoimagery](https://github.com/dataforcanada/d4c-datapkg-orthoimagery)**
 
 Join the conversation at [#dataforcanada:matrix.org](https://matrix.to/#/#dataforcanada:matrix.org) to chat, or provide feedback directly on the GitHub repositories listed above.
