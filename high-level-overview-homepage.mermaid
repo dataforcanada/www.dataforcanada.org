@@ -18,6 +18,10 @@ flowchart TD
     DataPkgs@{ shape: rect, label: "Data Packages"}
 
     subgraph df [Dissemination Formats]
+    %% TODO: 3D Tiles. Need to take a closer look at this file format, I am not experienced with it
+    GLB@{ shape: rect, label: "glTF GLB"}
+    FlatCityBuf@{ shape: rect}
+    
         subgraph sot [Long-Term Storage]
             Parquet@{ shape: lean-l}
             Zarr@{ shape: lean-l}
@@ -69,6 +73,7 @@ flowchart TD
         DataSci@{ shape: rect, label: "Data People & Developers"}
         Systems@{ shape: rect, label: "Systems"}
     end
+
 
     Statistical e1@<--> DataPkgs
     e1@{animate: true, animation: slow}
@@ -157,6 +162,9 @@ flowchart TD
     style Services fill:#FBC02D,stroke:#F9A825,color:#000000
     style ObjStorage fill:#FBC02D,stroke:#F9A825,color:#000000
 
+    style GLB fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    style FlatCityBuf fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+
     style DataPkgs fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style FAIRCat fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     %% I'm not as concerned about distribution of data. I have made some progress on smart nodes so that's going to be a YUGE release
@@ -205,6 +213,7 @@ flowchart TD
     click FileGDB "https://gdal.org/en/stable/drivers/vector/openfilegdb.html" _blank
     click VectorTiles "https://github.com/mapbox/vector-tile-spec/" _blank
     click NextGenVT "https://github.com/maplibre/maplibre-tile-spec/" _blank
+    click GLB "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#glb-file-format-specification"
     click GeoTIFF "https://cogeo.org/" _blank
     click Zarr "https://github.com/zarr-developers/geozarr-spec/" _blank
     click WebP "https://developers.google.com/speed/webp/" _blank
