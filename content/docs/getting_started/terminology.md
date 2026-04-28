@@ -25,15 +25,20 @@ Terms related to base-layer datasets and structural identifiers.
 
 ## 1. Statistical Data Package
 
-Standard geographic areas from the 2021 Census of Population hierarchy, as defined by Statistics Canada.
 
 {{< callout type="important" >}}
   These concepts are key to working with Statistical and Census data from Statistics Canada.
 {{< /callout >}}
 
-* **[DGUID (Dissemination Geography Unique Identifier)](https://s3.labs.dataforcanada.org/backblaze-public/d4u-datapkg-web-corpus/archive/1777397949.903216/singlefile.html):** An alphanumeric code used by Statistics Canada to uniquely identify a geographic area. It incorporates the vintage (year), type, and specific area code.
+{{% details title="PDFs" closed="true" %}}
+All Statistics Canada terminology is derived from:
+- [2021 Census of Population Dictionary](https://s3.labs.dataforcanada.org/backblaze-public/d4u-datapkg-web-corpus/archive/1777398477.100686/www12.statcan.gc.ca/census-recensement/2021/ref/dict/98-301-x2021001-eng.pdf)
+{{% /details %}}
 
+Standard geographic areas from the 2021 Census of Population hierarchy, as defined by Statistics Canada.
 ![geographic hierarchy](geographic-hiearchy.webp)
+
+* **[DGUID (Dissemination Geography Unique Identifier)](https://s3.labs.dataforcanada.org/backblaze-public/d4u-datapkg-web-corpus/archive/1777397949.903216/singlefile.html):** An alphanumeric code used by Statistics Canada to uniquely identify a geographic area. It incorporates the vintage (year), type, and specific area code.
 
 ### Administrative Areas
 
