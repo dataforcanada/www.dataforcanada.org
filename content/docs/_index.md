@@ -23,7 +23,8 @@ Look through our [GitHub Organization](https://github.com/orgs/dataforcanada/rep
 
 {{< cards cols="1" >}}
   {{< card link="https://source.coop/dataforcanada/" title="Source Cooperative Mirror" icon="beaker" >}}
-  {{< card link="https://d4c-pkgs.t3.storage.dev/" title="Tigris Strategic Mirror" icon="globe" >}}
+  {{< card link="https://s3.labs.dataforcanada.org/tigris/" title="Tigris Strategic Mirror" icon="globe" >}}
+  {{< card link="https://s3.labs.dataforcanada.org/backblaze-ca-east-006" title="Backblaze B2 Strategic Mirror" icon="check-circle" >}}
   <!--
   {{< card link="" title="Cloudflare Strategic Mirror" icon="check-circle" >}}
   -->
