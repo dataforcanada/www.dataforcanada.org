@@ -23,11 +23,10 @@ Look through our [GitHub Organization](https://github.com/orgs/dataforcanada/rep
 
 {{< cards cols="1" >}}
   {{< card link="https://source.coop/dataforcanada/" title="Source Cooperative Mirror" icon="beaker" >}}
-  {{< card link="https://s3.labs.dataforcanada.org/tigris/" title="Tigris Strategic Mirror" icon="globe" >}}
-  {{< card link="https://s3.labs.dataforcanada.org/backblaze-ca-east-006" title="Backblaze B2 Strategic Mirror" icon="check-circle" >}}
-  <!--
-  {{< card link="" title="Cloudflare Strategic Mirror" icon="check-circle" >}}
-  -->
+  {{< card link="https://s3.dataforcanada.org/tigris/" title="Tigris Strategic Mirror" icon="globe" >}}
+  {{< card link="https://s3.dataforcanada.org/backblaze-ca-east-006" title="Backblaze B2 Strategic Mirror" icon="check-circle" >}}
+  {{< card link="https://s3.dataforcanada.org/cloudflare-apac" title="Cloudflare Strategic Mirror (APAC)" icon="cloud" >}}
+  {{< card link="https://s3.dataforcanada.org/cloudflare-enam" title="Cloudflare Strategic Mirror (ENAM)" icon="cloud" >}}
   {{< card link="https://zenodo.org/communities/dataforcanada/records/" title="Zenodo Strategic Mirror" icon="academic-cap" >}}
   {{< card link="https://archive.org/details/@diegoripley/uploads/" title="Internet Archive Strategic Mirror" icon="library" >}}
   {{< card link="/#get-involved" title="Community" icon="sun" >}}

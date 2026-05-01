@@ -18,7 +18,8 @@ flowchart TD
         SourceCoop[Source Cooperative]
         Tigris[Tigris]
         Community[Community]
-        Cloudflare
+        CloudflareAPAC
+        CloudflareENAM
         Zenodo[Zenodo]
         InternetArchive[Internet Archive]
         BackblazeB2[Backblaze B2]
@@ -53,8 +54,10 @@ flowchart TD
     a22@{animate: true, animation: fast}
     Metadata a23@<--> Zenodo
     a23@{animate: true, animation: slow}
-    Metadata a24@<--> Cloudflare
+    Metadata a24@<--> CloudflareAPAC
     a24@{animate: true, animation: fast}
+    Metadata a27@<--> CloudflareENAM
+    a27@{animate: true, animation: fast}
     Metadata a25@<--> InternetArchive
     a25@{animate: true, animation: slow}
     Metadata a26@<--> BackblazeB2
@@ -74,8 +77,17 @@ flowchart TD
     %% P2P Connections
     P2P a10@<--> Consumers
     a10@{animate: true, animation: fast}
+
+    classDef legendRed fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
+    classDef legendYellow fill:#FBC02D,stroke:#F9A825,color:#000000
+    classDef legendGreen fill:#66BB6A,stroke:#2E7D32,color:#000000
     
-    style Sources fill:#FFB74D,stroke:#EF6C00,color:#000000
+    subgraph legend [Priority Legend]
+        direction LR
+        L1[High]:::legendRed ~~~ L2[Medium]:::legendYellow ~~~ L3[Low]:::legendGreen
+    end
+    
+    style Sources fill:#FBC02D,stroke:#F9A825,color:#000000
     style Artifacts fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     %% Opera concertmaster
     style Metadata fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
@@ -83,9 +95,10 @@ flowchart TD
     style Processes fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     class Processes Processes
     style SourceCoop fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
-    style Tigris fill:#FFB74D,stroke:#EF6C00,color:#000000
-    style Cloudflare fill:#FFB74D,stroke:#EF6C00,color:#000000
-    style Zenodo fill:#FFB74D,stroke:#EF6C00,color:#000000
+    style Tigris fill:#FBC02D,stroke:#F9A825,color:#000000
+    style CloudflareAPAC fill:#FBC02D,stroke:#F9A825,color:#000000
+    style CloudflareENAM fill:#FBC02D,stroke:#F9A825,color:#000000
+    style Zenodo fill:#66BB6A,stroke:#2E7D32,color:#000000
     style Community fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style P2P fill:#B71C1C,stroke:#7F0000,color:#FFFFFF
     style InternetArchive fill:#66BB6A,stroke:#2E7D32,color:#000000
@@ -95,15 +108,16 @@ flowchart TD
     
     %% Click Actions
 	click P2P "https://libp2p.io/" _blank
-    click Cloudflare "https://s3.labs.dataforcanada.org/cloudflare-enam" _blank
-    click Tigris "https://s3.labs.dataforcanada.org/tigris/" _blank
+    click CloudflareAPAC "https://s3.dataforcanada.org/cloudflare-apac" _blank
+    click CloudflareENAM "https://s3.dataforcanada.org/cloudflare-enam" _blank
+    click Tigris "https://s3.dataforcanada.org/tigris/" _blank
     click Sources "https://www.dataforcanada.org/#high-level-overview" _blank
     click Processes "https://www.dataforcanada.org/docs/d4c-pkgs/" _blank
     click Metadata "https://stac-utils.github.io/stac-geoparquet/latest/spec/stac-geoparquet-spec/" _blank
     click Zenodo "https://zenodo.org/communities/dataforcanada/" _blank
-    click SourceCoop "https://s3.labs.dataforcanada.org/sourcecooperative/" _blank
+    click SourceCoop "https://s3.dataforcanada.org/sourcecooperative/" _blank
     click InternetArchive "https://archive.org/details/@diegoripley/uploads/" _blank
-    click BackblazeB2 "https://s3.labs.dataforcanada.org/backblaze-ca-east-006" _blank
+    click BackblazeB2 "https://s3.dataforcanada.org/backblaze-ca-east-006" _blank
 
     %% APPLY STYLES TO LINKED NODES
     class Sources linkNode
