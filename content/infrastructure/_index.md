@@ -107,20 +107,17 @@ sidebar:
 
   // ── Data ─────────────────────────────────────────────────────────────────
   const nodes = [
-    /*
     { id: 'smart-node-01', name: 'Smart Node 01', location: 'Toronto, Ontario, Canada', coords: [-79.38, 43.65], specs: '50Gbps / 50Gbps, 950GB Flash Storage', protocol: 'P2P, SSH', jurisdiction: 'Singapore', color: '#9966CC' },
-     */
     { id: 'geo-services-01', name: 'Geo Services 01', location: 'Ottawa, Ontario, Canada', coords: [-75.69, 45.42], specs: '3GBps / 3GBps, 60TB HDD Storage, 14TB Flash Storage', protocol: 'All', jurisdiction: 'Canada', color: '#EA2839' },
     { id: 'vancouver', name: 'Internet Archive Mirror', location: 'Vancouver, Canada', coords: [-123.12, 49.28], protocol: 'HTTP', jurisdiction: 'USA', color: '#002147' },
     { id: 'source-cooperative-oregon', name: 'Source Cooperative', location: 'Oregon, USA', coords: [-122.68, 45.52], specs: 'AWS S3 (us-west-2), ~50TB HDD Storage', protocol: 'HTTP', jurisdiction: 'USA', color: '#002147' },
-    { id: 'r2', name: 'Cloudflare R2', location: 'Eastern North America', coords: [-73.94, 40.71], specs: 'Primary Object Storage', protocol: 'HTTP', jurisdiction: 'USA', color: '#002147' },
+    { id: 'r2-enam', name: 'Cloudflare R2 ENAM', location: 'Eastern North America', coords: [-73.94, 40.71], specs: 'Primary Object Storage', protocol: 'HTTP', jurisdiction: 'USA', color: '#002147' },
+    { id: 'r2-apac', name: 'Cloudflare R2 APAC', location: 'Asia-Pacific', coords: [103.82, 1.35], specs: 'Primary Object Storage', protocol: 'HTTP', jurisdiction: 'USA', color: '#002147' },
     { id: 'san-francisco', name: 'The Internet Archive', location: 'San Francisco, California, USA', coords: [-122.42, 37.77], protocol: 'HTTP', jurisdiction: 'USA', color: '#002147' },
     { id: 'vps-01', name: 'VPS 01', location: 'Manassas, Virginia, USA', coords: [-77.48, 38.75], specs: '2.5Gbps / 2.5Gbps, 512GB Flash Storage', protocol: 'All', jurisdiction: 'Germany', color: '#FFCC00' },
     { id: 'backup-node-01', name: 'Backup Node 01', location: 'Fremont, California, USA', specs: '10Gbps / 10Gbps, 2TB Storage', coords: [-121, 40], protocol: 'SSH, Multi', jurisdiction: 'USA', color: '#002147' },
-    /*
     { id: 'smart-node-02', name: 'Smart Node 02', location: 'Amsterdam, Netherlands', coords: [4.90, 52.37], specs: '50Gbps / 50Gbps, 950GB Flash Storage', protocol: 'P2P, SSH', jurisdiction: 'Singapore', color: '#9966CC' },
     { id: 'smart-node-03', name: 'Smart Node 03', location: 'Amsterdam, Netherlands', coords: [4.90, 52.37], specs: '50Gbps / 50Gbps, 6TB HDD Storage', protocol: 'P2P, SSH', jurisdiction: 'Singapore', color: '#9966CC' },
-    */
     { id: 'geneva', name: 'Zenodo', location: 'Geneva, Switzerland', coords: [6.14, 46.20], specs: 'Replicated in Budapest', protocol: 'HTTP', jurisdiction: 'Switzerland', color: '#FFFFFF' },
     { id: 'budapest', name: 'Zenodo Mirror', location: 'Budapest, Hungary', coords: [19.04, 47.50], protocol: 'HTTP', jurisdiction: 'Switzerland', color: '#FFFFFF' },
     { id: 'tigris-ams', name: 'Tigris (Amsterdam)', location: 'Amsterdam, Netherlands', coords: [4.90, 52.37], specs: 'Tigris CDN Region (ams)', protocol: 'HTTP', jurisdiction: 'USA', color: '#002147' },
