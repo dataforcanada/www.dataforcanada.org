@@ -10,7 +10,7 @@ tags:
   - internet-archive
   - ia
 excludeSearch: false
-draft: true
+draft: false
 ---
 
 We have added the internetarchive bucket to https://s3.labs.dataforcanada.org.
@@ -72,4 +72,4 @@ flowchart TD
 - And it looks like we're getting throttled, even with keys
 ![landscape](2026-05-06_10-42-ia-slowdown.png)
 
-- Due to IA's architecture, it might be necessary to
+- Due to IA's architecture, it might be necessary to map their /download, for example http://archive.org/download/region-of-peel-2021-orthoimagery/Peel_75mm_2021.tif to S3 operations
