@@ -10,7 +10,7 @@ tags:
   - internet-archive
   - ia
 excludeSearch: false
-draft: false
+draft: true
 ---
 
 We have added the internetarchive bucket to https://s3.labs.dataforcanada.org.
