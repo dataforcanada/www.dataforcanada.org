@@ -13,7 +13,7 @@ excludeSearch: false
 draft: true
 ---
 
-We have added the internetarchive bucket to https://s3.labs.dataforcanada.org.
+We have added the `internetarchive` bucket to [https://s3.labs.dataforcanada.org](https://s3.labs.dataforcanada.org), which proxies directly to the Internet Archive. This opens up a massive amount of data to standard S3 API calls, but there are a few important caveats regarding performance and discovery.
 
 ```mermaid
 flowchart TD
@@ -46,7 +46,7 @@ flowchart TD
     end
 
     subgraph INTERNETARCHIVE ["📚 Internet Archive Data"]
-        INTERNETARCHIVENode["📍San Francisco, United States and Vancouver, Canada"]
+        INTERNETARCHIVENode["🗃️ San Francisco, United States and Vancouver, Canada"]
     end
 
     subgraph TIGRIS ["⚡ Tigris Data"]
@@ -60,16 +60,38 @@ flowchart TD
     style CFAPACNode fill:#f6821f,color:#fff,stroke:#c4681a
     style CFENAMNode fill:#f6821f,color:#fff,stroke:#c4681a
     style TIGRISNode fill:#6c3483,color:#fff,stroke:#512e6b
+    style INTERNETARCHIVENode fill:#000,color:#fff,stroke:#512e6b
 ```
 
-# Notes
-- Internet Archive  S3 Documentation https://archive.org/developers/ias3.html
-- You need to know your identifier of your dataset (aka your bucket). For example, [earth-at-night-2016](https://s3.labs.dataforcanada.org/internetarchive/earth-at-night-2016)
-- 30 GB per 5 minute bandwidth quota as the Internet Archive has limited budget
-- Curious if anybody has made an index of all Internet Archive buckets
-- I believe it would be ideal to have an Internet Archive serverless worker(s) that are situated closer to the Internet Archive, then connect to those, as they do not have a CDN 
+## The Quest for Efficiency
 
-- And it looks like we're getting throttled, even with keys
+Integrating the Internet Archive wasn't without its hurdles. I started by using the official Internet Archive endpoint defined in their [ias3 documentation](https://archive.org/developers/ias3.html) (https://s3.us.archive.org). Unfortunately, even when using authenticated API keys, requests were throttled almost immediately.
+
 ![landscape](2026-05-06_10-42-ia-slowdown.png)
 
-- Due to IA's architecture, it might be necessary to map their /download, for example http://archive.org/download/region-of-peel-2021-orthoimagery/Peel_75mm_2021.tif to S3 operations
+To make this architecture **as efficient as possible**, I had to pivot. Instead of relying on the standard S3 endpoint, I switched the backend to utilize the Internet Archive's native HTTP paths, wrapping them in a custom S3 interface:
+
+* `http://archive.org/download/{identifier}` for optimized file downloading.
+* `https://archive.org/metadata/{identifier}` for fetching JSON metadata.
+
+Even with this highly optimized, custom approach, you will still encounter rate throttling. We have added a bandwidth quota of **30GB per 5 minutes**.
+
+## How to Access the Data
+
+Because of how this proxy functions, you currently need to know the exact identifier (which acts as your bucket) of the dataset you want to access.
+
+Let's use the `earth-at-night-2016` dataset as an example. Behind the scenes, the native archive links look like this:
+
+* **Download:** https://archive.org/download/earth-at-night-2016
+* **Metadata:** https://archive.org/metadata/earth-at-night-2016
+
+Through our gateway, you can access this identical dataset using standard S3 protocols simply by pointing your client here:
+
+* **S3 Gateway:** https://s3.labs.dataforcanada.org/internetarchive/earth-at-night-2016
+![Internet Archive listing dataset](internet-archive-listing-s3.png)
+
+## What's Next?
+
+Right now, finding these dataset identifiers requires manually browsing the Internet Archive. Because this proxy implementation is now as fast and efficient as the upstream rate limits will allow, my next goal is to improve discovery.
+
+In the future, I plan to build a simple, searchable file and metadata index of the Internet Archive directly into the platform. I'm a big fan of movies, so I'll be starting the indexing process there!
